@@ -1,5 +1,6 @@
 {
 	"languageCode": "BG",
+	"languageLocalName": "български",
 	"messages": {
 		"SettingsCalibrationWarning": "Уверете се, че човката на поялника е със стайна температура преди да продължите!",
 		"SettingsResetWarning": "Сигурни ли сте, че искате да върнете фабричните настройки?",
@@ -16,14 +17,14 @@
 		"IdleTipString": "Връх:",
 		"IdleSetString": " Set:",
 		"TipDisconnectedString": "ВРЪХ ЛОША ВРЪЗКА",
-		"SolderingAdvancedPowerPrompt": "Захранване: "
-	},
-	"characters": {
-		"SettingRightChar": "R",
-		"SettingLeftChar": "L",
-		"SettingAutoChar": "A",
-		"SettingFastChar": "F",
-		"SettingSlowChar": "S"
+		"SolderingAdvancedPowerPrompt": "Захранване: ",
+		"ResetOK": "RESET OK",
+		"OffString": "Off",
+		"SettingRightChar": "Д",
+		"SettingLeftChar": "Л",
+		"SettingAutoChar": "А",
+		"SettingFastChar": "Б",
+		"SettingSlowChar": "П"
 	},
 	"menuDouble": true,
 	"menuGroups": {
@@ -119,7 +120,7 @@
 				"Ориентация",
 				"на дисплея"
 			],
-			"desc": "Ориентация на дисплея <A. Автоматично L. Лява Ръка R. Дясна Ръка>"
+			"desc": "Ориентация на дисплея <А. Автоматично Л. Лява Ръка Д. Дясна Ръка>"
 		},
 		"BoostEnabled": {
 			"text": "",
@@ -191,8 +192,15 @@
 				"Скорост",
 				"на текста"
 			],
-			"desc": "Скорост на движение на този текст"
+			"desc": "Скорост на движение на този текст <Б. Бързо П.Полека>"
+		},
+		"Language": {
+			"text": "",
+			"text2": [
+				"Език",
+				""
+			],
+			"desc": ""
 		}
-	},
-	"languageLocalName": "български"
+	}
 }

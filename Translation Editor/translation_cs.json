@@ -1,5 +1,6 @@
 {
-	"languageCode": "CS_CZ",
+	"languageCode": "CS",
+	"languageLocalName": "Český",
 	"messages": {
 		"SettingsCalibrationWarning": "Ujistěte se, že hrot má pokojovou teplotu!",
 		"SettingsResetWarning": "Opravdu chcete resetovat zařízení do továrního nastavení?",
@@ -16,9 +17,9 @@
 		"IdleTipString": "Hrot:",
 		"IdleSetString": " Cíl:",
 		"TipDisconnectedString": "HROT NEPŘIPOJEN",
-		"SolderingAdvancedPowerPrompt": "Ohřev: "
-	},
-	"characters": {
+		"SolderingAdvancedPowerPrompt": "Ohřev: ",
+		"ResetOK": "RESET OK",
+		"OffString": "Off",
 		"SettingRightChar": "P",
 		"SettingLeftChar": "L",
 		"SettingAutoChar": "A",
@@ -192,7 +193,14 @@
 				"popisků"
 			],
 			"desc": "Rychlost skrolování popisků podobných tomuto <P=Pomalu,R=Rychle>"
+		},
+		"Language": {
+			"text": "",
+			"text2": [
+				"Jazyk",
+				""
+			],
+			"desc": ""
 		}
-	},
-	"languageLocalName": "Český"
+	}
 }

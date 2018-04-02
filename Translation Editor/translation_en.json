@@ -17,15 +17,16 @@
 		"IdleTipString": "Tip:",
 		"IdleSetString": " Set:",
 		"TipDisconnectedString": "TIP DISCONNECTED",
-		"SolderingAdvancedPowerPrompt": "Power: "
-	},
-	"characters": {
+		"SolderingAdvancedPowerPrompt": "Power: ",
+		"ResetOK": "RESET OK",
+		"OffString": "Off",
 		"SettingRightChar": "R",
 		"SettingLeftChar": "L",
 		"SettingAutoChar": "A",
 		"SettingFastChar": "F",
 		"SettingSlowChar": "S"
 	},
+	"menuDouble": true,
 	"menuGroups": {
 		"SolderingMenu": {
 			"text2": [
@@ -39,14 +40,14 @@
 				"Sleep",
 				"Modes"
 			],
-			"desc": "Power saving settings"
+			"desc": "Power Saving Settings"
 		},
 		"UIMenu": {
 			"text2": [
 				"User",
 				"Interface"
 			],
-			"desc": "User interface settings"
+			"desc": "User Interface settings"
 		},
 		"AdvancedMenu": {
 			"text2": [
@@ -56,7 +57,6 @@
 			"desc": "Advanced options"
 		}
 	},
-	"menuDouble": true,
 	"menuOptions": {
 		"PowerSource": {
 			"text": "PWRSC",
@@ -163,10 +163,10 @@
 			"desc": "Calibrate tip offset."
 		},
 		"SettingsReset": {
-			"text": "RESET?",
+			"text": "RESET",
 			"text2": [
 				"Factory",
-				"Reset?"
+				"reset?"
 			],
 			"desc": "Reset all settings"
 		},
@@ -193,6 +193,14 @@
 				"Scroll Speed"
 			],
 			"desc": "Speed this text scrolls past at"
+		},
+		"Language": {
+			"text": "LANG",
+			"text2": [
+				"Language",
+				""
+			],
+			"desc": ""
 		}
 	}
 }

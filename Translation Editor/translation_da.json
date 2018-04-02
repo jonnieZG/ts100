@@ -1,5 +1,6 @@
 {
-	"languageCode": "DK",
+	"languageCode": "DA",
+	"languageLocalName": "Dansk",
 	"messages": {
 		"SettingsCalibrationWarning": "Sørg for at loddespidsen er ved stuetemperatur, inden du fortsætter!",
 		"SettingsResetWarning": "Are you sure to reset settings to default values?",
@@ -11,14 +12,14 @@
 		"SleepingSimpleString": "Zzzz",
 		"SleepingAdvancedString": "Dvale...",
 		"WarningSimpleString": "Varm",
-		"WarningAdvancedString": "ADVARSEL! VARM LODDESPIDS!",
+		"WarningAdvancedString": "!!! VARM !!!",
 		"SleepingTipAdvancedString": "Tip:",
 		"IdleTipString": "Tip:",
 		"IdleSetString": " Set:",
 		"TipDisconnectedString": "TIP DISCONNECTED",
-		"SolderingAdvancedPowerPrompt": "Power: "
-	},
-	"characters": {
+		"SolderingAdvancedPowerPrompt": "Power: ",
+		"ResetOK": "RESET OK",
+		"OffString": "Off",
 		"SettingRightChar": "H",
 		"SettingLeftChar": "V",
 		"SettingAutoChar": "A",
@@ -192,7 +193,14 @@
 				""
 			],
 			"desc": "Speed this text scrolls past at"
+		},
+		"Language": {
+			"text": "SPROG",
+			"text2": [
+				"",
+				""
+			],
+			"desc": ""
 		}
-	},
-	"languageLocalName": "Dansk"
+	}
 }

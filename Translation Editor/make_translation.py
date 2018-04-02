@@ -3,7 +3,7 @@ import os
 import io
 import sys
 
-TRANSLATION_CPP = "Translation.cpp"
+TARGET_FILE = "Translation.cpp"
 
 try :
     to_unicode = unicode
@@ -163,7 +163,7 @@ Second parameter = target directory
 '''
 
 
-print "Making " + TRANSLATION_CPP + ":"
+print "Making " + TARGET_FILE + ":"
 
 if len(sys.argv) > 1:
     jsonDir = sys.argv[1]
@@ -197,9 +197,9 @@ for key in sortedKeys:
 # Add the rest as they come
 
 # Start writing the file
-targetTranslationFile = os.path.join(outDir, TRANSLATION_CPP)
+targetFile = os.path.join(outDir, TARGET_FILE)
 
-with io.open(targetTranslationFile, 'w', encoding='utf-8', newline="\n") as f:
+with io.open(targetFile, 'w', encoding='utf-8', newline="\n") as f:
     writeStart(f)
     
     for langCode in mandatoryOrder:

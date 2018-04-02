@@ -17,9 +17,9 @@
 		"IdleTipString": "Ant:",
 		"IdleSetString": " Nust:",
 		"TipDisconnectedString": "ANTGAL ATJUNGTAS",
-		"SolderingAdvancedPowerPrompt": "Maitinimas: "
-	},
-	"characters": {
+		"SolderingAdvancedPowerPrompt": "Maitinimas: ",
+		"ResetOK": "RESET OK",
+		"OffString": "Off",
 		"SettingRightChar": "D",
 		"SettingLeftChar": "K",
 		"SettingAutoChar": "A",
@@ -51,7 +51,7 @@
 		},
 		"AdvancedMenu": {
 			"text2": [
-				"Išplėstiniai",
+				"Papildomi",
 				"nustatymai"
 			],
 			"desc": "Išplėstiniai nustatymai"
@@ -109,8 +109,8 @@
 		"AdvancedIdle": {
 			"text": "",
 			"text2": [
-				"Detalus lauki-",
-				"mo ekranas"
+				"Detalus lau-",
+				"kimo ekranas"
 			],
 			"desc": "Ar rodyti papildomą informaciją mažesniu šriftu laukimo ekrane"
 		},
@@ -189,10 +189,18 @@
 		"ScrollingSpeed": {
 			"text": "",
 			"text2": [
-				"Greitas apra-",
-				"šymo slinkimas"
+				"Pranešimų",
+				"greitis"
 			],
 			"desc": "Greitis, kuriuo šis tekstas slenka"
+		},
+		"Language": {
+			"text": "",
+			"text2": [
+				"Kalba",
+				""
+			],
+			"desc": ""
 		}
 	}
 }

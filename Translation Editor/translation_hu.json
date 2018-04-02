@@ -1,5 +1,6 @@
 {
 	"languageCode": "HU",
+	"languageLocalName": "Magyar",
 	"messages": {
 		"SettingsCalibrationWarning": "Folytatás előtt győződj meg róla, hogy a hegy szobahőmérsékletű!",
 		"SettingsResetWarning": "Are you sure to reset settings to default values?",
@@ -11,14 +12,14 @@
 		"SleepingSimpleString": "Zzzz",
 		"SleepingAdvancedString": "Alvás...",
 		"WarningSimpleString": "HOT!",
-		"WarningAdvancedString": "FIGYELEM! FORRÓ HEGY!",
+		"WarningAdvancedString": "!!! HEGY !!!",
 		"SleepingTipAdvancedString": "Tip:",
 		"IdleTipString": "Tip:",
 		"IdleSetString": " Set:",
 		"TipDisconnectedString": "TIP DISCONNECTED",
-		"SolderingAdvancedPowerPrompt": "Power: "
-	},
-	"characters": {
+		"SolderingAdvancedPowerPrompt": "Power: ",
+		"ResetOK": "RESET OK",
+		"OffString": "Off",
 		"SettingRightChar": "R",
 		"SettingLeftChar": "L",
 		"SettingAutoChar": "A",
@@ -188,11 +189,18 @@
 		"ScrollingSpeed": {
 			"text": "DESCSP",
 			"text2": [
-				"",
+				"LANG",
 				""
 			],
 			"desc": "Speed this text scrolls past at"
+		},
+		"Language": {
+			"text": "DESCSP",
+			"text2": [
+				"LANG",
+				""
+			],
+			"desc": "A felhasználói felület nyelve"
 		}
-	},
-	"languageLocalName": "Magyar"
+	}
 }

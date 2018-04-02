@@ -1,5 +1,6 @@
 {
 	"languageCode": "SK",
+	"languageLocalName": "Slovenčina",
 	"messages": {
 		"SettingsCalibrationWarning": "Najprv sa prosim uistite, ze hrot ma izbovu teplotu!",
 		"SettingsResetWarning": "Are you sure to reset settings to default values?",
@@ -11,14 +12,14 @@
 		"SleepingSimpleString": "Chrr",
 		"SleepingAdvancedString": "Kludovy rezim...",
 		"WarningSimpleString": "HOT!",
-		"WarningAdvancedString": "HROT JE HORUCI !",
+		"WarningAdvancedString": "Pozor! Hrot je horuci!",
 		"SleepingTipAdvancedString": "Tip:",
 		"IdleTipString": "Tip:",
 		"IdleSetString": " Set:",
 		"TipDisconnectedString": "TIP DISCONNECTED",
-		"SolderingAdvancedPowerPrompt": "Power: "
-	},
-	"characters": {
+		"SolderingAdvancedPowerPrompt": "Power: ",
+		"ResetOK": "RESET OK",
+		"OffString": "Off",
 		"SettingRightChar": "R",
 		"SettingLeftChar": "L",
 		"SettingAutoChar": "A",
@@ -192,6 +193,14 @@
 				""
 			],
 			"desc": "Speed this text scrolls past at"
+		},
+		"Language": {
+			"text": "LANG",
+			"text2": [
+				"",
+				""
+			],
+			"desc": "Jazyk rozhrania"
 		}
 	}
 }

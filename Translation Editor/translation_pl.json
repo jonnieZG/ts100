@@ -1,5 +1,6 @@
 {
 	"languageCode": "PL",
+	"languageLocalName": "Polski",
 	"messages": {
 		"SettingsCalibrationWarning": "Przed kontynuowaniem upewnij się, że końcówka osiągnela temperature pokojowa!",
 		"SettingsResetWarning": "Are you sure to reset settings to default values?",
@@ -11,14 +12,14 @@
 		"SleepingSimpleString": "Zzz!",
 		"SleepingAdvancedString": "Uspienie...",
 		"WarningSimpleString": "HOT!",
-		"WarningAdvancedString": "UWAGA! GORĄCA KOŃCÓWKA!",
+		"WarningAdvancedString": "GORĄCA KOŃCÓWKA!",
 		"SleepingTipAdvancedString": "Tip:",
 		"IdleTipString": "Tip:",
 		"IdleSetString": " Set:",
 		"TipDisconnectedString": "TIP DISCONNECTED",
-		"SolderingAdvancedPowerPrompt": "Power: "
-	},
-	"characters": {
+		"SolderingAdvancedPowerPrompt": "Power: ",
+		"ResetOK": "RESET OK",
+		"OffString": "Off",
 		"SettingRightChar": "P",
 		"SettingLeftChar": "L",
 		"SettingAutoChar": "A",
@@ -191,8 +192,15 @@
 				"",
 				""
 			],
-			"desc": "Speed this text scrolls past at"
+			"desc": "Szybkość, z jaką porusza się ten tekst"
+		},
+		"Language": {
+			"text": "LANG",
+			"text2": [
+				"",
+				""
+			],
+			"desc": "Język interfejsu"
 		}
-	},
-	"languageLocalName": "Polski"
+	}
 }

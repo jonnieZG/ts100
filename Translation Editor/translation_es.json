@@ -1,59 +1,60 @@
 {
 	"languageCode": "ES",
+	"languageLocalName": "Español",
 	"messages": {
-		"SettingsCalibrationWarning": "Please ensure the tip is at room temperature before continuing!",
-		"SettingsResetWarning": "Are you sure to reset settings to default values?",
+		"SettingsCalibrationWarning": "Por favor, ¡asegúrese que la punta esté a temperatura ambiente antes de proceder!",
+		"SettingsResetWarning": "¿Está seguro de volver a estado de fábrica?",
 		"UVLOWarningString": "DC LOW",
 		"UndervoltageString": "Undervoltage",
 		"InputVoltageString": "Input V: ",
 		"WarningTipTempString": "Tip Temp: ",
-		"BadTipString": "BAD TIP",
+		"BadTipString": "MAL PUNT",
 		"SleepingSimpleString": "Zzzz",
-		"SleepingAdvancedString": "Sleeping...",
+		"SleepingAdvancedString": "Reposo...",
 		"WarningSimpleString": "HOT!",
-		"WarningAdvancedString": "WARNING! TIP HOT!",
+		"WarningAdvancedString": "!!! CALIENTE !!!",
 		"SleepingTipAdvancedString": "Tip:",
 		"IdleTipString": "Tip:",
 		"IdleSetString": " Set:",
 		"TipDisconnectedString": "TIP DISCONNECTED",
-		"SolderingAdvancedPowerPrompt": "Power: "
-	},
-	"characters": {
-		"SettingRightChar": "R",
-		"SettingLeftChar": "L",
+		"SolderingAdvancedPowerPrompt": "Potencia: ",
+		"ResetOK": "RESET OK",
+		"OffString": "Off",
+		"SettingRightChar": "D",
+		"SettingLeftChar": "I",
 		"SettingAutoChar": "A",
-		"SettingFastChar": "F",
-		"SettingSlowChar": "S"
+		"SettingFastChar": "R",
+		"SettingSlowChar": "L"
 	},
 	"menuDouble": false,
 	"menuGroups": {
 		"SolderingMenu": {
 			"text2": [
-				"Soldering",
-				"Settings"
+				"Opciones de",
+				"soldadura"
 			],
-			"desc": "Soldering settings"
+			"desc": "Opciones de soldadura"
 		},
 		"PowerSavingMenu": {
 			"text2": [
-				"Sleep",
-				"Modes"
+				"Modos de",
+				"reposo"
 			],
-			"desc": "Power Saving Settings"
+			"desc": "Opciones de ahorro energético"
 		},
 		"UIMenu": {
 			"text2": [
-				"User",
-				"Interface"
+				"Interfaz de",
+				"usuario"
 			],
-			"desc": "User Interface settings"
+			"desc": "Opciones de interfaz de usuario"
 		},
 		"AdvancedMenu": {
 			"text2": [
-				"Advanced",
-				"Options"
+				"Opciones",
+				"avanzadas"
 			],
-			"desc": "Advanced options"
+			"desc": "Opciones avanzadas"
 		}
 	},
 	"menuOptions": {
@@ -111,7 +112,7 @@
 				"",
 				""
 			],
-			"desc": "Display detailed information in a smaller font on the idle screen."
+			"desc": "Mostrar información detallada con fuente de menor tamaño en la pantalla de reposo."
 		},
 		"DisplayRotation": {
 			"text": "DSPROT",
@@ -159,7 +160,7 @@
 				"",
 				""
 			],
-			"desc": "Calibrate tip offset."
+			"desc": "Calibrar desviación térmica de la punta."
 		},
 		"SettingsReset": {
 			"text": "RESET?",
@@ -167,7 +168,7 @@
 				"",
 				""
 			],
-			"desc": "Reset all settings"
+			"desc": "Volver a estado de fábrica."
 		},
 		"VoltageCalibration": {
 			"text": "CAL VIN?",
@@ -175,7 +176,7 @@
 				"",
 				""
 			],
-			"desc": "VIN Calibration. Buttons adjust, long press to exit"
+			"desc": "Calibración VIN (Voltaje de entrada). Ajuste con ambos botones, pulsación larga para salir."
 		},
 		"AdvancedSoldering": {
 			"text": "ADVSLD",
@@ -183,7 +184,7 @@
 				"",
 				""
 			],
-			"desc": "Display detailed information while soldering"
+			"desc": "Mostrar información detallada mientras suelda."
 		},
 		"ScrollingSpeed": {
 			"text": "DESCSP",
@@ -191,8 +192,15 @@
 				"",
 				""
 			],
-			"desc": "Speed this text scrolls past at"
+			"desc": "Velocidad de desplazamiento del texto."
+		},
+		"Language": {
+			"text": "IDIOM",
+			"text2": [
+				"",
+				""
+			],
+			"desc": "Idioma"
 		}
-	},
-	"languageLocalName": "Español"
+	}
 }

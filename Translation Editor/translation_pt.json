@@ -1,5 +1,6 @@
 {
 	"languageCode": "PT",
+	"languageLocalName": "Português",
 	"messages": {
 		"SettingsCalibrationWarning": "A ponta deve estar em temperatura ambiente antes de continuar!",
 		"SettingsResetWarning": "Reverter para os ajustes de fábrica?",
@@ -16,9 +17,9 @@
 		"IdleTipString": "Ponta:",
 		"IdleSetString": " Aj:",
 		"TipDisconnectedString": "SEM PONTA",
-		"SolderingAdvancedPowerPrompt": "Power: "
-	},
-	"characters": {
+		"SolderingAdvancedPowerPrompt": "Power: ",
+		"ResetOK": "RESET OK",
+		"OffString": "Off",
 		"SettingRightChar": "D",
 		"SettingLeftChar": "C",
 		"SettingAutoChar": "A",
@@ -192,7 +193,14 @@
 				""
 			],
 			"desc": "Speed this text scrolls past at"
+		},
+		"Language": {
+			"text": "LANG",
+			"text2": [
+				"",
+				""
+			],
+			"desc": "Idioma da interface"
 		}
-	},
-	"languageLocalName": "Portugues"
+	}
 }

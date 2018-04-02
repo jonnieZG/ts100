@@ -1,5 +1,6 @@
 {
 	"languageCode": "TR",
+	"languageLocalName": "Türkçe",
 	"messages": {
 		"SettingsCalibrationWarning": "Lütfen devam etmeden önce ucun oda sıcaklığında olduğunu garantiye alın!",
 		"SettingsResetWarning": "Are you sure to reset settings to default values?",
@@ -16,9 +17,9 @@
 		"IdleTipString": "Tip:",
 		"IdleSetString": " Set:",
 		"TipDisconnectedString": "TIP DISCONNECTED",
-		"SolderingAdvancedPowerPrompt": "Power: "
-	},
-	"characters": {
+		"SolderingAdvancedPowerPrompt": "Power: ",
+		"ResetOK": "RESET OK",
+		"OffString": "Off",
 		"SettingRightChar": "R",
 		"SettingLeftChar": "L",
 		"SettingAutoChar": "A",
@@ -191,8 +192,15 @@
 				"",
 				""
 			],
-			"desc": "Speed this text scrolls past at"
+			"desc": "Hareketli mesajların hızı"
+		},
+		"Language": {
+			"text": "LANG",
+			"text2": [
+				"",
+				""
+			],
+			"desc": "Arayüzün dili"
 		}
-	},
-	"languageLocalName": "Türk"
+	}
 }

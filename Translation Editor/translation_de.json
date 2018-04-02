@@ -1,5 +1,6 @@
 {
 	"languageCode": "DE",
+	"languageLocalName": "Deutsch",
 	"messages": {
 		"SettingsCalibrationWarning": "Vor dem Fortfahren muss die Lötspitze vollständig abgekühlt sein!",
 		"SettingsResetWarning": "Sind Sie sicher, dass Sie alle Werte Zurücksetzen wollen?",
@@ -11,26 +12,26 @@
 		"SleepingSimpleString": "Zzz ",
 		"SleepingAdvancedString": "Ruhemodus...",
 		"WarningSimpleString": "HEIß",
-		"WarningAdvancedString": "! Achtung Heiß !",
+		"WarningAdvancedString": "SPITZE HEIß!",
 		"SleepingTipAdvancedString": "Temp:",
 		"IdleTipString": "Ist:",
 		"IdleSetString": " Soll:",
 		"TipDisconnectedString": "Spitze fehlt",
-		"SolderingAdvancedPowerPrompt": "Leistung: "
-	},
-	"characters": {
+		"SolderingAdvancedPowerPrompt": "Leistung: ",
+		"ResetOK": "RESET OK",
+		"OffString": "Off",
 		"SettingRightChar": "R",
 		"SettingLeftChar": "L",
 		"SettingAutoChar": "A",
-		"SettingFastChar": "F",
-		"SettingSlowChar": "S"
+		"SettingFastChar": "S",
+		"SettingSlowChar": "L"
 	},
 	"menuDouble": true,
 	"menuGroups": {
 		"SolderingMenu": {
 			"text2": [
 				"Löt-",
-				"einstellungen"
+				"einst."
 			],
 			"desc": "Löteinstellungen"
 		},
@@ -44,14 +45,14 @@
 		"UIMenu": {
 			"text2": [
 				"Menü-",
-				"einstellungen"
+				"einst."
 			],
 			"desc": "Menüeinstellungen"
 		},
 		"AdvancedMenu": {
 			"text2": [
 				"Erweiterte",
-				"Einstellungen"
+				"Einst."
 			],
 			"desc": "Erweiterte Einstellungen"
 		}
@@ -132,8 +133,8 @@
 		"BoostTemperature": {
 			"text": "",
 			"text2": [
-				"Boosttemp-",
-				"eratur"
+				"Boost-",
+				"temp."
 			],
 			"desc": "Temperatur im Boostmodus  (In der eingestellten Einheit)"
 		},
@@ -192,7 +193,14 @@
 				"geschw."
 			],
 			"desc": "Scrollgeschwindigkeit der Texte"
+		},
+		"Language": {
+			"text": "",
+			"text2": [
+				"Sprache",
+				""
+			],
+			"desc": ""
 		}
-	},
-	"languageLocalName": "Deutsch"
+	}
 }

@@ -72,10 +72,16 @@ var def =
 		}, 
 		{
 			"id" :"SolderingAdvancedPowerPrompt",
-			"maxLen": null
-		}
-	],
-	"characters": [
+			"maxLen": 12
+		},
+		{
+			"id" :"ResetOK",
+			"maxLen": 12
+		},
+		{
+			"id" :"OffString",
+			"maxLen": 3
+		},
 		{
 			"id": "SettingRightChar",
 			"len": 1
@@ -199,6 +205,11 @@ var def =
 		{
 			"id": "ScrollingSpeed",
 			"maxLen": 6,
+			"maxLen2": 11
+		},
+		{
+			"id": "Language",
+			"maxLen": 5,
 			"maxLen2": 11
 		}
 	]

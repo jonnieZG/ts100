@@ -1,5 +1,6 @@
 {
-	"languageCode": "SE",
+	"languageCode": "SV",
+	"languageLocalName": "Svenska",
 	"messages": {
 		"SettingsCalibrationWarning": "Please ensure the tip is at room temperature before continuing!",
 		"SettingsResetWarning": "Are you sure to reset settings to default values?",
@@ -11,21 +12,21 @@
 		"SleepingSimpleString": "Zzzz",
 		"SleepingAdvancedString": "Sleeping...",
 		"WarningSimpleString": "HOT!",
-		"WarningAdvancedString": "WARNING! TIP HOT!",
+		"WarningAdvancedString": "!!! TIP HOT !!!",
 		"SleepingTipAdvancedString": "Tip:",
 		"IdleTipString": "Tip:",
 		"IdleSetString": " Set:",
 		"TipDisconnectedString": "TIP DISCONNECTED",
-		"SolderingAdvancedPowerPrompt": "Power: "
-	},
-	"characters": {
+		"SolderingAdvancedPowerPrompt": "Power: ",
+		"ResetOK": "RESET OK",
+		"OffString": "Off",
 		"SettingRightChar": "R",
 		"SettingLeftChar": "L",
 		"SettingAutoChar": "A",
 		"SettingFastChar": "F",
 		"SettingSlowChar": "S"
 	},
-	"menuDouble": false,
+	"menuDouble": true,
 	"menuGroups": {
 		"SolderingMenu": {
 			"text2": [
@@ -60,138 +61,146 @@
 		"PowerSource": {
 			"text": "PWRSC",
 			"text2": [
-				"",
-				""
+				"Power",
+				"source"
 			],
-			"desc": "Источник питания. Установка напряжения отключения. <DC 10V> <S 3.3 V на батарею>"
+			"desc": "Power source. Sets cutoff voltage. <DC 10V> <S 3.3V per cell>"
 		},
 		"SleepTemperature": {
 			"text": "STMP",
 			"text2": [
-				"",
-				""
+				"Sleep",
+				"temp"
 			],
-			"desc": "Температура Сна  <С>"
+			"desc": "Sleep Temperature <C>"
 		},
 		"SleepTimeout": {
 			"text": "STME",
 			"text2": [
-				"",
-				""
+				"Sleep",
+				"timeout"
 			],
-			"desc": "Переход в режим Сна <Минуты>"
+			"desc": "Sleep Timeout <Minutes/Seconds>"
 		},
 		"ShutdownTimeout": {
 			"text": "SHTME",
 			"text2": [
-				"",
-				""
+				"Shutdown",
+				"timeout"
 			],
-			"desc": "Переходит в режим ожидания <Минуты>"
+			"desc": "Shutdown Timeout <Minutes>"
 		},
 		"MotionSensitivity": {
 			"text": "MSENSE",
 			"text2": [
-				"",
-				""
+				"Motion",
+				"sensitivity"
 			],
-			"desc": "Акселерометр <0. Выкл. 1. мин. чувствительный 9. макс. чувствительный>"
+			"desc": "Motion Sensitivity <0.Off 1.least sensitive 9.most sensitive>"
 		},
 		"TemperatureUnit": {
 			"text": "TMPUNT",
 			"text2": [
-				"",
-				""
+				"Temperature",
+				"units"
 			],
-			"desc": "В чем измерять температуру"
+			"desc": "Temperature Unit <C=Celsius F=Fahrenheit>"
 		},
 		"AdvancedIdle": {
 			"text": "ADVIDL",
 			"text2": [
-				"",
-				""
+				"Detailed",
+				"idle screen"
 			],
 			"desc": "Display detailed information in a smaller font on the idle screen."
 		},
 		"DisplayRotation": {
 			"text": "DSPROT",
 			"text2": [
-				"",
-				""
+				"Display",
+				"orientation"
 			],
-			"desc": "Ориентация Дисплея <A. Автоматический L. Левая Рука R. Правая Рука>"
+			"desc": "Display Orientation <A. Automatic L. Left Handed R. Right Handed>"
 		},
 		"BoostEnabled": {
 			"text": "BOOST",
 			"text2": [
-				"",
-				""
+				"Boost mode",
+				"enabled"
 			],
-			"desc": "Активация  кнопки A для Турбо режима до  450С при пайке "
+			"desc": "Enable front key enters boost mode 450C mode when soldering"
 		},
 		"BoostTemperature": {
 			"text": "BTMP",
 			"text2": [
-				"",
-				""
+				"Boost",
+				"temp"
 			],
-			"desc": "Установка температуры для Турбо режима"
+			"desc": "Temperature when in \"boost\" mode"
 		},
 		"AutoStart": {
 			"text": "ASTART",
 			"text2": [
-				"",
-				""
+				"Auto",
+				"start"
 			],
-			"desc": "Автоматический запуск паяльника при включении питания. T=Нагрев, S= Режим Сна,F=Выкл."
+			"desc": "Automatically starts the iron into soldering on power up. T=Soldering, S= Sleep mode,F=Off"
 		},
 		"CooldownBlink": {
 			"text": "CLBLNK",
 			"text2": [
-				"",
-				""
+				"Cooldown",
+				"blink"
 			],
-			"desc": "Мигает температура на экране охлаждения, пока жало остается горячим."
+			"desc": "Blink the temperature on the cooling screen while the tip is still hot."
 		},
 		"TemperatureCalibration": {
 			"text": "TMP CAL?",
 			"text2": [
-				"",
-				""
+				"Calibrate",
+				"temperature?"
 			],
 			"desc": "Calibrate tip offset."
 		},
 		"SettingsReset": {
-			"text": "RESET?",
+			"text": "RESET",
 			"text2": [
-				"",
-				""
+				"Factory",
+				"reset?"
 			],
 			"desc": "Reset all settings"
 		},
 		"VoltageCalibration": {
 			"text": "CAL VIN?",
 			"text2": [
-				"",
-				""
+				"Calibrate",
+				"input voltage?"
 			],
 			"desc": "VIN Calibration. Buttons adjust, long press to exit"
 		},
 		"AdvancedSoldering": {
 			"text": "ADVSLD",
 			"text2": [
-				"",
-				""
+				"Detailed",
+				"solder screen"
 			],
 			"desc": "Display detailed information while soldering"
 		},
 		"ScrollingSpeed": {
 			"text": "DESCSP",
 			"text2": [
-				"",
-				""
+				"Description",
+				"Scroll Speed"
 			],
 			"desc": "Speed this text scrolls past at"
+		},
+		"Language": {
+			"text": "LANG",
+			"text2": [
+				"Språk",
+				""
+			],
+			"desc": ""
 		}
 	}
 }

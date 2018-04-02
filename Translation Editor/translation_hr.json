@@ -2,6 +2,7 @@
 	"languageCode": "HR",
 	"languageLocalName": "Hrvatski",
 	"messages": {
+		"SettingsCalibrationWarning": "Provjerite da je vršak ohlađen na sobnu temperaturu prije nego što nastavite!",
 		"SettingsResetWarning": "Jeste li sigurni da želite sve postavke vratiti na tvorničke vrijednosti?",
 		"UVLOWarningString": "BATERIJA",
 		"UndervoltageString": "PRENIZAK NAPON",
@@ -11,15 +12,14 @@
 		"SleepingSimpleString": "Zzz ",
 		"SleepingAdvancedString": "SPAVANJE...",
 		"WarningSimpleString": "VRUĆ",
-		"WarningAdvancedString": "OPREZ, VRUĆE!",
+		"WarningAdvancedString": "!!! VRUĆE !!!",
 		"SleepingTipAdvancedString": "Vrh: ",
 		"IdleTipString": "Vrh: ",
 		"IdleSetString": " / ",
 		"TipDisconnectedString": "VRH NIJE SPOJEN!",
 		"SolderingAdvancedPowerPrompt": "Snaga: ",
-		"SettingsCalibrationWarning": "Please ensure the tip is at room temperature before continuing!"
-	},
-	"characters": {
+		"ResetOK": "RESET OK",
+		"OffString": "Ne",
 		"SettingRightChar": "D",
 		"SettingLeftChar": "L",
 		"SettingAutoChar": "A",
@@ -193,6 +193,14 @@
 				"poruka"
 			],
 			"desc": "Brzina kretanja dugačkih poruka. <B=brzo, S=sporo>"
+		},
+		"Language": {
+			"text": "LANG",
+			"text2": [
+				"Jezik",
+				""
+			],
+			"desc": ""
 		}
 	}
 }
