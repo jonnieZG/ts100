@@ -7,7 +7,7 @@
 
 #include <OLED.hpp>
 #include <string.h>
-#include "Translation.h"
+#include "i14n.h"
 #include "cmsis_os.h"
 /*Setup params for the OLED screen*/
 /*http://www.displayfuture.com/Display/datasheet/controller/SSD1307.pdf*/
@@ -46,7 +46,7 @@ uint8_t OLED_Setup_Array[] = { /**/
 OLED::OLED(I2C_HandleTypeDef* i2cHandle) {
 	i2c = i2cHandle;
 	cursor_x = cursor_y = 0;
-	currentFont = FONT_12;
+	currentFont = FONT_12x16;
 	fontWidth = 12;
 	inLeftHandedMode = false;
 	firstStripPtr = &screenBuffer[13];
@@ -222,7 +222,7 @@ void OLED::setFont(uint8_t fontNumber) {
 		fontHeight = 16;
 		fontWidth = 12;
 	} else {
-		currentFont = FONT_12;
+		currentFont = FONT_12x16;
 		fontHeight = 16;
 		fontWidth = 12;
 	}

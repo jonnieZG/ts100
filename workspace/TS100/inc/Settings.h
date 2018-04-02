@@ -31,6 +31,7 @@ typedef struct {
 	uint8_t detailedSoldering :1;		//Detailed soldering screens
 	uint8_t temperatureInF;			//Should the temp be in F or C (true is F)
 	uint8_t descriptionScrollSpeed:1; // Description scroll speed
+	uint8_t language:5;     		// Language
 	uint16_t voltageDiv;			//Voltage divisor factor
 	uint16_t BoostTemp; 			//Boost mode set point for the iron
 	int16_t CalibrationOffset;		//This stores the temperature offset for this tip in the iron.

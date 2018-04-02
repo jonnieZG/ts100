@@ -7,7 +7,7 @@
 
 #ifndef GUI_HPP_
 #define GUI_HPP_
-#include "Translation.h"
+#include "Bitmaps.h"
 #include "Settings.h"
 #include "hardware.h"
 
@@ -27,7 +27,7 @@ typedef struct state_func_t {
 
 //Struct for holding the function pointers and descriptions
 typedef struct {
-	const char *description;
+	const char* const* description;
 	const state_func incrementHandler;
 	const state_func draw;
 } menuitem;

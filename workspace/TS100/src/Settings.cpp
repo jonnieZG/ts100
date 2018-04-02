@@ -11,6 +11,7 @@
 #include "Setup.h"
 #define FLASH_ADDR 		(0x8000000|0xFC00)/*Flash start OR'ed with the maximum amount of flash - 1024 bytes*/
 #include "string.h"
+
 volatile systemSettingsType systemSettings;
 
 void saveSettings() {
@@ -90,6 +91,7 @@ void resetSettings() {
 	systemSettings.CalibrationOffset = 10;		//This appears to be quite close for both of my tips, in both of my handles
 	systemSettings.temperatureInF = 0;			//default to 0
 	systemSettings.descriptionScrollSpeed=0;//default to slow
+	systemSettings.language = 0;      // Default to english
 	saveSettings();
 }
 

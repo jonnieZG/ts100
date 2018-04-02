@@ -12,7 +12,7 @@
 #include <hardware.h>
 #include "stm32f1xx_hal.h"
 #include <stdbool.h>
-#include "Font.h"
+#include "Bitmaps.h"
 #ifdef __cplusplus
 extern "C" {
 #endif

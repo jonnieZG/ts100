@@ -8,9 +8,11 @@
 #include "gui.hpp"
 #include "main.hpp"
 #include "cmsis_os.h"
-#include "Translation.h"
+#include "Bitmaps.h"
 
 #include "string.h"
+#include "MyString.h"
+
 extern uint32_t lastButtonTime;
 void gui_Menu(const menuitem* menu);
 static void settings_setInputVRange(void);
@@ -23,6 +25,8 @@ static void settings_setShutdownTime(void);
 static void settings_displayShutdownTime(void);
 static void settings_setSensitivity(void);
 static void settings_displaySensitivity(void);
+static void settings_setLanguage(void);
+static void settings_displayLanguage(void);
 static void settings_setTempF(void);
 static void settings_displayTempF(void);
 static void settings_setAdvancedSolderingScreens(void);
@@ -98,16 +102,16 @@ const menuitem rootSettingsMenu[] {
  * Advanced Menu
  * Exit
  */
-{ (const char*) SettingsDescriptions[0], { settings_setInputVRange }, {
+{ LOC_ARR_SND[LOC_SN_POWERSOURCE], { settings_setInputVRange }, {
 		settings_displayInputVRange } }, /*Voltage input*/
-{ (const char*) SettingsMenuEntriesDescriptions[0], {
-		settings_enterSolderingMenu }, { settings_displaySolderingMenu } }, /*Soldering*/
-{ (const char*) SettingsMenuEntriesDescriptions[1], { settings_enterPowerMenu },
-		{ settings_displayPowerMenu } }, /*Sleep Options Menu*/
-{ (const char*) SettingsMenuEntriesDescriptions[2], { settings_enterUIMenu }, {
-		settings_displayUIMenu } }, /*UI Menu*/
-{ (const char*) SettingsMenuEntriesDescriptions[3],
-		{ settings_enterAdvancedMenu }, { settings_displayAdvancedMenu } }, /*Advanced Menu*/
+{ LOC_ARR_SGD[LOC_SG_SOLDERINGMENU], { settings_enterSolderingMenu }, {
+		settings_displaySolderingMenu } }, /*Soldering*/
+{ LOC_ARR_SGD[LOC_SG_POWERSAVINGMENU], { settings_enterPowerMenu }, {
+		settings_displayPowerMenu } }, /*Sleep Options Menu*/
+{ LOC_ARR_SGD[LOC_SG_UIMENU], { settings_enterUIMenu },
+		{ settings_displayUIMenu } }, /*UI Menu*/
+{ LOC_ARR_SGD[LOC_SG_ADVANCEDMENU], { settings_enterAdvancedMenu }, {
+		settings_displayAdvancedMenu } }, /*Advanced Menu*/
 { NULL, { NULL }, { NULL } }            // end of menu marker. DO NOT REMOVE
 };
 
@@ -117,11 +121,11 @@ const menuitem solderingMenu[] = {
  * 	Boost Mode Temp
  * 	Auto Start
  */
-{ (const char*) SettingsDescriptions[8], { settings_setBoostModeEnabled }, {
+{ LOC_ARR_SGD[LOC_SN_BOOSTENABLED], { settings_setBoostModeEnabled }, {
 		settings_displayBoostModeEnabled } }, /*Enable Boost*/
-{ (const char*) SettingsDescriptions[9], { settings_setBoostTemp }, {
+{ LOC_ARR_SGD[LOC_SN_BOOSTTEMPERATURE], { settings_setBoostTemp }, {
 		settings_displayBoostTemp } }, /*Boost Temp*/
-{ (const char*) SettingsDescriptions[10], { settings_setAutomaticStartMode }, {
+{ LOC_ARR_SGD[LOC_SN_AUTOSTART], { settings_setAutomaticStartMode }, {
 		settings_displayAutomaticStartMode } }, /*Auto start*/
 { NULL, { NULL }, { NULL } }            // end of menu marker. DO NOT REMOVE
 };
@@ -133,13 +137,15 @@ const menuitem UIMenu[] = {
  *  Display orientation
  *  Cooldown blink
  */
-{ (const char*) SettingsDescriptions[5], { settings_setTempF }, {
+{ LOC_ARR_SGD[LOC_SN_LANGUAGE], { settings_setLanguage }, {
+		settings_displayLanguage } }, /* Language*/
+{ LOC_ARR_SGD[LOC_SN_TEMPERATUREUNIT], { settings_setTempF }, {
 		settings_displayTempF } }, /* Temperature units*/
-{ (const char*) SettingsDescriptions[7], { settings_setDisplayRotation }, {
+{ LOC_ARR_SGD[LOC_SN_DISPLAYROTATION], { settings_setDisplayRotation }, {
 		settings_displayDisplayRotation } }, /*Display Rotation*/
-{ (const char*) SettingsDescriptions[11], { settings_setCoolingBlinkEnabled }, {
+{ LOC_ARR_SGD[LOC_SN_COOLDOWNBLINK], { settings_setCoolingBlinkEnabled }, {
 		settings_displayCoolingBlinkEnabled } }, /*Cooling blink warning*/
-{ (const char*) SettingsDescriptions[16], { settings_setScrollSpeed }, {
+{ LOC_ARR_SGD[LOC_SN_SCROLLINGSPEED], { settings_setScrollSpeed }, {
 		settings_displayScrollSpeed } }, /*Scroll Speed for descriptions*/
 { NULL, { NULL }, { NULL } }            // end of menu marker. DO NOT REMOVE
 };
@@ -150,13 +156,13 @@ const menuitem PowerMenu[] = {
  * 	Shutdown Time
  * 	Motion Sensitivity
  */
-{ (const char*) SettingsDescriptions[1], { settings_setSleepTemp }, {
+{ LOC_ARR_SGD[LOC_SN_SLEEPTEMPERATURE], { settings_setSleepTemp }, {
 		settings_displaySleepTemp } }, /*Sleep Temp*/
-{ (const char*) SettingsDescriptions[2], { settings_setSleepTime }, {
+{ LOC_ARR_SGD[LOC_SN_SLEEPTIMEOUT], { settings_setSleepTime }, {
 		settings_displaySleepTime } }, /*Sleep Time*/
-{ (const char*) SettingsDescriptions[3], { settings_setShutdownTime }, {
+{ LOC_ARR_SGD[LOC_SN_SHUTDOWNTIMEOUT], { settings_setShutdownTime }, {
 		settings_displayShutdownTime } }, /*Shutdown Time*/
-{ (const char*) SettingsDescriptions[4], { settings_setSensitivity }, {
+{ LOC_ARR_SGD[LOC_SN_MOTIONSENSITIVITY], { settings_setSensitivity }, {
 		settings_displaySensitivity } }, /* Motion Sensitivity*/
 { NULL, { NULL }, { NULL } }            // end of menu marker. DO NOT REMOVE
 };
@@ -170,16 +176,16 @@ const menuitem advancedMenu[] = {
  *  Calibrate Input V
  *  Reset Settings
  */
-{ (const char*) SettingsDescriptions[6], { settings_setAdvancedIDLEScreens }, {
+{ LOC_ARR_SGD[LOC_SN_ADVANCEDIDLE], { settings_setAdvancedIDLEScreens }, {
 		settings_displayAdvancedIDLEScreens } }, /* Advanced idle screen*/
-{ (const char*) SettingsDescriptions[15],
+{ LOC_ARR_SGD[LOC_SN_ADVANCEDSOLDERING],
 		{ settings_setAdvancedSolderingScreens }, {
 				settings_displayAdvancedSolderingScreens } }, /* Advanced soldering screen*/
-{ (const char*) SettingsDescriptions[13], { settings_setResetSettings }, {
+{ LOC_ARR_SGD[LOC_SN_SETTINGSRESET], { settings_setResetSettings }, {
 		settings_displayResetSettings } }, /*Resets settings*/
-{ (const char*) SettingsDescriptions[12], { settings_setCalibrate }, {
+{ LOC_ARR_SGD[LOC_SN_TEMPERATURECALIBRATION], { settings_setCalibrate }, {
 		settings_displayCalibrate } }, /*Calibrate tip*/
-{ (const char*) SettingsDescriptions[14], { settings_setCalibrateVIN }, {
+{ LOC_ARR_SGD[LOC_SN_VOLTAGECALIBRATION], { settings_setCalibrateVIN }, {
 		settings_displayCalibrateVIN } }, /*Voltage input cal*/
 { NULL, { NULL }, { NULL } }            // end of menu marker. DO NOT REMOVE
 };
@@ -477,7 +483,7 @@ static void settings_displayCoolingBlinkEnabled(void) {
 }
 
 static void settings_setResetSettings(void) {
-	if (userConfirmation(SettingsResetWarning)) {
+	if (userConfirmation (SettingsResetWarning)) {
 		resetSettings();
 
 		lcd.setFont(0);
@@ -494,7 +500,7 @@ static void settings_displayResetSettings(void) {
 }
 
 static void settings_setCalibrate(void) {
-	if (userConfirmation(SettingsCalibrationWarning)) {
+	if (userConfirmation (SettingsCalibrationWarning)) {
 		//User confirmed
 		//So we now perform the actual calculation
 		lcd.clearScreen();
@@ -638,20 +644,21 @@ void gui_Menu(const menuitem* menu) {
 	while ((menu[currentScreen].draw.func != NULL) && earlyExit == false) {
 		lcd.setFont(0);
 		lcd.setCursor(0, 0);
+		uint16_t msgLen = myStrlen(
+				menu[currentScreen].description[systemSettings.language]);
 		//If the user has hesitated for >=3 seconds, show the long text
 		//Otherwise "draw" the option
-		if (xTaskGetTickCount() - lastButtonTime < 300) {
+		if (msgLen > 0 && xTaskGetTickCount() - lastButtonTime < 300) {
 			lcd.clearScreen();
 			menu[currentScreen].draw.func();
 			lastOffset = -1;
 			lcdRefresh = true;
 		} else {
-			// Draw description
+			// Draw description if present
 			if (descriptionStart == 0)
 				descriptionStart = xTaskGetTickCount();
 			// lower the value - higher the speed
-			int16_t descriptionWidth = FONT_12_WIDTH
-					* (strlen(menu[currentScreen].description) + 7);
+			int16_t descriptionWidth = FONT_12_WIDTH * (msgLen + 7);
 			int16_t descriptionOffset =
 					((xTaskGetTickCount() - descriptionStart)
 							/ (systemSettings.descriptionScrollSpeed == 1 ?
@@ -663,7 +670,8 @@ void gui_Menu(const menuitem* menu) {
 
 				//^ Rolling offset based on time
 				lcd.setCursor((OLED_WIDTH - descriptionOffset), 0);
-				lcd.print(menu[currentScreen].description);
+				lcd.print(
+						menu[currentScreen].description[systemSettings.language]);
 				lastOffset = descriptionOffset;
 				lcdRefresh = true;
 			}
