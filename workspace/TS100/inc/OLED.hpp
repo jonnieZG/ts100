@@ -32,6 +32,7 @@ public:
 	void displayOnOff(bool on);				// Turn the screen on or not
 	void setRotation(bool leftHanded);  	// Set the rotation for the screen
 	bool getRotation();					// Get the current rotation of the LCD
+	void print(const char* const strMultiLang[]);	// Draw a string in the current language to the current location, with current font
 	void print(const char* string);	// Draw a string to the current location, with current font
 	void setCursor(int16_t x, int16_t y);   // Set the cursor location by pixels
 	void setCharCursor(int16_t x, int16_t y); //Set cursor location by chars in current font

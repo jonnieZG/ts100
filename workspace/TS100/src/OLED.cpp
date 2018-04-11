@@ -9,6 +9,7 @@
 #include <string.h>
 #include "i14n.h"
 #include "cmsis_os.h"
+#include "Settings.h"
 /*Setup params for the OLED screen*/
 /*http://www.displayfuture.com/Display/datasheet/controller/SSD1307.pdf*/
 /*All commands are prefixed with 0x80*/
@@ -189,6 +190,11 @@ void OLED::setRotation(bool leftHanded) {
 		taskEXIT_CRITICAL();
 		inLeftHandedMode = leftHanded;
 	}
+}
+
+//Draw a string in the current language to the current location, with current font
+void OLED::print(const char* const strMultiLang[]) {
+	print(strMultiLang[systemSettings.language]);
 }
 
 //print a string to the current cursor location

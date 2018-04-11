@@ -3,7 +3,6 @@
 #include <main.hpp>
 #include "OLED.hpp"
 #include "Settings.h"
-#include "Translation.h"
 #include "cmsis_os.h"
 #include "stdlib.h"
 #include "stm32f1xx_hal.h"
@@ -62,7 +61,7 @@ int main(void) {
 		PCBVersion = 3;
 		systemSettings.SleepTime = 0;
 		systemSettings.ShutdownTime = 0;			//No accel -> disable sleep
-		systemSettings.sensitivity=0;
+		systemSettings.sensitivity = 0;
 	}
 	HAL_IWDG_Refresh(&hiwdg);
 	restoreSettings();  // load the settings from flash
@@ -219,9 +218,9 @@ static bool checkVoltageForExit() {
 		lcd.setCursor(0, 0);
 		if (systemSettings.detailedSoldering) {
 			lcd.setFont(1);
-			lcd.print(UndervoltageString);
+			lcd.print(L_ARR_MS[L_MS_UNDERVOLTAGESTRING]);
 			lcd.setCursor(0, 8);
-			lcd.print(InputVoltageString);
+			lcd.print(L_ARR_MS[L_MS_INPUTVOLTAGESTRING]);
 			lcd.printNumber(getInputVoltageX10(systemSettings.voltageDiv) / 10,
 					2);
 			lcd.drawChar('.');
@@ -231,7 +230,7 @@ static bool checkVoltageForExit() {
 
 		} else {
 			lcd.setFont(0);
-			lcd.print(UVLOWarningString);
+			lcd.print(L_ARR_MS[L_MS_UVLOWARNINGSTRING]);
 		}
 
 		lcd.refresh();
@@ -340,9 +339,9 @@ static int gui_showTipTempWarning() {
 		lcd.setCursor(0, 0);
 		if (systemSettings.detailedSoldering) {
 			lcd.setFont(1);
-			lcd.print(WarningAdvancedString);
+			lcd.print(L_ARR_MS[L_MS_WARNINGADVANCEDSTRING]);
 			lcd.setCursor(0, 8);
-			lcd.print(WarningTipTempString);
+			lcd.print(L_ARR_MS[L_MS_WARNINGTIPTEMPSTRING]);
 
 			if (systemSettings.temperatureInF) {
 				lcd.printNumber(tipMeasurementToF(getTipRawTemp(0)), 3);
@@ -421,9 +420,9 @@ static int gui_SolderingSleepingMode() {
 		lcd.setCursor(0, 0);
 		if (systemSettings.detailedSoldering) {
 			lcd.setFont(1);
-			lcd.print(SleepingAdvancedString);
+			lcd.print(L_ARR_MS[L_MS_SLEEPINGADVANCEDSTRING]);
 			lcd.setCursor(0, 8);
-			lcd.print(SleepingTipAdvancedString);
+			lcd.print(L_ARR_MS[L_MS_SLEEPINGTIPADVANCEDSTRING]);
 			lcd.printNumber(tipTemp, 3);
 			if (systemSettings.temperatureInF)
 				lcd.print("F");
@@ -439,7 +438,7 @@ static int gui_SolderingSleepingMode() {
 			lcd.drawChar('V');
 		} else {
 			lcd.setFont(0);
-			lcd.print(SleepingSimpleString);
+			lcd.print(L_ARR_MS[L_MS_SLEEPINGSIMPLESTRING]);
 			lcd.printNumber(tipTemp, 3);
 			if (systemSettings.temperatureInF)
 				lcd.drawSymbol(0);
@@ -517,7 +516,7 @@ static void gui_solderingMode() {
 		lcd.clearScreen();
 		lcd.setFont(0);
 		if (tipTemp > 16300) {
-			lcd.print(BadTipString);
+			lcd.print(L_ARR_MS[L_MS_BADTIPSTRING]);
 			lcd.refresh();
 			currentlyActiveTemperatureTarget = 0;
 			waitForButtonPress();
@@ -525,12 +524,12 @@ static void gui_solderingMode() {
 		} else {
 			if (systemSettings.detailedSoldering) {
 				lcd.setFont(1);
-				lcd.print(SolderingAdvancedPowerPrompt);  //Power:
+				lcd.print(L_ARR_MS[L_MS_SOLDERINGADVANCEDPOWERPROMPT]); //Power:
 				lcd.printNumber(getTipPWM(), 3);
 				lcd.print("%");
 
 				lcd.setCursor(0, 8);
-				lcd.print(SleepingTipAdvancedString);
+				lcd.print(L_ARR_MS[L_MS_SLEEPINGTIPADVANCEDSTRING]);
 				uint16_t Temp = getTipRawTemp(0);
 
 				if (systemSettings.temperatureInF)
@@ -762,7 +761,7 @@ void startGUITask(void const *argument) {
 
 		currentlyActiveTemperatureTarget = 0;  // ensure tip is off
 
-		uint16_t tipTemp = tipMeasurementToC(getTipRawTemp(1));//This forces a faster update rate on the filtering
+		uint16_t tipTemp = tipMeasurementToC(getTipRawTemp(1)); //This forces a faster update rate on the filtering
 
 		if (tipTemp < 50) {
 
@@ -797,18 +796,18 @@ void startGUITask(void const *argument) {
 		if (systemSettings.detailedIDLE) {
 			lcd.setFont(1);
 			if (tipTemp > 470) {
-				lcd.print(TipDisconnectedString);
+				lcd.print(L_ARR_MS[L_MS_TIPDISCONNECTEDSTRING]);
 			} else {
-				lcd.print(IdleTipString);
+				lcd.print(L_ARR_MS[L_MS_IDLETIPSTRING]);
 				if (systemSettings.temperatureInF)
 					lcd.printNumber(tipMeasurementToF(getTipRawTemp(0)), 3);
 				else
 					lcd.printNumber(tipMeasurementToC(getTipRawTemp(0)), 3);
-				lcd.print(IdleSetString);
+				lcd.print(L_ARR_MS[L_MS_IDLESETSTRING]);
 				lcd.printNumber(systemSettings.SolderingTemp, 3);
 			}
 			lcd.setCursor(0, 8);
-			lcd.print(InputVoltageString);
+			lcd.print(L_ARR_MS[L_MS_INPUTVOLTAGESTRING]);
 			lcd.printNumber(getInputVoltageX10(systemSettings.voltageDiv) / 10,
 					2);
 			lcd.drawChar('.');
