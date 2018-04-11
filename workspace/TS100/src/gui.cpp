@@ -228,15 +228,11 @@ static int userConfirmation(const char* message) {
 	int16_t lastOffset = -1;
 	bool lcdRefresh = true;
 
-
 	for (;;) {
 
-					int16_t messageOffset =
-							((xTaskGetTickCount() - messageStart)
-									/ (systemSettings.descriptionScrollSpeed == 1 ?
-											1 : 2));
-					messageOffset %= messageWidth;		//Roll around at the end
-
+		int16_t messageOffset = ((xTaskGetTickCount() - messageStart)
+				/ (systemSettings.descriptionScrollSpeed == 1 ? 1 : 2));
+		messageOffset %= messageWidth;		//Roll around at the end
 
 		if (lastOffset != messageOffset) {
 			lcd.clearScreen();
@@ -289,9 +285,16 @@ static void settings_displayInputVRange(void) {
 }
 
 static void settings_setSleepTemp(void) {
-	systemSettings.SleepTemp += 10;
-	if (systemSettings.SleepTemp > 300)
-		systemSettings.SleepTemp = 50;
+	//If in C, 10 deg, if in F 20 deg
+	if (systemSettings.temperatureInF) {
+		systemSettings.SleepTemp += 20;
+		if (systemSettings.SleepTemp > 580)
+			systemSettings.SleepTemp = 120;
+	} else {
+		systemSettings.SleepTemp += 10;
+		if (systemSettings.SleepTemp > 300)
+			systemSettings.SleepTemp = 50;
+	}
 }
 
 static void settings_displaySleepTemp(void) {
@@ -302,15 +305,18 @@ static void settings_displaySleepTemp(void) {
 static void settings_setSleepTime(void) {
 	systemSettings.SleepTime++;  // Go up 1 minute at a time
 	if (systemSettings.SleepTime >= 16) {
-		systemSettings.SleepTime = 1;  // can't set time over 10 mins
+		systemSettings.SleepTime = 0;  // can't set time over 10 mins
 	}
 	// Remember that ^ is the time of no movement
+	if (PCBVersion == 3)
+		systemSettings.SleepTime = 0;  //Disable sleep on no accel
 }
 
 static void settings_displaySleepTime(void) {
 	printShortDescription(2, 5);
-
-	if (systemSettings.SleepTime < 6) {
+	if (systemSettings.SleepTime == 0) {
+		lcd.print(OffString);
+	} else if (systemSettings.SleepTime < 6) {
 		lcd.printNumber(systemSettings.SleepTime * 10, 2);
 		lcd.drawChar('S');
 	} else {
@@ -324,15 +330,46 @@ static void settings_setShutdownTime(void) {
 	if (systemSettings.ShutdownTime > 60) {
 		systemSettings.ShutdownTime = 0;  // wrap to off
 	}
+	if (PCBVersion == 3)
+		systemSettings.ShutdownTime = 0;  //Disable shutdown on no accel
 }
 
 static void settings_displayShutdownTime(void) {
-	printShortDescription(3, 6);
-	lcd.printNumber(systemSettings.ShutdownTime, 2);
+	printShortDescription(3, 5);
+	if (systemSettings.ShutdownTime == 0) {
+		lcd.print(OffString);
+	} else {
+		lcd.printNumber(systemSettings.ShutdownTime, 2);
+		lcd.drawChar('M');
+	}
 }
 
 static void settings_setTempF(void) {
 	systemSettings.temperatureInF = !systemSettings.temperatureInF;
+	if (systemSettings.temperatureInF) {
+		//Change sleep, boost and soldering temps to the F equiv
+		//C to F == F= ( (C*9) +160)/5
+		systemSettings.BoostTemp = ((systemSettings.BoostTemp * 9) + 160) / 5;
+		systemSettings.SolderingTemp =
+				((systemSettings.SolderingTemp * 9) + 160) / 5;
+		systemSettings.SleepTemp = ((systemSettings.SleepTemp * 9) + 160) / 5;
+	} else {
+		//Change sleep, boost and soldering temps to the C equiv
+		// F->C == C = ((F-32)*5)/9
+		systemSettings.BoostTemp = ((systemSettings.BoostTemp - 32) * 5) / 9;
+		systemSettings.SolderingTemp = ((systemSettings.SolderingTemp - 32) * 5)
+				/ 9;
+		systemSettings.SleepTemp = ((systemSettings.SleepTemp - 32) * 5) / 9;
+
+	}
+	// Rescale both to be multiples of 10
+	systemSettings.BoostTemp = systemSettings.BoostTemp/10;
+	systemSettings.BoostTemp *=10;
+	systemSettings.SolderingTemp = systemSettings.SolderingTemp/10;
+	systemSettings.SolderingTemp *=10;
+	systemSettings.SleepTemp = systemSettings.SleepTemp/10;
+	systemSettings.SleepTemp *=10;
+	
 }
 
 static void settings_displayTempF(void) {
@@ -388,18 +425,18 @@ static void settings_setDisplayRotation(void) {
 	systemSettings.OrientationMode++;
 	systemSettings.OrientationMode = systemSettings.OrientationMode % 3;
 	switch (systemSettings.OrientationMode) {
-		case 0:
-			lcd.setRotation(false);
-			break;
-		case 1:
-			lcd.setRotation(true);
-			break;
-		case 2:
-			//do nothing on auto
-			break;
-		default:
-			break;
-		}
+	case 0:
+		lcd.setRotation(false);
+		break;
+	case 1:
+		lcd.setRotation(true);
+		break;
+	case 2:
+		//do nothing on auto
+		break;
+	default:
+		break;
+	}
 }
 
 static void settings_displayDisplayRotation(void) {
@@ -432,12 +469,14 @@ static void settings_displayBoostModeEnabled(void) {
 }
 
 static void settings_setBoostTemp(void) {
-	systemSettings.BoostTemp += 10;  // Go up 10 at a time
+
 	if (systemSettings.temperatureInF) {
+		systemSettings.BoostTemp += 20;  // Go up 20F at a time
 		if (systemSettings.BoostTemp > 850) {
 			systemSettings.BoostTemp = 480;  // loop back at 250
 		}
 	} else {
+		systemSettings.BoostTemp += 10;  // Go up 10C at a time
 		if (systemSettings.BoostTemp > 450) {
 			systemSettings.BoostTemp = 250;  // loop back at 250
 		}
@@ -719,7 +758,8 @@ void gui_Menu(const menuitem* menu) {
 
 		if ((PRESS_ACCEL_INTERVAL_MAX - autoRepeatAcceleration)
 				< PRESS_ACCEL_INTERVAL_MIN) {
-			autoRepeatAcceleration = PRESS_ACCEL_INTERVAL_MAX - PRESS_ACCEL_INTERVAL_MIN;
+			autoRepeatAcceleration = PRESS_ACCEL_INTERVAL_MAX
+					- PRESS_ACCEL_INTERVAL_MIN;
 		}
 
 		if (lcdRefresh) {
