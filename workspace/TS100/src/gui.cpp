@@ -390,7 +390,7 @@ static void settings_displayTempF(void) {
 
 static void settings_setSensitivity(void) {
 	systemSettings.sensitivity++;
-	systemSettings.sensitivity = systemSettings.sensitivity % 10;
+	systemSettings.sensitivity %= 10;
 }
 
 static void settings_displaySensitivity(void) {
@@ -399,11 +399,21 @@ static void settings_displaySensitivity(void) {
 }
 
 static void settings_setLanguage(void) {
-	// TODO setLanguage
+	systemSettings.language++;
+	systemSettings.language %= LANG_COUNT;
 }
 
 static void settings_displayLanguage(void) {
-	// TODO displayLanguage
+	printShortDescription(L_SN_LANGUAGE, 6);
+	lcd.print(L_ARR_MS[L_MS_LANGUAGECODE][systemSettings.language]);
+	// Display full language name when in double-line mode
+
+	if (L_MENU_TYPE[systemSettings.language] == SHORT_NAME_DOUBLE_LINE) {
+		lcd.setFont(1);
+		lcd.setCharCursor(0, 1);
+		lcd.print(L_ARR_MS[L_MS_LANGUAGELOCALNAME][systemSettings.language]);
+	}
+
 }
 
 static void settings_setAdvancedSolderingScreens(void) {

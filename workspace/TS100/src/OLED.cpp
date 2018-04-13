@@ -96,6 +96,38 @@ void OLED::refresh() {
 
 }
 
+#ifndef TRANSLATION_H_
+#ifdef MYENC
+// To maintain compatibility with UTF-8, c2 is the first byte and c1 is the second byte. When there is just one byte, then c2 will be 0.
+void OLED::drawChar(char c1, char c2) {
+	uint16_t index;
+
+	if (c2 == 0) {
+		index = c1;
+	} else {
+		index = (c2 & 0x7F) + (((uint16_t) c1) << 7);
+	}
+	if (index == '\n' && cursor_y == 0) {
+		cursor_x = 0;
+		cursor_y = 8;
+	}
+	if (index < ' ') {
+		return;
+	}
+	index -= ' ';
+
+	uint8_t* charPointer;
+	charPointer = ((uint8_t*) currentFont)
+			+ ((fontWidth * (fontHeight / 8)) * index);
+
+	drawArea(cursor_x, cursor_y, fontWidth, fontHeight, charPointer);
+
+	cursor_x += fontWidth;
+}
+#endif
+#endif
+
+#ifdef TRANSLATION_H_
 /*
  * Prints a char to the screen.
  * UTF font handling is done using the two input chars.
@@ -122,40 +154,41 @@ void OLED::drawChar(char c, char PrecursorCommand) {
 
 		switch (PrecursorCommand) {
 
-		case 0xC2:
+			case 0xC2:
 			index = (96 - 32) + (c);
 			break;  //-32 compensate for chars excluded from font C2 section
-		case 0xC3:
+			case 0xC3:
 			index = (128) + (c);
 			break;
 #if defined(LANG_RU) || defined(LANG_UK) || defined(LANG_SR) || defined(LANG_BG) || defined(LANG_MK)
-		case 0xD0:
+			case 0xD0:
 			index = (192) + (c);
 			break;
-		case 0xD1:
+			case 0xD1:
 			index = (256) + (c);
 			break;
 #else
-		case 0xC4:
+			case 0xC4:
 			index = (192) + (c);
 			break;
-		case 0xC5:
+			case 0xC5:
 			index = (256) + (c);
 			break;
 #endif
 
-		default:
+			default:
 			return;
 		}
 	}
 	uint8_t* charPointer;
 	charPointer = ((uint8_t*) currentFont)
-			+ ((fontWidth * (fontHeight / 8)) * index);
+	+ ((fontWidth * (fontHeight / 8)) * index);
 
 	drawArea(cursor_x, cursor_y, fontWidth, fontHeight, charPointer);
 
 	cursor_x += fontWidth;
 }
+#endif
 
 void OLED::displayOnOff(bool on) {
 
@@ -306,11 +339,11 @@ void OLED::drawArea(int16_t x, int8_t y, uint8_t wide, uint8_t height,
 	uint8_t visibleEnd = wide;
 
 	// trimming to draw partials
-	if(x < 0) {
-	  visibleStart -= x;  //subtract negative value == add absolute value
+	if (x < 0) {
+		visibleStart -= x;  //subtract negative value == add absolute value
 	}
-	if(x + wide > 96) {
-	  visibleEnd = 96 - x;
+	if (x + wide > 96) {
+		visibleEnd = 96 - x;
 	}
 
 	if (y == 0) {
