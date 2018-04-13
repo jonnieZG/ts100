@@ -11,7 +11,7 @@ enum ShortNameType {
 
 // ================ COMMON CONSTANTS ================
 
-#define LANG_COUNT  4    /* Number of languages */
+#define LANG_COUNT  3    /* Number of languages */
 
 // ---- Special Character Codes ----
 
@@ -21,744 +21,626 @@ enum ShortNameType {
 
 #define LANG_EN     0   /* English */
 #define LANG_HR     1   /* Hrvatski */
-#define LANG_IT     2   /* Italiano */
-#define LANG_RU     3   /* Русский */
+#define LANG_RU     2   /* Русский */
 
 
 // ================ STRING INDEXES ================
 
+// ---- Message Strings ----
+
+#define L_MS_LANGUAGECODE                        0
+#define L_MS_LANGUAGELOCALNAME                   1
+#define L_MS_SETTINGSCALIBRATIONWARNING          2
+#define L_MS_SETTINGSRESETWARNING                3
+#define L_MS_UVLOWARNINGSTRING                   4
+#define L_MS_UNDERVOLTAGESTRING                  5
+#define L_MS_INPUTVOLTAGESTRING                  6
+#define L_MS_WARNINGTIPTEMPSTRING                7
+#define L_MS_BADTIPSTRING                        8
+#define L_MS_SLEEPINGSIMPLESTRING                9
+#define L_MS_SLEEPINGADVANCEDSTRING              10
+#define L_MS_WARNINGSIMPLESTRING                 11
+#define L_MS_WARNINGADVANCEDSTRING               12
+#define L_MS_SLEEPINGTIPADVANCEDSTRING           13
+#define L_MS_IDLETIPSTRING                       14
+#define L_MS_IDLESETSTRING                       15
+#define L_MS_TIPDISCONNECTEDSTRING               16
+#define L_MS_SOLDERINGADVANCEDPOWERPROMPT        17
+#define L_MS_RESETOK                             18
+#define L_MS_OFFSTRING                           19
+#define L_MS_SETTINGRIGHTCHAR                    20
+#define L_MS_SETTINGLEFTCHAR                     21
+#define L_MS_SETTINGAUTOCHAR                     22
+#define L_MS_SETTINGFASTCHAR                     23
+#define L_MS_SETTINGSLOWCHAR                     24
+
 // ---- Settings Groups ----
 
-#define LOC_SG_SOLDERINGMENU                       0
-#define LOC_SG_POWERSAVINGMENU                     1
-#define LOC_SG_UIMENU                              2
-#define LOC_SG_ADVANCEDMENU                        3
+#define L_SG_SOLDERINGMENU                       0
+#define L_SG_POWERSAVINGMENU                     1
+#define L_SG_UIMENU                              2
+#define L_SG_ADVANCEDMENU                        3
 
 // ---- Settings Names ----
 
-#define LOC_SN_POWERSOURCE                         0
-#define LOC_SN_SLEEPTEMPERATURE                    1
-#define LOC_SN_SLEEPTIMEOUT                        2
-#define LOC_SN_SHUTDOWNTIMEOUT                     3
-#define LOC_SN_MOTIONSENSITIVITY                   4
-#define LOC_SN_TEMPERATUREUNIT                     5
-#define LOC_SN_ADVANCEDIDLE                        6
-#define LOC_SN_DISPLAYROTATION                     7
-#define LOC_SN_BOOSTENABLED                        8
-#define LOC_SN_BOOSTTEMPERATURE                    9
-#define LOC_SN_AUTOSTART                           10
-#define LOC_SN_COOLDOWNBLINK                       11
-#define LOC_SN_TEMPERATURECALIBRATION              12
-#define LOC_SN_SETTINGSRESET                       13
-#define LOC_SN_VOLTAGECALIBRATION                  14
-#define LOC_SN_ADVANCEDSOLDERING                   15
-#define LOC_SN_SCROLLINGSPEED                      16
-#define LOC_SN_LANGUAGE                            17
-
-// ---- Message Strings ----
-
-#define LOC_MS_SETTINGSCALIBRATIONWARNING          0
-#define LOC_MS_SETTINGSRESETWARNING                1
-#define LOC_MS_UVLOWARNINGSTRING                   2
-#define LOC_MS_UNDERVOLTAGESTRING                  3
-#define LOC_MS_INPUTVOLTAGESTRING                  4
-#define LOC_MS_WARNINGTIPTEMPSTRING                5
-#define LOC_MS_BADTIPSTRING                        6
-#define LOC_MS_SLEEPINGSIMPLESTRING                7
-#define LOC_MS_SLEEPINGADVANCEDSTRING              8
-#define LOC_MS_WARNINGSIMPLESTRING                 9
-#define LOC_MS_WARNINGADVANCEDSTRING               10
-#define LOC_MS_SLEEPINGTIPADVANCEDSTRING           11
-#define LOC_MS_IDLETIPSTRING                       12
-#define LOC_MS_IDLESETSTRING                       13
-#define LOC_MS_TIPDISCONNECTEDSTRING               14
-#define LOC_MS_SOLDERINGADVANCEDPOWERPROMPT        15
-#define LOC_MS_RESETOK                             16
-#define LOC_MS_OFFSTRING                           17
-#define LOC_MS_SETTINGRIGHTCHAR                    18
-#define LOC_MS_SETTINGLEFTCHAR                     19
-#define LOC_MS_SETTINGAUTOCHAR                     20
-#define LOC_MS_SETTINGFASTCHAR                     21
-#define LOC_MS_SETTINGSLOWCHAR                     22
+#define L_SN_POWERSOURCE                         0
+#define L_SN_SLEEPTEMPERATURE                    1
+#define L_SN_SLEEPTIMEOUT                        2
+#define L_SN_SHUTDOWNTIMEOUT                     3
+#define L_SN_MOTIONSENSITIVITY                   4
+#define L_SN_TEMPERATUREUNIT                     5
+#define L_SN_ADVANCEDIDLE                        6
+#define L_SN_DISPLAYROTATION                     7
+#define L_SN_BOOSTENABLED                        8
+#define L_SN_BOOSTTEMPERATURE                    9
+#define L_SN_AUTOSTART                           10
+#define L_SN_COOLDOWNBLINK                       11
+#define L_SN_TEMPERATURECALIBRATION              12
+#define L_SN_SETTINGSRESET                       13
+#define L_SN_VOLTAGECALIBRATION                  14
+#define L_SN_ADVANCEDSOLDERING                   15
+#define L_SN_SCROLLINGSPEED                      16
+#define L_SN_LANGUAGE                            17
 
 
 // ================ Translation Strings - English (EN) ================
 
+// ---- Message Strings (EN) ----
+
+const char _L_MS_LANGUAGECODE_EN[] =    // EN
+    "EN";
+const char _L_MS_LANGUAGELOCALNAME_EN[] =    // English
+    "English";
+const char _L_MS_SETTINGSCALIBRATIONWARNING_EN[] =    // Please ensure the tip is at room temperature before continuing!
+    "Please ensure the tip is at room temperature before continuing!";
+const char _L_MS_SETTINGSRESETWARNING_EN[] =    // Are you sure to reset settings to default values?
+    "Are you sure to reset settings to default values?";
+const char _L_MS_UVLOWARNINGSTRING_EN[] =    // DC LOW
+    "DC LOW";
+const char _L_MS_UNDERVOLTAGESTRING_EN[] =    // Undervoltage
+    "Undervoltage";
+const char _L_MS_INPUTVOLTAGESTRING_EN[] =    // Input V: 
+    "Input V: ";
+const char _L_MS_WARNINGTIPTEMPSTRING_EN[] =    // Tip Temp: 
+    "Tip Temp: ";
+const char _L_MS_BADTIPSTRING_EN[] =    // BAD TIP
+    "BAD TIP";
+const char _L_MS_SLEEPINGSIMPLESTRING_EN[] =    // Zzzz
+    "Zzzz";
+const char _L_MS_SLEEPINGADVANCEDSTRING_EN[] =    // Sleeping...
+    "Sleeping...";
+const char _L_MS_WARNINGSIMPLESTRING_EN[] =    // HOT!
+    "HOT!";
+const char _L_MS_WARNINGADVANCEDSTRING_EN[] =    // !!! TIP HOT !!!
+    "!!! TIP HOT !!!";
+const char _L_MS_SLEEPINGTIPADVANCEDSTRING_EN[] =    // Tip:
+    "Tip:";
+#define _L_MS_IDLETIPSTRING_EN    _L_MS_SLEEPINGTIPADVANCEDSTRING_EN     /* Tip: */
+const char _L_MS_IDLESETSTRING_EN[] =    //  Set:
+    " Set:";
+const char _L_MS_TIPDISCONNECTEDSTRING_EN[] =    // TIP DISCONNECTED
+    "TIP DISCONNECTED";
+const char _L_MS_SOLDERINGADVANCEDPOWERPROMPT_EN[] =    // Power: 
+    "Power: ";
+const char _L_MS_RESETOK_EN[] =    // RESET OK
+    "RESET OK";
+const char _L_MS_OFFSTRING_EN[] =    // Off
+    "Off";
+const char _L_MS_SETTINGRIGHTCHAR_EN[] =    // R
+    "R";
+const char _L_MS_SETTINGLEFTCHAR_EN[] =    // L
+    "L";
+const char _L_MS_SETTINGAUTOCHAR_EN[] =    // A
+    "A";
+const char _L_MS_SETTINGFASTCHAR_EN[] =    // F
+    "F";
+const char _L_MS_SETTINGSLOWCHAR_EN[] =    // S
+    "S";
+
 // ---- Settings Groups (EN) ----
 
-const char _LOC_SG_SOLDERINGMENU_EN[] =    // Soldering|Settings
+const char _L_SG_SOLDERINGMENU_EN[] =    // Soldering|Settings
     "Soldering\nSettings";
-const char _LOC_SG_POWERSAVINGMENU_EN[] =    // Sleep|Modes
+const char _L_SG_POWERSAVINGMENU_EN[] =    // Sleep|Modes
     "Sleep\nModes";
-const char _LOC_SG_UIMENU_EN[] =    // User|Interface
+const char _L_SG_UIMENU_EN[] =    // User|Interface
     "User\nInterface";
-const char _LOC_SG_ADVANCEDMENU_EN[] =    // Advanced|Options
+const char _L_SG_ADVANCEDMENU_EN[] =    // Advanced|Options
     "Advanced\nOptions";
 
 // ---- Settings Groups Descriptions (EN) ----
 
-const char _LOC_SGD_SOLDERINGMENU_EN[] =    // Soldering settings
+const char _L_SGD_SOLDERINGMENU_EN[] =    // Soldering settings
     "Soldering settings";
-const char _LOC_SGD_POWERSAVINGMENU_EN[] =    // Power Saving Settings
+const char _L_SGD_POWERSAVINGMENU_EN[] =    // Power Saving Settings
     "Power Saving Settings";
-const char _LOC_SGD_UIMENU_EN[] =    // User Interface settings
+const char _L_SGD_UIMENU_EN[] =    // User Interface settings
     "User Interface settings";
-const char _LOC_SGD_ADVANCEDMENU_EN[] =    // Advanced options
+const char _L_SGD_ADVANCEDMENU_EN[] =    // Advanced options
     "Advanced options";
 
 // ---- Settings Names (EN) ----
 
-const char _LOC_SN_POWERSOURCE_EN[] =    // Power|source
+const char _L_SN_POWERSOURCE_EN[] =    // Power|source
     "Power\nsource";
-const char _LOC_SN_SLEEPTEMPERATURE_EN[] =    // Sleep|temp
+const char _L_SN_SLEEPTEMPERATURE_EN[] =    // Sleep|temp
     "Sleep\ntemp";
-const char _LOC_SN_SLEEPTIMEOUT_EN[] =    // Sleep|timeout
+const char _L_SN_SLEEPTIMEOUT_EN[] =    // Sleep|timeout
     "Sleep\ntimeout";
-const char _LOC_SN_SHUTDOWNTIMEOUT_EN[] =    // Shutdown|timeout
+const char _L_SN_SHUTDOWNTIMEOUT_EN[] =    // Shutdown|timeout
     "Shutdown\ntimeout";
-const char _LOC_SN_MOTIONSENSITIVITY_EN[] =    // Motion|sensitivity
+const char _L_SN_MOTIONSENSITIVITY_EN[] =    // Motion|sensitivity
     "Motion\nsensitivity";
-const char _LOC_SN_TEMPERATUREUNIT_EN[] =    // Temperature|units
+const char _L_SN_TEMPERATUREUNIT_EN[] =    // Temperature|units
     "Temperature\nunits";
-const char _LOC_SN_ADVANCEDIDLE_EN[] =    // Detailed|idle screen
+const char _L_SN_ADVANCEDIDLE_EN[] =    // Detailed|idle screen
     "Detailed\nidle screen";
-const char _LOC_SN_DISPLAYROTATION_EN[] =    // Display|orientation
+const char _L_SN_DISPLAYROTATION_EN[] =    // Display|orientation
     "Display\norientation";
-const char _LOC_SN_BOOSTENABLED_EN[] =    // Boost mode|enabled
+const char _L_SN_BOOSTENABLED_EN[] =    // Boost mode|enabled
     "Boost mode\nenabled";
-const char _LOC_SN_BOOSTTEMPERATURE_EN[] =    // Boost|temp
+const char _L_SN_BOOSTTEMPERATURE_EN[] =    // Boost|temp
     "Boost\ntemp";
-const char _LOC_SN_AUTOSTART_EN[] =    // Auto|start
+const char _L_SN_AUTOSTART_EN[] =    // Auto|start
     "Auto\nstart";
-const char _LOC_SN_COOLDOWNBLINK_EN[] =    // Cooldown|blink
+const char _L_SN_COOLDOWNBLINK_EN[] =    // Cooldown|blink
     "Cooldown\nblink";
-const char _LOC_SN_TEMPERATURECALIBRATION_EN[] =    // Calibrate|temperature?
+const char _L_SN_TEMPERATURECALIBRATION_EN[] =    // Calibrate|temperature?
     "Calibrate\ntemperature?";
-const char _LOC_SN_SETTINGSRESET_EN[] =    // Factory|reset?
+const char _L_SN_SETTINGSRESET_EN[] =    // Factory|reset?
     "Factory\nreset?";
-const char _LOC_SN_VOLTAGECALIBRATION_EN[] =    // Calibrate|input voltage?
+const char _L_SN_VOLTAGECALIBRATION_EN[] =    // Calibrate|input voltage?
     "Calibrate\ninput voltage?";
-const char _LOC_SN_ADVANCEDSOLDERING_EN[] =    // Detailed|solder screen
+const char _L_SN_ADVANCEDSOLDERING_EN[] =    // Detailed|solder screen
     "Detailed\nsolder screen";
-const char _LOC_SN_SCROLLINGSPEED_EN[] =    // Description|Scroll Speed
+const char _L_SN_SCROLLINGSPEED_EN[] =    // Description|Scroll Speed
     "Description\nScroll Speed";
-const char _LOC_SN_LANGUAGE_EN[] =    // Language|
+const char _L_SN_LANGUAGE_EN[] =    // Language|
     "Language\n";
 
 // ---- Settings Descriptions (EN) ----
 
-const char _LOC_SND_POWERSOURCE_EN[] =    // Power source. Sets cutoff voltage. <DC 10V> <S 3.3V per cell>
+const char _L_SND_POWERSOURCE_EN[] =    // Power source. Sets cutoff voltage. <DC 10V> <S 3.3V per cell>
     "Power source. Sets cutoff voltage. <DC 10V> <S 3.3V per cell>";
-const char _LOC_SND_SLEEPTEMPERATURE_EN[] =    // Sleep Temperature <C>
+const char _L_SND_SLEEPTEMPERATURE_EN[] =    // Sleep Temperature <C>
     "Sleep Temperature <C>";
-const char _LOC_SND_SLEEPTIMEOUT_EN[] =    // Sleep Timeout <Minutes/Seconds>
+const char _L_SND_SLEEPTIMEOUT_EN[] =    // Sleep Timeout <Minutes/Seconds>
     "Sleep Timeout <Minutes/Seconds>";
-const char _LOC_SND_SHUTDOWNTIMEOUT_EN[] =    // Shutdown Timeout <Minutes>
+const char _L_SND_SHUTDOWNTIMEOUT_EN[] =    // Shutdown Timeout <Minutes>
     "Shutdown Timeout <Minutes>";
-const char _LOC_SND_MOTIONSENSITIVITY_EN[] =    // Motion Sensitivity <0.Off 1.least sensitive 9.most sensitive>
+const char _L_SND_MOTIONSENSITIVITY_EN[] =    // Motion Sensitivity <0.Off 1.least sensitive 9.most sensitive>
     "Motion Sensitivity <0.Off 1.least sensitive 9.most sensitive>";
-const char _LOC_SND_TEMPERATUREUNIT_EN[] =    // Temperature Unit <C=Celsius F=Fahrenheit>
+const char _L_SND_TEMPERATUREUNIT_EN[] =    // Temperature Unit <C=Celsius F=Fahrenheit>
     "Temperature Unit <C=Celsius F=Fahrenheit>";
-const char _LOC_SND_ADVANCEDIDLE_EN[] =    // Display detailed information in a smaller font on the idle screen.
+const char _L_SND_ADVANCEDIDLE_EN[] =    // Display detailed information in a smaller font on the idle screen.
     "Display detailed information in a smaller font on the idle screen.";
-const char _LOC_SND_DISPLAYROTATION_EN[] =    // Display Orientation <A. Automatic L. Left Handed R. Right Handed>
+const char _L_SND_DISPLAYROTATION_EN[] =    // Display Orientation <A. Automatic L. Left Handed R. Right Handed>
     "Display Orientation <A. Automatic L. Left Handed R. Right Handed>";
-const char _LOC_SND_BOOSTENABLED_EN[] =    // Enable front key enters boost mode 450C mode when soldering
+const char _L_SND_BOOSTENABLED_EN[] =    // Enable front key enters boost mode 450C mode when soldering
     "Enable front key enters boost mode 450C mode when soldering";
-const char _LOC_SND_BOOSTTEMPERATURE_EN[] =    // Temperature when in \"boost\" mode
+const char _L_SND_BOOSTTEMPERATURE_EN[] =    // Temperature when in \"boost\" mode
     "Temperature when in \"boost\" mode";
-const char _LOC_SND_AUTOSTART_EN[] =    // Automatically starts the iron into soldering on power up. T=Soldering, S= Sleep mode,F=Off
+const char _L_SND_AUTOSTART_EN[] =    // Automatically starts the iron into soldering on power up. T=Soldering, S= Sleep mode,F=Off
     "Automatically starts the iron into soldering on power up. T=Soldering, S= Sleep mode,F=Off";
-const char _LOC_SND_COOLDOWNBLINK_EN[] =    // Blink the temperature on the cooling screen while the tip is still hot.
+const char _L_SND_COOLDOWNBLINK_EN[] =    // Blink the temperature on the cooling screen while the tip is still hot.
     "Blink the temperature on the cooling screen while the tip is still hot.";
-const char _LOC_SND_TEMPERATURECALIBRATION_EN[] =    // Calibrate tip offset.
+const char _L_SND_TEMPERATURECALIBRATION_EN[] =    // Calibrate tip offset.
     "Calibrate tip offset.";
-const char _LOC_SND_SETTINGSRESET_EN[] =    // Reset all settings
+const char _L_SND_SETTINGSRESET_EN[] =    // Reset all settings
     "Reset all settings";
-const char _LOC_SND_VOLTAGECALIBRATION_EN[] =    // VIN Calibration. Buttons adjust, long press to exit
+const char _L_SND_VOLTAGECALIBRATION_EN[] =    // VIN Calibration. Buttons adjust, long press to exit
     "VIN Calibration. Buttons adjust, long press to exit";
-const char _LOC_SND_ADVANCEDSOLDERING_EN[] =    // Display detailed information while soldering
+const char _L_SND_ADVANCEDSOLDERING_EN[] =    // Display detailed information while soldering
     "Display detailed information while soldering";
-const char _LOC_SND_SCROLLINGSPEED_EN[] =    // Speed this text scrolls past at
+const char _L_SND_SCROLLINGSPEED_EN[] =    // Speed this text scrolls past at
     "Speed this text scrolls past at";
-const char _LOC_SND_LANGUAGE_EN[] =    // 
+const char _L_SND_LANGUAGE_EN[] =    // 
     "";
-
-// ---- Message Strings (EN) ----
-
-const char _LOC_MS_SETTINGSCALIBRATIONWARNING_EN[] =    // Please ensure the tip is at room temperature before continuing!
-    "Please ensure the tip is at room temperature before continuing!";
-const char _LOC_MS_SETTINGSRESETWARNING_EN[] =    // Are you sure to reset settings to default values?
-    "Are you sure to reset settings to default values?";
-const char _LOC_MS_UVLOWARNINGSTRING_EN[] =    // DC LOW
-    "DC LOW";
-const char _LOC_MS_UNDERVOLTAGESTRING_EN[] =    // Undervoltage
-    "Undervoltage";
-const char _LOC_MS_INPUTVOLTAGESTRING_EN[] =    // Input V: 
-    "Input V: ";
-const char _LOC_MS_WARNINGTIPTEMPSTRING_EN[] =    // Tip Temp: 
-    "Tip Temp: ";
-const char _LOC_MS_BADTIPSTRING_EN[] =    // BAD TIP
-    "BAD TIP";
-const char _LOC_MS_SLEEPINGSIMPLESTRING_EN[] =    // Zzzz
-    "Zzzz";
-const char _LOC_MS_SLEEPINGADVANCEDSTRING_EN[] =    // Sleeping...
-    "Sleeping...";
-const char _LOC_MS_WARNINGSIMPLESTRING_EN[] =    // HOT!
-    "HOT!";
-const char _LOC_MS_WARNINGADVANCEDSTRING_EN[] =    // !!! TIP HOT !!!
-    "!!! TIP HOT !!!";
-const char _LOC_MS_SLEEPINGTIPADVANCEDSTRING_EN[] =    // Tip:
-    "Tip:";
-#define _LOC_MS_IDLETIPSTRING_EN    _LOC_MS_SLEEPINGTIPADVANCEDSTRING_EN     /* Tip: */
-const char _LOC_MS_IDLESETSTRING_EN[] =    //  Set:
-    " Set:";
-const char _LOC_MS_TIPDISCONNECTEDSTRING_EN[] =    // TIP DISCONNECTED
-    "TIP DISCONNECTED";
-const char _LOC_MS_SOLDERINGADVANCEDPOWERPROMPT_EN[] =    // Power: 
-    "Power: ";
-const char _LOC_MS_RESETOK_EN[] =    // RESET OK
-    "RESET OK";
-const char _LOC_MS_OFFSTRING_EN[] =    // Off
-    "Off";
-const char _LOC_MS_SETTINGRIGHTCHAR_EN[] =    // R
-    "R";
-const char _LOC_MS_SETTINGLEFTCHAR_EN[] =    // L
-    "L";
-const char _LOC_MS_SETTINGAUTOCHAR_EN[] =    // A
-    "A";
-const char _LOC_MS_SETTINGFASTCHAR_EN[] =    // F
-    "F";
-const char _LOC_MS_SETTINGSLOWCHAR_EN[] =    // S
-    "S";
 
 
 // ================ Translation Strings - Hrvatski (HR) ================
 
+// ---- Message Strings (HR) ----
+
+const char _L_MS_LANGUAGECODE_HR[] =    // HR
+    "HR";
+const char _L_MS_LANGUAGELOCALNAME_HR[] =    // Hrvatski
+    "Hrvatski";
+const char _L_MS_SETTINGSCALIBRATIONWARNING_HR[] =    // Provjerite da je vršak ohlađen na sobnu temperaturu prije nego što nastavite!
+    "Provjerite da je vr\x80\x1""ak ohla\x81\x1""en na sobnu temperaturu prije nego \x80\x1""to nastavite!";
+const char _L_MS_SETTINGSRESETWARNING_HR[] =    // Jeste li sigurni da želite sve postavke vratiti na tvorničke vrijednosti?
+    "Jeste li sigurni da \x82\x1""elite sve postavke vratiti na tvorni\x83\x1""ke vrijednosti?";
+const char _L_MS_UVLOWARNINGSTRING_HR[] =    // BATERIJA
+    "BATERIJA";
+const char _L_MS_UNDERVOLTAGESTRING_HR[] =    // PRENIZAK NAPON
+    "PRENIZAK NAPON";
+const char _L_MS_INPUTVOLTAGESTRING_HR[] =    // Napajanje: 
+    "Napajanje: ";
+const char _L_MS_WARNINGTIPTEMPSTRING_HR[] =    // Temp vrha: 
+    "Temp vrha: ";
+const char _L_MS_BADTIPSTRING_HR[] =    // LOŠ VRH
+    "LO\x84\x1"" VRH";
+const char _L_MS_SLEEPINGSIMPLESTRING_HR[] =    // Zzz
+    "Zzz ";
+const char _L_MS_SLEEPINGADVANCEDSTRING_HR[] =    // SPAVANJE...
+    "SPAVANJE...";
+const char _L_MS_WARNINGSIMPLESTRING_HR[] =    // VRUĆ
+    "VRU\x85\x1";
+const char _L_MS_WARNINGADVANCEDSTRING_HR[] =    // !!! VRUĆE !!!
+    "!!! VRU\x85\x1""E !!!";
+const char _L_MS_SLEEPINGTIPADVANCEDSTRING_HR[] =    // Vrh: 
+    "Vrh: ";
+#define _L_MS_IDLETIPSTRING_HR    _L_MS_SLEEPINGTIPADVANCEDSTRING_HR     /* Vrh:  */
+const char _L_MS_IDLESETSTRING_HR[] =    //  / 
+    " / ";
+const char _L_MS_TIPDISCONNECTEDSTRING_HR[] =    // VRH NIJE SPOJEN!
+    "VRH NIJE SPOJEN!";
+const char _L_MS_SOLDERINGADVANCEDPOWERPROMPT_HR[] =    // Snaga: 
+    "Snaga: ";
+#define _L_MS_RESETOK_HR    _L_MS_RESETOK_EN     /* RESET OK */
+const char _L_MS_OFFSTRING_HR[] =    // Ne
+    "Ne";
+const char _L_MS_SETTINGRIGHTCHAR_HR[] =    // D
+    "D";
+#define _L_MS_SETTINGLEFTCHAR_HR    _L_MS_SETTINGLEFTCHAR_EN     /* L */
+#define _L_MS_SETTINGAUTOCHAR_HR    _L_MS_SETTINGAUTOCHAR_EN     /* A */
+const char _L_MS_SETTINGFASTCHAR_HR[] =    // B
+    "B";
+#define _L_MS_SETTINGSLOWCHAR_HR    _L_MS_SETTINGSLOWCHAR_EN     /* S */
+
 // ---- Settings Groups (HR) ----
 
-const char _LOC_SG_SOLDERINGMENU_HR[] =    // Postavke|lemljenja
+const char _L_SG_SOLDERINGMENU_HR[] =    // Postavke|lemljenja
     "Postavke\nlemljenja";
-const char _LOC_SG_POWERSAVINGMENU_HR[] =    // Ušteda|energije
+const char _L_SG_POWERSAVINGMENU_HR[] =    // Ušteda|energije
     "U\x80\x1""teda\nenergije";
-const char _LOC_SG_UIMENU_HR[] =    // Korisničko|sučelje
-    "Korisni\x81\x1""ko\nsu\x81\x1""elje";
-const char _LOC_SG_ADVANCEDMENU_HR[] =    // Napredne|opcije
+const char _L_SG_UIMENU_HR[] =    // Korisničko|sučelje
+    "Korisni\x83\x1""ko\nsu\x83\x1""elje";
+const char _L_SG_ADVANCEDMENU_HR[] =    // Napredne|opcije
     "Napredne\nopcije";
 
 // ---- Settings Groups Descriptions (HR) ----
 
-const char _LOC_SGD_SOLDERINGMENU_HR[] =    // Postavke pri lemljenju
+const char _L_SGD_SOLDERINGMENU_HR[] =    // Postavke pri lemljenju
     "Postavke pri lemljenju";
-const char _LOC_SGD_POWERSAVINGMENU_HR[] =    // Postavke spavanja i štednje energije
+const char _L_SGD_POWERSAVINGMENU_HR[] =    // Postavke spavanja i štednje energije
     "Postavke spavanja i \x80\x1""tednje energije";
-const char _LOC_SGD_UIMENU_HR[] =    // Postavke korisničkog sučelja
-    "Postavke korisni\x81\x1""kog su\x81\x1""elja";
-const char _LOC_SGD_ADVANCEDMENU_HR[] =    // Upravljanje naprednim opcijama
+const char _L_SGD_UIMENU_HR[] =    // Postavke korisničkog sučelja
+    "Postavke korisni\x83\x1""kog su\x83\x1""elja";
+const char _L_SGD_ADVANCEDMENU_HR[] =    // Upravljanje naprednim opcijama
     "Upravljanje naprednim opcijama";
 
 // ---- Settings Names (HR) ----
 
-const char _LOC_SN_POWERSOURCE_HR[] =    // Izvor|napajanja
+const char _L_SN_POWERSOURCE_HR[] =    // Izvor|napajanja
     "Izvor\nnapajanja";
-const char _LOC_SN_SLEEPTEMPERATURE_HR[] =    // Temp|spavanja
+const char _L_SN_SLEEPTEMPERATURE_HR[] =    // Temp|spavanja
     "Temp\nspavanja";
-const char _LOC_SN_SLEEPTIMEOUT_HR[] =    // Vrijeme|spavanja
+const char _L_SN_SLEEPTIMEOUT_HR[] =    // Vrijeme|spavanja
     "Vrijeme\nspavanja";
-const char _LOC_SN_SHUTDOWNTIMEOUT_HR[] =    // Vrijeme|gašenja
+const char _L_SN_SHUTDOWNTIMEOUT_HR[] =    // Vrijeme|gašenja
     "Vrijeme\nga\x80\x1""enja";
-const char _LOC_SN_MOTIONSENSITIVITY_HR[] =    // Osjetljivost|pokreta
+const char _L_SN_MOTIONSENSITIVITY_HR[] =    // Osjetljivost|pokreta
     "Osjetljivost\npokreta";
-const char _LOC_SN_TEMPERATUREUNIT_HR[] =    // Jedinica|temperature
+const char _L_SN_TEMPERATUREUNIT_HR[] =    // Jedinica|temperature
     "Jedinica\ntemperature";
-const char _LOC_SN_ADVANCEDIDLE_HR[] =    // Detalji|pri čekanju
-    "Detalji\npri \x81\x1""ekanju";
-const char _LOC_SN_DISPLAYROTATION_HR[] =    // Rotacija|ekrana
+const char _L_SN_ADVANCEDIDLE_HR[] =    // Detalji|pri čekanju
+    "Detalji\npri \x83\x1""ekanju";
+const char _L_SN_DISPLAYROTATION_HR[] =    // Rotacija|ekrana
     "Rotacija\nekrana";
-const char _LOC_SN_BOOSTENABLED_HR[] =    // Boost|način
-    "Boost\nna\x81\x1""in";
-#define _LOC_SN_BOOSTTEMPERATURE_HR    _LOC_SN_BOOSTTEMPERATURE_EN     /* Boost|temp */
-#define _LOC_SN_AUTOSTART_HR    _LOC_SN_AUTOSTART_EN     /* Auto|start */
-const char _LOC_SN_COOLDOWNBLINK_HR[] =    // Upozorenje|pri hlađenju
-    "Upozorenje\npri hla\x82\x1""enju";
-const char _LOC_SN_TEMPERATURECALIBRATION_HR[] =    // Kalibracija|temperature
+const char _L_SN_BOOSTENABLED_HR[] =    // Boost|način
+    "Boost\nna\x83\x1""in";
+#define _L_SN_BOOSTTEMPERATURE_HR    _L_SN_BOOSTTEMPERATURE_EN     /* Boost|temp */
+#define _L_SN_AUTOSTART_HR    _L_SN_AUTOSTART_EN     /* Auto|start */
+const char _L_SN_COOLDOWNBLINK_HR[] =    // Upozorenje|pri hlađenju
+    "Upozorenje\npri hla\x81\x1""enju";
+const char _L_SN_TEMPERATURECALIBRATION_HR[] =    // Kalibracija|temperature
     "Kalibracija\ntemperature";
-const char _LOC_SN_SETTINGSRESET_HR[] =    // Tvorničke|postavke
-    "Tvorni\x81\x1""ke\npostavke";
-const char _LOC_SN_VOLTAGECALIBRATION_HR[] =    // Kalibracija|napona napajanja
+const char _L_SN_SETTINGSRESET_HR[] =    // Tvorničke|postavke
+    "Tvorni\x83\x1""ke\npostavke";
+const char _L_SN_VOLTAGECALIBRATION_HR[] =    // Kalibracija|napona napajanja
     "Kalibracija\nnapona napajanja";
-const char _LOC_SN_ADVANCEDSOLDERING_HR[] =    // Detalji|pri lemljenju
+const char _L_SN_ADVANCEDSOLDERING_HR[] =    // Detalji|pri lemljenju
     "Detalji\npri lemljenju";
-const char _LOC_SN_SCROLLINGSPEED_HR[] =    // Brzina|poruka
+const char _L_SN_SCROLLINGSPEED_HR[] =    // Brzina|poruka
     "Brzina\nporuka";
-const char _LOC_SN_LANGUAGE_HR[] =    // Jezik|
+const char _L_SN_LANGUAGE_HR[] =    // Jezik|
     "Jezik\n";
 
 // ---- Settings Descriptions (HR) ----
 
-const char _LOC_SND_POWERSOURCE_HR[] =    // Izvor napajanja. Postavlja napon isključivanja. <DC 10V> <S 3.3V po ćeliji>
-    "Izvor napajanja. Postavlja napon isklju\x81\x1""ivanja. <DC 10V> <S 3.3V po \x83\x1""eliji>";
-const char _LOC_SND_SLEEPTEMPERATURE_HR[] =    // Temperatura na koju se spušta lemilica nakon određenog vremena mirovanja. <C/F>
-    "Temperatura na koju se spu\x80\x1""ta lemilica nakon odre\x82\x1""enog vremena mirovanja. <C/F>";
-const char _LOC_SND_SLEEPTIMEOUT_HR[] =    // Vrijeme mirovanja nakon kojega lemilica spušta temperaturu. <Minute/Sekunde>
+const char _L_SND_POWERSOURCE_HR[] =    // Izvor napajanja. Postavlja napon isključivanja. <DC 10V> <S 3.3V po ćeliji>
+    "Izvor napajanja. Postavlja napon isklju\x83\x1""ivanja. <DC 10V> <S 3.3V po \x86\x1""eliji>";
+const char _L_SND_SLEEPTEMPERATURE_HR[] =    // Temperatura na koju se spušta lemilica nakon određenog vremena mirovanja. <C/F>
+    "Temperatura na koju se spu\x80\x1""ta lemilica nakon odre\x81\x1""enog vremena mirovanja. <C/F>";
+const char _L_SND_SLEEPTIMEOUT_HR[] =    // Vrijeme mirovanja nakon kojega lemilica spušta temperaturu. <Minute/Sekunde>
     "Vrijeme mirovanja nakon kojega lemilica spu\x80\x1""ta temperaturu. <Minute/Sekunde>";
-const char _LOC_SND_SHUTDOWNTIMEOUT_HR[] =    // Vrijeme mirovanja nakon kojega će se lemilica ugasiti. <Minute>
-    "Vrijeme mirovanja nakon kojega \x83\x1""e se lemilica ugasiti. <Minute>";
-const char _LOC_SND_MOTIONSENSITIVITY_HR[] =    // Osjetljivost prepoznavanja pokreta. <0=Ugašeno, 1=Najmanje osjetljivo, 9=Najosjetljivije>
+const char _L_SND_SHUTDOWNTIMEOUT_HR[] =    // Vrijeme mirovanja nakon kojega će se lemilica ugasiti. <Minute>
+    "Vrijeme mirovanja nakon kojega \x86\x1""e se lemilica ugasiti. <Minute>";
+const char _L_SND_MOTIONSENSITIVITY_HR[] =    // Osjetljivost prepoznavanja pokreta. <0=Ugašeno, 1=Najmanje osjetljivo, 9=Najosjetljivije>
     "Osjetljivost prepoznavanja pokreta. <0=Uga\x80\x1""eno, 1=Najmanje osjetljivo, 9=Najosjetljivije>";
-const char _LOC_SND_TEMPERATUREUNIT_HR[] =    // Jedinica temperature. <C=Celzij, F=Fahrenheit>
+const char _L_SND_TEMPERATUREUNIT_HR[] =    // Jedinica temperature. <C=Celzij, F=Fahrenheit>
     "Jedinica temperature. <C=Celzij, F=Fahrenheit>";
-const char _LOC_SND_ADVANCEDIDLE_HR[] =    // Prikazivanje detaljnih informacija tijekom čekanja.
-    "Prikazivanje detaljnih informacija tijekom \x81\x1""ekanja.";
-const char _LOC_SND_DISPLAYROTATION_HR[] =    // Orijentacija ekrana. <A=Automatski, L=Ljevoruki, D=Desnoruki>
+const char _L_SND_ADVANCEDIDLE_HR[] =    // Prikazivanje detaljnih informacija tijekom čekanja.
+    "Prikazivanje detaljnih informacija tijekom \x83\x1""ekanja.";
+const char _L_SND_DISPLAYROTATION_HR[] =    // Orijentacija ekrana. <A=Automatski, L=Ljevoruki, D=Desnoruki>
     "Orijentacija ekrana. <A=Automatski, L=Ljevoruki, D=Desnoruki>";
-const char _LOC_SND_BOOSTENABLED_HR[] =    // Držanjem prednjeg gumba prilikom lemljenja aktivira se pojačani (Boost) način.
-    "Dr\x84\x1""anjem prednjeg gumba prilikom lemljenja aktivira se poja\x81\x1""ani (Boost) na\x81\x1""in.";
-const char _LOC_SND_BOOSTTEMPERATURE_HR[] =    // Temperatura u pojačanom (Boost) načinu.
-    "Temperatura u poja\x81\x1""anom (Boost) na\x81\x1""inu.";
-const char _LOC_SND_AUTOSTART_HR[] =    // Ako je aktivno, lemilica po uključivanju napajanja odmah počinje grijati.
-    "Ako je aktivno, lemilica po uklju\x81\x1""ivanju napajanja odmah po\x81\x1""inje grijati.";
-const char _LOC_SND_COOLDOWNBLINK_HR[] =    // Bljeskanje temperature prilikom hlađenja, ako je lemilica vruća.
-    "Bljeskanje temperature prilikom hla\x82\x1""enja, ako je lemilica vru\x83\x1""a.";
-const char _LOC_SND_TEMPERATURECALIBRATION_HR[] =    // Kalibriranje temperature mjeri razliku temperatura vrška i drške, dok je lemilica hladna.
+const char _L_SND_BOOSTENABLED_HR[] =    // Držanjem prednjeg gumba prilikom lemljenja aktivira se pojačani (Boost) način.
+    "Dr\x82\x1""anjem prednjeg gumba prilikom lemljenja aktivira se poja\x83\x1""ani (Boost) na\x83\x1""in.";
+const char _L_SND_BOOSTTEMPERATURE_HR[] =    // Temperatura u pojačanom (Boost) načinu.
+    "Temperatura u poja\x83\x1""anom (Boost) na\x83\x1""inu.";
+const char _L_SND_AUTOSTART_HR[] =    // Ako je aktivno, lemilica po uključivanju napajanja odmah počinje grijati.
+    "Ako je aktivno, lemilica po uklju\x83\x1""ivanju napajanja odmah po\x83\x1""inje grijati.";
+const char _L_SND_COOLDOWNBLINK_HR[] =    // Bljeskanje temperature prilikom hlađenja, ako je lemilica vruća.
+    "Bljeskanje temperature prilikom hla\x81\x1""enja, ako je lemilica vru\x86\x1""a.";
+const char _L_SND_TEMPERATURECALIBRATION_HR[] =    // Kalibriranje temperature mjeri razliku temperatura vrška i drške, dok je lemilica hladna.
     "Kalibriranje temperature mjeri razliku temperatura vr\x80\x1""ka i dr\x80\x1""ke, dok je lemilica hladna.";
-const char _LOC_SND_SETTINGSRESET_HR[] =    // Vraćanje svih postavki na tvorničke vrijednosti.
-    "Vra\x83\x1""anje svih postavki na tvorni\x81\x1""ke vrijednosti.";
-const char _LOC_SND_VOLTAGECALIBRATION_HR[] =    // Kalibracija ulaznog napona. Podešavanje gumbima, dugački pritisak za kraj.
-    "Kalibracija ulaznog napona. Pode\x80\x1""avanje gumbima, duga\x81\x1""ki pritisak za kraj.";
-const char _LOC_SND_ADVANCEDSOLDERING_HR[] =    // Prikazivanje detaljnih informacija tijekom lemljenja.
+const char _L_SND_SETTINGSRESET_HR[] =    // Vraćanje svih postavki na tvorničke vrijednosti.
+    "Vra\x86\x1""anje svih postavki na tvorni\x83\x1""ke vrijednosti.";
+const char _L_SND_VOLTAGECALIBRATION_HR[] =    // Kalibracija ulaznog napona. Podešavanje gumbima, dugački pritisak za kraj.
+    "Kalibracija ulaznog napona. Pode\x80\x1""avanje gumbima, duga\x83\x1""ki pritisak za kraj.";
+const char _L_SND_ADVANCEDSOLDERING_HR[] =    // Prikazivanje detaljnih informacija tijekom lemljenja.
     "Prikazivanje detaljnih informacija tijekom lemljenja.";
-const char _LOC_SND_SCROLLINGSPEED_HR[] =    // Brzina kretanja dugačkih poruka. <B=brzo, S=sporo>
-    "Brzina kretanja duga\x81\x1""kih poruka. <B=brzo, S=sporo>";
-#define _LOC_SND_LANGUAGE_HR    _LOC_SND_LANGUAGE_EN     /*  */
-
-// ---- Message Strings (HR) ----
-
-const char _LOC_MS_SETTINGSCALIBRATIONWARNING_HR[] =    // Provjerite da je vršak ohlađen na sobnu temperaturu prije nego što nastavite!
-    "Provjerite da je vr\x80\x1""ak ohla\x82\x1""en na sobnu temperaturu prije nego \x80\x1""to nastavite!";
-const char _LOC_MS_SETTINGSRESETWARNING_HR[] =    // Jeste li sigurni da želite sve postavke vratiti na tvorničke vrijednosti?
-    "Jeste li sigurni da \x84\x1""elite sve postavke vratiti na tvorni\x81\x1""ke vrijednosti?";
-const char _LOC_MS_UVLOWARNINGSTRING_HR[] =    // BATERIJA
-    "BATERIJA";
-const char _LOC_MS_UNDERVOLTAGESTRING_HR[] =    // PRENIZAK NAPON
-    "PRENIZAK NAPON";
-const char _LOC_MS_INPUTVOLTAGESTRING_HR[] =    // Napajanje: 
-    "Napajanje: ";
-const char _LOC_MS_WARNINGTIPTEMPSTRING_HR[] =    // Temp vrha: 
-    "Temp vrha: ";
-const char _LOC_MS_BADTIPSTRING_HR[] =    // LOŠ VRH
-    "LO\x85\x1"" VRH";
-const char _LOC_MS_SLEEPINGSIMPLESTRING_HR[] =    // Zzz 
-    "Zzz ";
-const char _LOC_MS_SLEEPINGADVANCEDSTRING_HR[] =    // SPAVANJE...
-    "SPAVANJE...";
-const char _LOC_MS_WARNINGSIMPLESTRING_HR[] =    // VRUĆ
-    "VRU\x86\x1";
-const char _LOC_MS_WARNINGADVANCEDSTRING_HR[] =    // !!! VRUĆE !!!
-    "!!! VRU\x86\x1""E !!!";
-const char _LOC_MS_SLEEPINGTIPADVANCEDSTRING_HR[] =    // Vrh: 
-    "Vrh: ";
-#define _LOC_MS_IDLETIPSTRING_HR    _LOC_MS_SLEEPINGTIPADVANCEDSTRING_HR     /* Vrh:  */
-const char _LOC_MS_IDLESETSTRING_HR[] =    //  / 
-    " / ";
-const char _LOC_MS_TIPDISCONNECTEDSTRING_HR[] =    // VRH NIJE SPOJEN!
-    "VRH NIJE SPOJEN!";
-const char _LOC_MS_SOLDERINGADVANCEDPOWERPROMPT_HR[] =    // Snaga: 
-    "Snaga: ";
-#define _LOC_MS_RESETOK_HR    _LOC_MS_RESETOK_EN     /* RESET OK */
-const char _LOC_MS_OFFSTRING_HR[] =    // Ne
-    "Ne";
-const char _LOC_MS_SETTINGRIGHTCHAR_HR[] =    // D
-    "D";
-#define _LOC_MS_SETTINGLEFTCHAR_HR    _LOC_MS_SETTINGLEFTCHAR_EN     /* L */
-#define _LOC_MS_SETTINGAUTOCHAR_HR    _LOC_MS_SETTINGAUTOCHAR_EN     /* A */
-const char _LOC_MS_SETTINGFASTCHAR_HR[] =    // B
-    "B";
-#define _LOC_MS_SETTINGSLOWCHAR_HR    _LOC_MS_SETTINGSLOWCHAR_EN     /* S */
-
-
-// ================ Translation Strings - Italiano (IT) ================
-
-// ---- Settings Groups (IT) ----
-
-const char _LOC_SG_SOLDERINGMENU_IT[] =    // Opzioni|saldatura
-    "Opzioni\nsaldatura";
-const char _LOC_SG_POWERSAVINGMENU_IT[] =    // Risparmio|energetico
-    "Risparmio\nenergetico";
-const char _LOC_SG_UIMENU_IT[] =    // Interfaccia|utente
-    "Interfaccia\nutente";
-const char _LOC_SG_ADVANCEDMENU_IT[] =    // Opzioni|avanzate
-    "Opzioni\navanzate";
-
-// ---- Settings Groups Descriptions (IT) ----
-
-const char _LOC_SGD_SOLDERINGMENU_IT[] =    // Menù d'impostazioni della modalità Saldatura
-    "Men\x87\x1"" d'impostazioni della modalit\x88\x1"" Saldatura";
-const char _LOC_SGD_POWERSAVINGMENU_IT[] =    // Menù d'impostazioni per il risparmio energetico
-    "Men\x87\x1"" d'impostazioni per il risparmio energetico";
-const char _LOC_SGD_UIMENU_IT[] =    // Menù d'impostazioni dell'interfaccia utente
-    "Men\x87\x1"" d'impostazioni dell'interfaccia utente";
-const char _LOC_SGD_ADVANCEDMENU_IT[] =    // Menù d'impostazioni avanzate
-    "Men\x87\x1"" d'impostazioni avanzate";
-
-// ---- Settings Names (IT) ----
-
-const char _LOC_SN_POWERSOURCE_IT[] =    // Sorgente|alimentaz
-    "Sorgente\nalimentaz";
-const char _LOC_SN_SLEEPTEMPERATURE_IT[] =    // Temp|standby
-    "Temp\nstandby";
-const char _LOC_SN_SLEEPTIMEOUT_IT[] =    // Timer|standby
-    "Timer\nstandby";
-const char _LOC_SN_SHUTDOWNTIMEOUT_IT[] =    // Timer di|arresto
-    "Timer di\narresto";
-const char _LOC_SN_MOTIONSENSITIVITY_IT[] =    // Sensibilità|al movimento
-    "Sensibilit\x88\x1\n""al movimento";
-const char _LOC_SN_TEMPERATUREUNIT_IT[] =    // Unità di|temperatura
-    "Unit\x88\x1"" di\ntemperatura";
-const char _LOC_SN_ADVANCEDIDLE_IT[] =    // Mostra|dettagli
-    "Mostra\ndettagli";
-const char _LOC_SN_DISPLAYROTATION_IT[] =    // Orientamento|display
-    "Orientamento\ndisplay";
-const char _LOC_SN_BOOSTENABLED_IT[] =    // Funzione|«Turbo»
-    "Funzione\n\x89\x1""Turbo\x8A\x1";
-const char _LOC_SN_BOOSTTEMPERATURE_IT[] =    // Temp|«Turbo»
-    "Temp\n\x89\x1""Turbo\x8A\x1";
-const char _LOC_SN_AUTOSTART_IT[] =    // Avvio|automatico
-    "Avvio\nautomatico";
-const char _LOC_SN_COOLDOWNBLINK_IT[] =    // Avviso|punta calda
-    "Avviso\npunta calda";
-const char _LOC_SN_TEMPERATURECALIBRATION_IT[] =    // Calibrazione|temperatura
-    "Calibrazione\ntemperatura";
-const char _LOC_SN_SETTINGSRESET_IT[] =    // Ripristino|impostazioni
-    "Ripristino\nimpostazioni";
-const char _LOC_SN_VOLTAGECALIBRATION_IT[] =    // Calibrazione|tensione
-    "Calibrazione\ntensione";
-const char _LOC_SN_ADVANCEDSOLDERING_IT[] =    // Dettagli|saldatura
-    "Dettagli\nsaldatura";
-const char _LOC_SN_SCROLLINGSPEED_IT[] =    // Velocità|testo
-    "Velocit\x88\x1\n""testo";
-const char _LOC_SN_LANGUAGE_IT[] =    // Lingua|
-    "Lingua\n";
-
-// ---- Settings Descriptions (IT) ----
-
-const char _LOC_SND_POWERSOURCE_IT[] =    // Scegli la sorgente di alimentazione; se a batteria, limita lo scaricamento al valore di soglia <DC: 10V; S: 3.3V per cella>
-    "Scegli la sorgente di alimentazione; se a batteria, limita lo scaricamento al valore di soglia <DC: 10V; S: 3.3V per cella>";
-const char _LOC_SND_SLEEPTEMPERATURE_IT[] =    // Imposta la temperatura da mantenere in modalità Standby <°C/°F>
-    "Imposta la temperatura da mantenere in modalit\x88\x1"" Standby <\x8B\x1""C/\x8B\x1""F>";
-const char _LOC_SND_SLEEPTIMEOUT_IT[] =    // Imposta il timer per entrare in modalità Standby <minuti/secondi>
-    "Imposta il timer per entrare in modalit\x88\x1"" Standby <minuti/secondi>";
-const char _LOC_SND_SHUTDOWNTIMEOUT_IT[] =    // Imposta il timer per lo spegnimento <minuti>
-    "Imposta il timer per lo spegnimento <minuti>";
-const char _LOC_SND_MOTIONSENSITIVITY_IT[] =    // Imposta la sensibilità al movimento per uscire dalla modalità Standby <0: nessuna; 1: minima; 9: massima>
-    "Imposta la sensibilit\x88\x1"" al movimento per uscire dalla modalit\x88\x1"" Standby <0: nessuna; 1: minima; 9: massima>";
-const char _LOC_SND_TEMPERATUREUNIT_IT[] =    // Scegli l'unità di misura per la temperatura <C: grado Celsius; F: grado Farenheit>
-    "Scegli l'unit\x88\x1"" di misura per la temperatura <C: grado Celsius; F: grado Farenheit>";
-const char _LOC_SND_ADVANCEDIDLE_IT[] =    // Mostra informazioni dettagliate con un carattere più piccolo all'interno della schermata principale
-    "Mostra informazioni dettagliate con un carattere pi\x87\x1"" piccolo all'interno della schermata principale";
-const char _LOC_SND_DISPLAYROTATION_IT[] =    // Imposta l'orientamento del display <A: automatico; S: mano sinistra; D: mano destra>
-    "Imposta l'orientamento del display <A: automatico; S: mano sinistra; D: mano destra>";
-const char _LOC_SND_BOOSTENABLED_IT[] =    // Il tasto superiore attiva la funzione «Turbo» durante la modalità Saldatura
-    "Il tasto superiore attiva la funzione \x89\x1""Turbo\x8A\x1"" durante la modalit\x88\x1"" Saldatura";
-const char _LOC_SND_BOOSTTEMPERATURE_IT[] =    // Imposta la temperatura della funzione «Turbo»
-    "Imposta la temperatura della funzione \x89\x1""Turbo\x8A\x1";
-const char _LOC_SND_AUTOSTART_IT[] =    // Attiva automaticamente il saldatore quando viene alimentato <A: saldatura; S: standby; D: disattiva>
-    "Attiva automaticamente il saldatore quando viene alimentato <A: saldatura; S: standby; D: disattiva>";
-const char _LOC_SND_COOLDOWNBLINK_IT[] =    // Mostra la temperatura durante il raffreddamento se la punta è ancora calda
-    "Mostra la temperatura durante il raffreddamento se la punta \x8C\x1"" ancora calda";
-const char _LOC_SND_TEMPERATURECALIBRATION_IT[] =    // Calibra le rilevazioni di temperatura
-    "Calibra le rilevazioni di temperatura";
-const char _LOC_SND_SETTINGSRESET_IT[] =    // Ripristina tutte le impostazioni
-    "Ripristina tutte le impostazioni";
-const char _LOC_SND_VOLTAGECALIBRATION_IT[] =    // Calibra la tensione in ingresso; regola con entrambi i tasti, tieni premuto il tasto superiore per uscire
-    "Calibra la tensione in ingresso; regola con entrambi i tasti, tieni premuto il tasto superiore per uscire";
-const char _LOC_SND_ADVANCEDSOLDERING_IT[] =    // Mostra informazioni dettagliate durante la modalità Saldatura
-    "Mostra informazioni dettagliate durante la modalit\x88\x1"" Saldatura";
-const char _LOC_SND_SCROLLINGSPEED_IT[] =    // Imposta la velocità di scorrimento del testo <L: lento; V: veloce>
-    "Imposta la velocit\x88\x1"" di scorrimento del testo <L: lento; V: veloce>";
-#define _LOC_SND_LANGUAGE_IT    _LOC_SND_LANGUAGE_EN     /*  */
-
-// ---- Message Strings (IT) ----
-
-const char _LOC_MS_SETTINGSCALIBRATIONWARNING_IT[] =    // Assicurati che la punta si trovi a temperatura ambiente prima di continuare!
-    "Assicurati che la punta si trovi a temperatura ambiente prima di continuare!";
-const char _LOC_MS_SETTINGSRESETWARNING_IT[] =    // Ripristinare le impostazioni iniziali?
-    "Ripristinare le impostazioni iniziali?";
-const char _LOC_MS_UVLOWARNINGSTRING_IT[] =    // DC BASSA
-    "DC BASSA";
-const char _LOC_MS_UNDERVOLTAGESTRING_IT[] =    // DC INSUFFICIENTE
-    "DC INSUFFICIENTE";
-const char _LOC_MS_INPUTVOLTAGESTRING_IT[] =    // V ingresso:
-    "V ingresso:";
-const char _LOC_MS_WARNINGTIPTEMPSTRING_IT[] =    // Punta:
-    "Punta:";
-const char _LOC_MS_BADTIPSTRING_IT[] =    // PUNTA NO
-    "PUNTA NO";
-const char _LOC_MS_SLEEPINGSIMPLESTRING_IT[] =    // ZZZ 
-    "ZZZ ";
-const char _LOC_MS_SLEEPINGADVANCEDSTRING_IT[] =    // Standby
-    "Standby";
-#define _LOC_MS_WARNINGSIMPLESTRING_IT    _LOC_MS_WARNINGSIMPLESTRING_EN     /* HOT! */
-const char _LOC_MS_WARNINGADVANCEDSTRING_IT[] =    // PUNTA CALDA!
-    "PUNTA CALDA!";
-#define _LOC_MS_SLEEPINGTIPADVANCEDSTRING_IT    _LOC_MS_WARNINGTIPTEMPSTRING_IT     /* Punta: */
-#define _LOC_MS_IDLETIPSTRING_IT    _LOC_MS_WARNINGTIPTEMPSTRING_IT     /* Punta: */
-const char _LOC_MS_IDLESETSTRING_IT[] =    // /
-    "/";
-const char _LOC_MS_TIPDISCONNECTEDSTRING_IT[] =    // PUNTA ASSENTE
-    "PUNTA ASSENTE";
-const char _LOC_MS_SOLDERINGADVANCEDPOWERPROMPT_IT[] =    // Potenza:
-    "Potenza:";
-#define _LOC_MS_RESETOK_IT    _LOC_MS_RESETOK_EN     /* RESET OK */
-#define _LOC_MS_OFFSTRING_IT    _LOC_MS_OFFSTRING_EN     /* Off */
-#define _LOC_MS_SETTINGRIGHTCHAR_IT    _LOC_MS_SETTINGRIGHTCHAR_HR     /* D */
-#define _LOC_MS_SETTINGLEFTCHAR_IT    _LOC_MS_SETTINGSLOWCHAR_EN     /* S */
-#define _LOC_MS_SETTINGAUTOCHAR_IT    _LOC_MS_SETTINGAUTOCHAR_EN     /* A */
-const char _LOC_MS_SETTINGFASTCHAR_IT[] =    // V
-    "V";
-#define _LOC_MS_SETTINGSLOWCHAR_IT    _LOC_MS_SETTINGLEFTCHAR_EN     /* L */
+const char _L_SND_SCROLLINGSPEED_HR[] =    // Brzina kretanja dugačkih poruka. <B=brzo, S=sporo>
+    "Brzina kretanja duga\x83\x1""kih poruka. <B=brzo, S=sporo>";
+#define _L_SND_LANGUAGE_HR    _L_SND_LANGUAGE_EN     /*  */
 
 
 // ================ Translation Strings - Русский (RU) ================
 
+// ---- Message Strings (RU) ----
+
+const char _L_MS_LANGUAGECODE_RU[] =    // RU
+    "RU";
+const char _L_MS_LANGUAGELOCALNAME_RU[] =    // Русский
+    {135,1,136,1,137,1,137,1,138,1,139,1,140,1,0};
+const char _L_MS_SETTINGSCALIBRATIONWARNING_RU[] =    // Убедитесь, что жало остыло до комнатной температуры, прежде чем продолжать!
+    {141,1,142,1,143,1,144,1,139,1,145,1,143,1,137,1,146,1,44,32,147,1,145,1,148,1,32,149,1,150,1,151,1,148,1,32,148,1,137,1,145,1,152,1,151,1,148,1,32,144,1,148,1,32,138,1,148,1,153,1,154,1,150,1,145,1,154,1,148,1,140,1,32,145,1,143,1,153,1,155,1,143,1,156,1,150,1,145,1,136,1,156,1,152,1,44,32,155,1,156,1,143,1,149,1,144,1,143,1,32,147,1,143,1,153,1,32,155,1,156,1,148,1,144,1,148,1,151,1,149,1,150,1,145,1,146,1,33,0};
+const char _L_MS_SETTINGSRESETWARNING_RU[] =    // Вы действительно хотите сбросить настройки до значений по умолчанию?
+    {157,1,152,1,32,144,1,143,1,140,1,137,1,145,1,158,1,139,1,145,1,143,1,151,1,146,1,154,1,148,1,32,159,1,148,1,145,1,139,1,145,1,143,1,32,137,1,142,1,156,1,148,1,137,1,139,1,145,1,146,1,32,154,1,150,1,137,1,145,1,156,1,148,1,140,1,138,1,139,1,32,144,1,148,1,32,160,1,154,1,150,1,147,1,143,1,154,1,139,1,140,1,32,155,1,148,1,32,136,1,153,1,148,1,151,1,147,1,150,1,154,1,139,1,161,1,63,0};
+const char _L_MS_UVLOWARNINGSTRING_RU[] =    // АККУМ--
+    {162,1,163,1,163,1,141,1,164,1,45,45,0};
+const char _L_MS_UNDERVOLTAGESTRING_RU[] =    // Под питанием
+    {165,1,148,1,144,1,32,155,1,139,1,145,1,150,1,154,1,139,1,143,1,153,1,0};
+const char _L_MS_INPUTVOLTAGESTRING_RU[] =    // Питание(B):
+    {165,1,139,1,145,1,150,1,154,1,139,1,143,1,40,66,41,58,0};
+const char _L_MS_WARNINGTIPTEMPSTRING_RU[] =    // Жало t°:
+    "\xA6\x1\x96\x1\x97\x1\x94\x1"" t\xA7\x1"": ";
+const char _L_MS_BADTIPSTRING_RU[] =    // Жало--
+    {166,1,150,1,151,1,148,1,45,45,0};
+const char _L_MS_SLEEPINGSIMPLESTRING_RU[] =    // Сон
+    {168,1,148,1,154,1,0};
+const char _L_MS_SLEEPINGADVANCEDSTRING_RU[] =    // Ожидание...
+    {169,1,149,1,139,1,144,1,150,1,154,1,139,1,143,1,46,46,46,0};
+const char _L_MS_WARNINGSIMPLESTRING_RU[] =    //  АЙ!
+    " \xA2\x1\xAA\x1""!";
+const char _L_MS_WARNINGADVANCEDSTRING_RU[] =    // ВНИМАНИЕ ГОРЯЧО!
+    {157,1,171,1,172,1,164,1,162,1,171,1,172,1,173,1,32,174,1,169,1,135,1,175,1,176,1,169,1,33,0};
+const char _L_MS_SLEEPINGTIPADVANCEDSTRING_RU[] =    // Жало:
+    {166,1,150,1,151,1,148,1,58,0};
+#define _L_MS_IDLETIPSTRING_RU    _L_MS_SLEEPINGTIPADVANCEDSTRING_RU     /* Жало: */
+const char _L_MS_IDLESETSTRING_RU[] =    //  ->
+    " ->";
+const char _L_MS_TIPDISCONNECTEDSTRING_RU[] =    // Жало отключено!
+    {166,1,150,1,151,1,148,1,32,148,1,145,1,138,1,151,1,161,1,147,1,143,1,154,1,148,1,33,0};
+const char _L_MS_SOLDERINGADVANCEDPOWERPROMPT_RU[] =    // Питание:
+    {165,1,139,1,145,1,150,1,154,1,139,1,143,1,58,32,0};
+#define _L_MS_RESETOK_RU    _L_MS_RESETOK_EN     /* RESET OK */
+#define _L_MS_OFFSTRING_RU    _L_MS_OFFSTRING_EN     /* Off */
+const char _L_MS_SETTINGRIGHTCHAR_RU[] =    // П
+    {165,1,0};
+const char _L_MS_SETTINGLEFTCHAR_RU[] =    // Л
+    {177,1,0};
+#define _L_MS_SETTINGAUTOCHAR_RU    _L_MS_SETTINGAUTOCHAR_EN     /* A */
+const char _L_MS_SETTINGFASTCHAR_RU[] =    // +
+    "+";
+const char _L_MS_SETTINGSLOWCHAR_RU[] =    // -
+    "-";
+
 // ---- Settings Groups (RU) ----
 
-const char _LOC_SG_SOLDERINGMENU_RU[] =    // Пайка|
-    {141,1,142,1,143,1,144,1,142,1,10,0};
-const char _LOC_SG_POWERSAVINGMENU_RU[] =    // Сон|
-    {145,1,146,1,147,1,10,0};
-const char _LOC_SG_UIMENU_RU[] =    // Интерфейс|
-    {148,1,147,1,149,1,150,1,151,1,152,1,150,1,143,1,153,1,10,0};
-const char _LOC_SG_ADVANCEDMENU_RU[] =    // Другие|
-    {154,1,151,1,155,1,156,1,157,1,150,1,10,0};
+const char _L_SG_SOLDERINGMENU_RU[] =    // Пайка|
+    {165,1,150,1,140,1,138,1,150,1,10,0};
+const char _L_SG_POWERSAVINGMENU_RU[] =    // Сон|
+    {168,1,148,1,154,1,10,0};
+const char _L_SG_UIMENU_RU[] =    // Интерфейс|
+    {172,1,154,1,145,1,143,1,156,1,178,1,143,1,140,1,137,1,10,0};
+const char _L_SG_ADVANCEDMENU_RU[] =    // Другие|
+    {179,1,156,1,136,1,180,1,139,1,143,1,10,0};
 
 // ---- Settings Groups Descriptions (RU) ----
 
-const char _LOC_SGD_SOLDERINGMENU_RU[] =    // Настройки для режима пайки. Действуют при включенном жале.
-    {158,1,142,1,153,1,149,1,151,1,146,1,143,1,144,1,157,1,32,159,1,160,1,161,1,32,151,1,150,1,162,1,157,1,163,1,142,1,32,164,1,142,1,143,1,144,1,157,1,46,32,154,1,150,1,143,1,153,1,149,1,165,1,155,1,166,1,149,1,32,164,1,151,1,157,1,32,165,1,144,1,160,1,166,1,167,1,150,1,147,1,147,1,146,1,163,1,32,162,1,142,1,160,1,150,1,46,0};
-const char _LOC_SGD_POWERSAVINGMENU_RU[] =    // Настройки при бездействии. Полезно что бы не обжечься и не случайно не сжечь жилище:)
-    {158,1,142,1,153,1,149,1,151,1,146,1,143,1,144,1,157,1,32,164,1,151,1,157,1,32,168,1,150,1,169,1,159,1,150,1,143,1,153,1,149,1,165,1,157,1,157,1,46,32,141,1,146,1,160,1,150,1,169,1,147,1,146,1,32,167,1,149,1,146,1,32,168,1,170,1,32,147,1,150,1,32,146,1,168,1,162,1,150,1,167,1,171,1,153,1,161,1,32,157,1,32,147,1,150,1,32,153,1,160,1,155,1,167,1,142,1,143,1,147,1,146,1,32,147,1,150,1,32,153,1,162,1,150,1,167,1,171,1,32,162,1,157,1,160,1,157,1,172,1,150,1,58,41,0};
-const char _LOC_SGD_UIMENU_RU[] =    // Пользовательский интерфейс.
-    {141,1,146,1,160,1,171,1,169,1,146,1,165,1,142,1,149,1,150,1,160,1,171,1,153,1,144,1,157,1,143,1,32,157,1,147,1,149,1,150,1,151,1,152,1,150,1,143,1,153,1,46,0};
-const char _LOC_SGD_ADVANCEDMENU_RU[] =    // Расширенные настройки. Дополнительные удобства.
-    {173,1,142,1,153,1,174,1,157,1,151,1,150,1,147,1,147,1,170,1,150,1,32,147,1,142,1,153,1,149,1,151,1,146,1,143,1,144,1,157,1,46,32,154,1,146,1,164,1,146,1,160,1,147,1,157,1,149,1,150,1,160,1,171,1,147,1,170,1,150,1,32,155,1,159,1,146,1,168,1,153,1,149,1,165,1,142,1,46,0};
+const char _L_SGD_SOLDERINGMENU_RU[] =    // Настройки для режима пайки. Действуют при включенном жале.
+    {171,1,150,1,137,1,145,1,156,1,148,1,140,1,138,1,139,1,32,144,1,151,1,181,1,32,156,1,143,1,149,1,139,1,153,1,150,1,32,155,1,150,1,140,1,138,1,139,1,46,32,179,1,143,1,140,1,137,1,145,1,158,1,136,1,161,1,145,1,32,155,1,156,1,139,1,32,158,1,138,1,151,1,161,1,147,1,143,1,154,1,154,1,148,1,153,1,32,149,1,150,1,151,1,143,1,46,0};
+const char _L_SGD_POWERSAVINGMENU_RU[] =    // Настройки при бездействии. Полезно что бы не обжечься и случайно не сжечь жилище.
+    {171,1,150,1,137,1,145,1,156,1,148,1,140,1,138,1,139,1,32,155,1,156,1,139,1,32,142,1,143,1,160,1,144,1,143,1,140,1,137,1,145,1,158,1,139,1,139,1,46,32,165,1,148,1,151,1,143,1,160,1,154,1,148,1,32,147,1,145,1,148,1,32,142,1,152,1,32,154,1,143,1,32,148,1,142,1,149,1,143,1,147,1,146,1,137,1,181,1,32,139,1,32,137,1,151,1,136,1,147,1,150,1,140,1,154,1,148,1,32,154,1,143,1,32,137,1,149,1,143,1,147,1,146,1,32,149,1,139,1,151,1,139,1,182,1,143,1,46,0};
+const char _L_SGD_UIMENU_RU[] =    // Пользовательский интерфейс
+    {165,1,148,1,151,1,146,1,160,1,148,1,158,1,150,1,145,1,143,1,151,1,146,1,137,1,138,1,139,1,140,1,32,139,1,154,1,145,1,143,1,156,1,178,1,143,1,140,1,137,1,0};
+const char _L_SGD_ADVANCEDMENU_RU[] =    // Расширенные настройки. Дополнительные удобства.
+    {135,1,150,1,137,1,183,1,139,1,156,1,143,1,154,1,154,1,152,1,143,1,32,154,1,150,1,137,1,145,1,156,1,148,1,140,1,138,1,139,1,46,32,179,1,148,1,155,1,148,1,151,1,154,1,139,1,145,1,143,1,151,1,146,1,154,1,152,1,143,1,32,136,1,144,1,148,1,142,1,137,1,145,1,158,1,150,1,46,0};
 
 // ---- Settings Names (RU) ----
 
-const char _LOC_SN_POWERSOURCE_RU[] =    // Настройки|питания
-    {158,1,142,1,153,1,149,1,151,1,146,1,143,1,144,1,157,1,10,164,1,157,1,149,1,142,1,147,1,157,1,161,1,0};
-const char _LOC_SN_SLEEPTEMPERATURE_RU[] =    // Темпер|сна
-    {175,1,150,1,163,1,164,1,150,1,151,1,10,153,1,147,1,142,1,0};
-const char _LOC_SN_SLEEPTIMEOUT_RU[] =    // Таймаут|сна
-    {175,1,142,1,143,1,163,1,142,1,155,1,149,1,10,153,1,147,1,142,1,0};
-const char _LOC_SN_SHUTDOWNTIMEOUT_RU[] =    // Время до|отключения
-    {176,1,151,1,150,1,163,1,161,1,32,159,1,146,1,10,146,1,149,1,144,1,160,1,166,1,167,1,150,1,147,1,157,1,161,1,0};
-const char _LOC_SN_MOTIONSENSITIVITY_RU[] =    // Чувст. сенсо-|ра движения
-    {177,1,155,1,165,1,153,1,149,1,46,32,153,1,150,1,147,1,153,1,146,1,45,10,151,1,142,1,32,159,1,165,1,157,1,162,1,150,1,147,1,157,1,161,1,0};
-const char _LOC_SN_TEMPERATUREUNIT_RU[] =    // Формат темпе-|ратуры(C°/F°)
-    {178,1,146,1,151,1,163,1,142,1,149,1,32,149,1,150,1,163,1,164,1,150,1,45,10,151,1,142,1,149,1,155,1,151,1,170,1,40,67,139,1,47,70,139,1,41,0};
-const char _LOC_SN_ADVANCEDIDLE_RU[] =    // Подробный ре-|жим ожидания
-    {141,1,146,1,159,1,151,1,146,1,168,1,147,1,170,1,143,1,32,151,1,150,1,45,10,162,1,157,1,163,1,32,146,1,162,1,157,1,159,1,142,1,147,1,157,1,161,1,0};
-const char _LOC_SN_DISPLAYROTATION_RU[] =    // Автоповорот|экрана
-    {179,1,165,1,149,1,146,1,164,1,146,1,165,1,146,1,151,1,146,1,149,1,10,180,1,144,1,151,1,142,1,147,1,142,1,0};
-const char _LOC_SN_BOOSTENABLED_RU[] =    // Режим|Турбо
-    {173,1,150,1,162,1,157,1,163,1,10,175,1,155,1,151,1,168,1,146,1,0};
-const char _LOC_SN_BOOSTTEMPERATURE_RU[] =    // Темпер.|Турбо
-    {175,1,150,1,163,1,164,1,150,1,151,1,46,10,175,1,155,1,151,1,168,1,146,1,0};
-const char _LOC_SN_AUTOSTART_RU[] =    // Режим при|включении
-    {173,1,150,1,162,1,157,1,163,1,32,164,1,151,1,157,1,10,165,1,144,1,160,1,166,1,167,1,150,1,147,1,157,1,157,1,0};
-const char _LOC_SN_COOLDOWNBLINK_RU[] =    // Показ t° при|остывании
-    {141,1,146,1,144,1,142,1,169,1,32,116,139,1,32,164,1,151,1,157,1,10,146,1,153,1,149,1,170,1,165,1,142,1,147,1,157,1,157,1,0};
-const char _LOC_SN_TEMPERATURECALIBRATION_RU[] =    // Калибровка|температуры
-    {181,1,142,1,160,1,157,1,168,1,151,1,146,1,165,1,144,1,142,1,10,149,1,150,1,163,1,164,1,150,1,151,1,142,1,149,1,155,1,151,1,170,1,0};
-const char _LOC_SN_SETTINGSRESET_RU[] =    // Сбросить все|настройки?
-    {145,1,168,1,151,1,146,1,153,1,157,1,149,1,171,1,32,165,1,153,1,150,1,10,147,1,142,1,153,1,149,1,151,1,146,1,143,1,144,1,157,1,63,0};
-const char _LOC_SN_VOLTAGECALIBRATION_RU[] =    // Калибровка|напряжения
-    {181,1,142,1,160,1,157,1,168,1,151,1,146,1,165,1,144,1,142,1,10,147,1,142,1,164,1,151,1,161,1,162,1,150,1,147,1,157,1,161,1,0};
-const char _LOC_SN_ADVANCEDSOLDERING_RU[] =    // Подробный ре-|жим пайки
-    {141,1,146,1,159,1,151,1,146,1,168,1,147,1,170,1,143,1,32,151,1,150,1,45,10,162,1,157,1,163,1,32,164,1,142,1,143,1,144,1,157,1,0};
-const char _LOC_SN_SCROLLINGSPEED_RU[] =    // Скорость|текста
-    {145,1,144,1,146,1,151,1,146,1,153,1,149,1,171,1,10,149,1,150,1,144,1,153,1,149,1,142,1,0};
-const char _LOC_SN_LANGUAGE_RU[] =    // Язык|
-    {182,1,169,1,170,1,144,1,10,0};
+const char _L_SN_POWERSOURCE_RU[] =    // Источник|питания
+    {172,1,137,1,145,1,148,1,147,1,154,1,139,1,138,1,10,155,1,139,1,145,1,150,1,154,1,139,1,181,1,0};
+const char _L_SN_SLEEPTEMPERATURE_RU[] =    // Темпер.|сна
+    {184,1,143,1,153,1,155,1,143,1,156,1,46,10,137,1,154,1,150,1,0};
+const char _L_SN_SLEEPTIMEOUT_RU[] =    // Таймаут|сна
+    {184,1,150,1,140,1,153,1,150,1,136,1,145,1,10,137,1,154,1,150,1,0};
+const char _L_SN_SHUTDOWNTIMEOUT_RU[] =    // Время до|отключения
+    {157,1,156,1,143,1,153,1,181,1,32,144,1,148,1,10,148,1,145,1,138,1,151,1,161,1,147,1,143,1,154,1,139,1,181,1,0};
+const char _L_SN_MOTIONSENSITIVITY_RU[] =    // Чувст. сенсо-|ра движения
+    {176,1,136,1,158,1,137,1,145,1,46,32,137,1,143,1,154,1,137,1,148,1,45,10,156,1,150,1,32,144,1,158,1,139,1,149,1,143,1,154,1,139,1,181,1,0};
+const char _L_SN_TEMPERATUREUNIT_RU[] =    // Формат темпе-|ратуры(C°/F°)
+    {185,1,148,1,156,1,153,1,150,1,145,1,32,145,1,143,1,153,1,155,1,143,1,45,10,156,1,150,1,145,1,136,1,156,1,152,1,40,67,167,1,47,70,167,1,41,0};
+const char _L_SN_ADVANCEDIDLE_RU[] =    // Подробный ре-|жим ожидания
+    {165,1,148,1,144,1,156,1,148,1,142,1,154,1,152,1,140,1,32,156,1,143,1,45,10,149,1,139,1,153,1,32,148,1,149,1,139,1,144,1,150,1,154,1,139,1,181,1,0};
+const char _L_SN_DISPLAYROTATION_RU[] =    // Автоповорот|экрана
+    {162,1,158,1,145,1,148,1,155,1,148,1,158,1,148,1,156,1,148,1,145,1,10,186,1,138,1,156,1,150,1,154,1,150,1,0};
+const char _L_SN_BOOSTENABLED_RU[] =    // Режим|Турбо
+    {135,1,143,1,149,1,139,1,153,1,10,184,1,136,1,156,1,142,1,148,1,0};
+const char _L_SN_BOOSTTEMPERATURE_RU[] =    // Темпер.|Турбо
+    {184,1,143,1,153,1,155,1,143,1,156,1,46,10,184,1,136,1,156,1,142,1,148,1,0};
+const char _L_SN_AUTOSTART_RU[] =    // Горячий|старт
+    {174,1,148,1,156,1,181,1,147,1,139,1,140,1,10,137,1,145,1,150,1,156,1,145,1,0};
+const char _L_SN_COOLDOWNBLINK_RU[] =    // Показ t° при|остывании
+    {165,1,148,1,138,1,150,1,160,1,32,116,167,1,32,155,1,156,1,139,1,10,148,1,137,1,145,1,152,1,158,1,150,1,154,1,139,1,139,1,0};
+const char _L_SN_TEMPERATURECALIBRATION_RU[] =    // Калибровка|температуры
+    {163,1,150,1,151,1,139,1,142,1,156,1,148,1,158,1,138,1,150,1,10,145,1,143,1,153,1,155,1,143,1,156,1,150,1,145,1,136,1,156,1,152,1,0};
+const char _L_SN_SETTINGSRESET_RU[] =    // Сбросить все|настройки
+    {168,1,142,1,156,1,148,1,137,1,139,1,145,1,146,1,32,158,1,137,1,143,1,10,154,1,150,1,137,1,145,1,156,1,148,1,140,1,138,1,139,1,0};
+const char _L_SN_VOLTAGECALIBRATION_RU[] =    // Калибровка|напряжения
+    {163,1,150,1,151,1,139,1,142,1,156,1,148,1,158,1,138,1,150,1,10,154,1,150,1,155,1,156,1,181,1,149,1,143,1,154,1,139,1,181,1,0};
+const char _L_SN_ADVANCEDSOLDERING_RU[] =    // Подробный ре-|напряжения
+    {165,1,148,1,144,1,156,1,148,1,142,1,154,1,152,1,140,1,32,156,1,143,1,45,10,154,1,150,1,155,1,156,1,181,1,149,1,143,1,154,1,139,1,181,1,0};
+const char _L_SN_SCROLLINGSPEED_RU[] =    // Скорость|текста
+    {168,1,138,1,148,1,156,1,148,1,137,1,145,1,146,1,10,145,1,143,1,138,1,137,1,145,1,150,1,0};
+const char _L_SN_LANGUAGE_RU[] =    // Язык|
+    {175,1,160,1,152,1,138,1,10,0};
 
 // ---- Settings Descriptions (RU) ----
 
-const char _LOC_SND_POWERSOURCE_RU[] =    // Источник питания. Установка напряжения отключения. <DC 10V> <S 3.3 V на батарею>
-    {148,1,153,1,149,1,146,1,167,1,147,1,157,1,144,1,32,164,1,157,1,149,1,142,1,147,1,157,1,161,1,46,32,183,1,153,1,149,1,142,1,147,1,146,1,165,1,144,1,142,1,32,147,1,142,1,164,1,151,1,161,1,162,1,150,1,147,1,157,1,161,1,32,146,1,149,1,144,1,160,1,166,1,167,1,150,1,147,1,157,1,161,1,46,32,60,68,67,32,49,48,86,62,32,60,83,32,51,46,51,32,86,32,147,1,142,1,32,168,1,142,1,149,1,142,1,151,1,150,1,166,1,62,0};
-const char _LOC_SND_SLEEPTEMPERATURE_RU[] =    // Температура режима ожидания <C°/F°>
-    {175,1,150,1,163,1,164,1,150,1,151,1,142,1,149,1,155,1,151,1,142,1,32,151,1,150,1,162,1,157,1,163,1,142,1,32,146,1,162,1,157,1,159,1,142,1,147,1,157,1,161,1,32,60,67,139,1,47,70,139,1,62,0};
-const char _LOC_SND_SLEEPTIMEOUT_RU[] =    // Время до перехода в режим ожидания <Минуты>
-    {176,1,151,1,150,1,163,1,161,1,32,159,1,146,1,32,164,1,150,1,151,1,150,1,184,1,146,1,159,1,142,1,32,165,1,32,151,1,150,1,162,1,157,1,163,1,32,146,1,162,1,157,1,159,1,142,1,147,1,157,1,161,1,32,60,185,1,157,1,147,1,155,1,149,1,170,1,62,0};
-const char _LOC_SND_SHUTDOWNTIMEOUT_RU[] =    // Время до отключения <Минуты>
-    {176,1,151,1,150,1,163,1,161,1,32,159,1,146,1,32,146,1,149,1,144,1,160,1,166,1,167,1,150,1,147,1,157,1,161,1,32,60,185,1,157,1,147,1,155,1,149,1,170,1,62,0};
-const char _LOC_SND_MOTIONSENSITIVITY_RU[] =    // Акселерометр <0. Выкл. 1. мин. чувствительный 9. макс. чувствительный>
-    {179,1,144,1,153,1,150,1,160,1,150,1,151,1,146,1,163,1,150,1,149,1,151,1,32,60,48,46,32,176,1,170,1,144,1,160,1,46,32,49,46,32,163,1,157,1,147,1,46,32,167,1,155,1,165,1,153,1,149,1,165,1,157,1,149,1,150,1,160,1,171,1,147,1,170,1,143,1,32,57,46,32,163,1,142,1,144,1,153,1,46,32,167,1,155,1,165,1,153,1,149,1,165,1,157,1,149,1,150,1,160,1,171,1,147,1,170,1,143,1,62,0};
-const char _LOC_SND_TEMPERATUREUNIT_RU[] =    // В чем измерять температуру <C Цельсий, F Фаренгейт>
-    {176,1,32,167,1,150,1,163,1,32,157,1,169,1,163,1,150,1,151,1,161,1,149,1,171,1,32,149,1,150,1,163,1,164,1,150,1,151,1,142,1,149,1,155,1,151,1,155,1,32,60,67,32,186,1,150,1,160,1,171,1,153,1,157,1,143,1,44,32,70,32,178,1,142,1,151,1,150,1,147,1,156,1,150,1,143,1,149,1,62,0};
-const char _LOC_SND_ADVANCEDIDLE_RU[] =    // Показывать детальную информацию маленьким шрифтом на домашнем экране
-    {141,1,146,1,144,1,142,1,169,1,170,1,165,1,142,1,149,1,171,1,32,159,1,150,1,149,1,142,1,160,1,171,1,147,1,155,1,166,1,32,157,1,147,1,152,1,146,1,151,1,163,1,142,1,187,1,157,1,166,1,32,163,1,142,1,160,1,150,1,147,1,171,1,144,1,157,1,163,1,32,174,1,151,1,157,1,152,1,149,1,146,1,163,1,32,147,1,142,1,32,159,1,146,1,163,1,142,1,174,1,147,1,150,1,163,1,32,180,1,144,1,151,1,142,1,147,1,150,1,0};
-const char _LOC_SND_DISPLAYROTATION_RU[] =    // Ориентация дисплея <A. Автоповорот, L Левша, R Правша>
-    {188,1,151,1,157,1,150,1,147,1,149,1,142,1,187,1,157,1,161,1,32,159,1,157,1,153,1,164,1,160,1,150,1,161,1,32,60,65,46,32,179,1,165,1,149,1,146,1,164,1,146,1,165,1,146,1,151,1,146,1,149,1,44,32,76,32,189,1,150,1,165,1,174,1,142,1,44,32,82,32,141,1,151,1,142,1,165,1,174,1,142,1,62,0};
-const char _LOC_SND_BOOSTENABLED_RU[] =    // Турбо-режим при удержании кнопки А при пайке
-    {175,1,155,1,151,1,168,1,146,1,45,151,1,150,1,162,1,157,1,163,1,32,164,1,151,1,157,1,32,155,1,159,1,150,1,151,1,162,1,142,1,147,1,157,1,157,1,32,144,1,147,1,146,1,164,1,144,1,157,1,32,179,1,32,164,1,151,1,157,1,32,164,1,142,1,143,1,144,1,150,1,0};
-const char _LOC_SND_BOOSTTEMPERATURE_RU[] =    // Температура в Турбо-режиме
-    {175,1,150,1,163,1,164,1,150,1,151,1,142,1,149,1,155,1,151,1,142,1,32,165,1,32,175,1,155,1,151,1,168,1,146,1,45,151,1,150,1,162,1,157,1,163,1,150,1,0};
-const char _LOC_SND_AUTOSTART_RU[] =    // Автоматический запуск паяльника при включении питания. T=Нагрев, S=Режим ожидания,F=Выкл.
-    {179,1,165,1,149,1,146,1,163,1,142,1,149,1,157,1,167,1,150,1,153,1,144,1,157,1,143,1,32,169,1,142,1,164,1,155,1,153,1,144,1,32,164,1,142,1,161,1,160,1,171,1,147,1,157,1,144,1,142,1,32,164,1,151,1,157,1,32,165,1,144,1,160,1,166,1,167,1,150,1,147,1,157,1,157,1,32,164,1,157,1,149,1,142,1,147,1,157,1,161,1,46,32,84,61,158,1,142,1,156,1,151,1,150,1,165,1,44,32,83,61,173,1,150,1,162,1,157,1,163,1,32,146,1,162,1,157,1,159,1,142,1,147,1,157,1,161,1,44,70,61,176,1,170,1,144,1,160,1,46,0};
-const char _LOC_SND_COOLDOWNBLINK_RU[] =    // Показывать температуру на экране охлаждения, пока жало остается горячим, при этом экран моргает
-    {141,1,146,1,144,1,142,1,169,1,170,1,165,1,142,1,149,1,171,1,32,149,1,150,1,163,1,164,1,150,1,151,1,142,1,149,1,155,1,151,1,155,1,32,147,1,142,1,32,180,1,144,1,151,1,142,1,147,1,150,1,32,146,1,184,1,160,1,142,1,162,1,159,1,150,1,147,1,157,1,161,1,44,32,164,1,146,1,144,1,142,1,32,162,1,142,1,160,1,146,1,32,146,1,153,1,149,1,142,1,150,1,149,1,153,1,161,1,32,156,1,146,1,151,1,161,1,167,1,157,1,163,1,44,32,164,1,151,1,157,1,32,180,1,149,1,146,1,163,1,32,180,1,144,1,151,1,142,1,147,1,32,163,1,146,1,151,1,156,1,142,1,150,1,149,1,0};
-const char _LOC_SND_TEMPERATURECALIBRATION_RU[] =    // Калибровка температурного датчика.
-    {181,1,142,1,160,1,157,1,168,1,151,1,146,1,165,1,144,1,142,1,32,149,1,150,1,163,1,164,1,150,1,151,1,142,1,149,1,155,1,151,1,147,1,146,1,156,1,146,1,32,159,1,142,1,149,1,167,1,157,1,144,1,142,1,46,0};
-const char _LOC_SND_SETTINGSRESET_RU[] =    // Сброс всех настроек к исходным значения.
-    {145,1,168,1,151,1,146,1,153,1,32,165,1,153,1,150,1,184,1,32,147,1,142,1,153,1,149,1,151,1,146,1,150,1,144,1,32,144,1,32,157,1,153,1,184,1,146,1,159,1,147,1,170,1,163,1,32,169,1,147,1,142,1,167,1,150,1,147,1,157,1,161,1,46,0};
-const char _LOC_SND_VOLTAGECALIBRATION_RU[] =    // Калибровка напряжения входа. Настройка кнопками, нажать и удержать чтобы завершить.
-    {181,1,142,1,160,1,157,1,168,1,151,1,146,1,165,1,144,1,142,1,32,147,1,142,1,164,1,151,1,161,1,162,1,150,1,147,1,157,1,161,1,32,165,1,184,1,146,1,159,1,142,1,46,32,158,1,142,1,153,1,149,1,151,1,146,1,143,1,144,1,142,1,32,144,1,147,1,146,1,164,1,144,1,142,1,163,1,157,1,44,32,147,1,142,1,162,1,142,1,149,1,171,1,32,157,1,32,155,1,159,1,150,1,151,1,162,1,142,1,149,1,171,1,32,167,1,149,1,146,1,168,1,170,1,32,169,1,142,1,165,1,150,1,151,1,174,1,157,1,149,1,171,1,46,0};
-const char _LOC_SND_ADVANCEDSOLDERING_RU[] =    // Показывать детальную информацию при пайке.
-    {141,1,146,1,144,1,142,1,169,1,170,1,165,1,142,1,149,1,171,1,32,159,1,150,1,149,1,142,1,160,1,171,1,147,1,155,1,166,1,32,157,1,147,1,152,1,146,1,151,1,163,1,142,1,187,1,157,1,166,1,32,164,1,151,1,157,1,32,164,1,142,1,143,1,144,1,150,1,46,0};
-const char _LOC_SND_SCROLLINGSPEED_RU[] =    // Скорость прокрутки текста
-    {145,1,144,1,146,1,151,1,146,1,153,1,149,1,171,1,32,164,1,151,1,146,1,144,1,151,1,155,1,149,1,144,1,157,1,32,149,1,150,1,144,1,153,1,149,1,142,1,0};
-#define _LOC_SND_LANGUAGE_RU    _LOC_SND_LANGUAGE_EN     /*  */
+const char _L_SND_POWERSOURCE_RU[] =    // Установка напряжения отключения <DC=10V, 3S=9.9V, 4S=13.2V, 5S=16.5V, 6S=19.8V>
+    "\x8D\x1\x89\x1\x91\x1\x96\x1\x9A\x1\x94\x1\x9E\x1\x8A\x1\x96\x1"" \x9A\x1\x96\x1\x9B\x1\x9C\x1\xB5\x1\x95\x1\x8F\x1\x9A\x1\x8B\x1\xB5\x1"" \x94\x1\x91\x1\x8A\x1\x97\x1\xA1\x1\x93\x1\x8F\x1\x9A\x1\x8B\x1\xB5\x1"" <DC=10V, 3S=9.9V, 4S=13.2V, 5S=16.5V, 6S=19.8V>";
+const char _L_SND_SLEEPTEMPERATURE_RU[] =    // Температура режима ожидания <C°/F°>
+    {184,1,143,1,153,1,155,1,143,1,156,1,150,1,145,1,136,1,156,1,150,1,32,156,1,143,1,149,1,139,1,153,1,150,1,32,148,1,149,1,139,1,144,1,150,1,154,1,139,1,181,1,32,60,67,167,1,47,70,167,1,62,0};
+const char _L_SND_SLEEPTIMEOUT_RU[] =    // Время до перехода в режим ожидания <Доступно отключение>
+    {157,1,156,1,143,1,153,1,181,1,32,144,1,148,1,32,155,1,143,1,156,1,143,1,159,1,148,1,144,1,150,1,32,158,1,32,156,1,143,1,149,1,139,1,153,1,32,148,1,149,1,139,1,144,1,150,1,154,1,139,1,181,1,32,60,179,1,148,1,137,1,145,1,136,1,155,1,154,1,148,1,32,148,1,145,1,138,1,151,1,161,1,147,1,143,1,154,1,139,1,143,1,62,0};
+const char _L_SND_SHUTDOWNTIMEOUT_RU[] =    // Время до отключения <Доступно отключение>
+    {157,1,156,1,143,1,153,1,181,1,32,144,1,148,1,32,148,1,145,1,138,1,151,1,161,1,147,1,143,1,154,1,139,1,181,1,32,60,179,1,148,1,137,1,145,1,136,1,155,1,154,1,148,1,32,148,1,145,1,138,1,151,1,161,1,147,1,143,1,154,1,139,1,143,1,62,0};
+const char _L_SND_MOTIONSENSITIVITY_RU[] =    // Акселерометр <0=Выкл., 1=мин. чувствительный, 9=макс. чувствительный>
+    {162,1,138,1,137,1,143,1,151,1,143,1,156,1,148,1,153,1,143,1,145,1,156,1,32,60,48,61,157,1,152,1,138,1,151,1,46,44,32,49,61,153,1,139,1,154,1,46,32,147,1,136,1,158,1,137,1,145,1,158,1,139,1,145,1,143,1,151,1,146,1,154,1,152,1,140,1,44,32,57,61,153,1,150,1,138,1,137,1,46,32,147,1,136,1,158,1,137,1,145,1,158,1,139,1,145,1,143,1,151,1,146,1,154,1,152,1,140,1,62,0};
+const char _L_SND_TEMPERATUREUNIT_RU[] =    // Единица измерения температуры <C=Цельсий, F=Фаренгейт>
+    {173,1,144,1,139,1,154,1,139,1,187,1,150,1,32,139,1,160,1,153,1,143,1,156,1,143,1,154,1,139,1,181,1,32,145,1,143,1,153,1,155,1,143,1,156,1,150,1,145,1,136,1,156,1,152,1,32,60,67,61,188,1,143,1,151,1,146,1,137,1,139,1,140,1,44,32,70,61,185,1,150,1,156,1,143,1,154,1,180,1,143,1,140,1,145,1,62,0};
+const char _L_SND_ADVANCEDIDLE_RU[] =    // Показывать детальную в режиме настроек <Вместо картинки>
+    {165,1,148,1,138,1,150,1,160,1,152,1,158,1,150,1,145,1,146,1,32,144,1,143,1,145,1,150,1,151,1,146,1,154,1,136,1,161,1,32,158,1,32,156,1,143,1,149,1,139,1,153,1,143,1,32,154,1,150,1,137,1,145,1,156,1,148,1,143,1,138,1,32,60,157,1,153,1,143,1,137,1,145,1,148,1,32,138,1,150,1,156,1,145,1,139,1,154,1,138,1,139,1,62,0};
+const char _L_SND_DISPLAYROTATION_RU[] =    // Ориентация дисплея <A=Автоповорот, L=Левша, R=Правша>
+    {169,1,156,1,139,1,143,1,154,1,145,1,150,1,187,1,139,1,181,1,32,144,1,139,1,137,1,155,1,151,1,143,1,181,1,32,60,65,61,162,1,158,1,145,1,148,1,155,1,148,1,158,1,148,1,156,1,148,1,145,1,44,32,76,61,177,1,143,1,158,1,183,1,150,1,44,32,82,61,165,1,156,1,150,1,158,1,183,1,150,1,62,0};
+const char _L_SND_BOOSTENABLED_RU[] =    // Турбо-режим при удержании кнопки А при пайке
+    {184,1,136,1,156,1,142,1,148,1,45,156,1,143,1,149,1,139,1,153,1,32,155,1,156,1,139,1,32,136,1,144,1,143,1,156,1,149,1,150,1,154,1,139,1,139,1,32,138,1,154,1,148,1,155,1,138,1,139,1,32,162,1,32,155,1,156,1,139,1,32,155,1,150,1,140,1,138,1,143,1,0};
+const char _L_SND_BOOSTTEMPERATURE_RU[] =    // Температура в Турбо-режиме
+    {184,1,143,1,153,1,155,1,143,1,156,1,150,1,145,1,136,1,156,1,150,1,32,158,1,32,184,1,136,1,156,1,142,1,148,1,45,156,1,143,1,149,1,139,1,153,1,143,1,0};
+const char _L_SND_AUTOSTART_RU[] =    // Автоматический переход в режим пайки при включении питания
+    {162,1,158,1,145,1,148,1,153,1,150,1,145,1,139,1,147,1,143,1,137,1,138,1,139,1,140,1,32,155,1,143,1,156,1,143,1,159,1,148,1,144,1,32,158,1,32,156,1,143,1,149,1,139,1,153,1,32,155,1,150,1,140,1,138,1,139,1,32,155,1,156,1,139,1,32,158,1,138,1,151,1,161,1,147,1,143,1,154,1,139,1,139,1,32,155,1,139,1,145,1,150,1,154,1,139,1,181,1,0};
+const char _L_SND_COOLDOWNBLINK_RU[] =    // Показывать температуру на экране охлаждения, пока жало остается горячим, при этом экран моргает
+    {165,1,148,1,138,1,150,1,160,1,152,1,158,1,150,1,145,1,146,1,32,145,1,143,1,153,1,155,1,143,1,156,1,150,1,145,1,136,1,156,1,136,1,32,154,1,150,1,32,186,1,138,1,156,1,150,1,154,1,143,1,32,148,1,159,1,151,1,150,1,149,1,144,1,143,1,154,1,139,1,181,1,44,32,155,1,148,1,138,1,150,1,32,149,1,150,1,151,1,148,1,32,148,1,137,1,145,1,150,1,143,1,145,1,137,1,181,1,32,180,1,148,1,156,1,181,1,147,1,139,1,153,1,44,32,155,1,156,1,139,1,32,186,1,145,1,148,1,153,1,32,186,1,138,1,156,1,150,1,154,1,32,153,1,148,1,156,1,180,1,150,1,143,1,145,1,0};
+const char _L_SND_TEMPERATURECALIBRATION_RU[] =    // Калибровка температурного датчика
+    {163,1,150,1,151,1,139,1,142,1,156,1,148,1,158,1,138,1,150,1,32,145,1,143,1,153,1,155,1,143,1,156,1,150,1,145,1,136,1,156,1,154,1,148,1,180,1,148,1,32,144,1,150,1,145,1,147,1,139,1,138,1,150,1,0};
+const char _L_SND_SETTINGSRESET_RU[] =    // Сброс всех настроек к исходным значения
+    {168,1,142,1,156,1,148,1,137,1,32,158,1,137,1,143,1,159,1,32,154,1,150,1,137,1,145,1,156,1,148,1,143,1,138,1,32,138,1,32,139,1,137,1,159,1,148,1,144,1,154,1,152,1,153,1,32,160,1,154,1,150,1,147,1,143,1,154,1,139,1,181,1,0};
+const char _L_SND_VOLTAGECALIBRATION_RU[] =    // Калибровка напряжения входа. Настройка кнопками, нажать и удержать чтобы завершить.
+    {163,1,150,1,151,1,139,1,142,1,156,1,148,1,158,1,138,1,150,1,32,154,1,150,1,155,1,156,1,181,1,149,1,143,1,154,1,139,1,181,1,32,158,1,159,1,148,1,144,1,150,1,46,32,171,1,150,1,137,1,145,1,156,1,148,1,140,1,138,1,150,1,32,138,1,154,1,148,1,155,1,138,1,150,1,153,1,139,1,44,32,154,1,150,1,149,1,150,1,145,1,146,1,32,139,1,32,136,1,144,1,143,1,156,1,149,1,150,1,145,1,146,1,32,147,1,145,1,148,1,142,1,152,1,32,160,1,150,1,158,1,143,1,156,1,183,1,139,1,145,1,146,1,46,0};
+const char _L_SND_ADVANCEDSOLDERING_RU[] =    // Показывать детальную информацию при пайке
+    {165,1,148,1,138,1,150,1,160,1,152,1,158,1,150,1,145,1,146,1,32,144,1,143,1,145,1,150,1,151,1,146,1,154,1,136,1,161,1,32,139,1,154,1,178,1,148,1,156,1,153,1,150,1,187,1,139,1,161,1,32,155,1,156,1,139,1,32,155,1,150,1,140,1,138,1,143,1,0};
+const char _L_SND_SCROLLINGSPEED_RU[] =    // Скорость прокрутки текста
+    {168,1,138,1,148,1,156,1,148,1,137,1,145,1,146,1,32,155,1,156,1,148,1,138,1,156,1,136,1,145,1,138,1,139,1,32,145,1,143,1,138,1,137,1,145,1,150,1,0};
+#define _L_SND_LANGUAGE_RU    _L_SND_LANGUAGE_EN     /*  */
 
-// ---- Message Strings (RU) ----
 
-const char _LOC_MS_SETTINGSCALIBRATIONWARNING_RU[] =    // Убедитесь, что жало остыло до комнатной температуры, прежде чем продолжать!
-    {183,1,168,1,150,1,159,1,157,1,149,1,150,1,153,1,171,1,44,32,167,1,149,1,146,1,32,162,1,142,1,160,1,146,1,32,146,1,153,1,149,1,170,1,160,1,146,1,32,159,1,146,1,32,144,1,146,1,163,1,147,1,142,1,149,1,147,1,146,1,143,1,32,149,1,150,1,163,1,164,1,150,1,151,1,142,1,149,1,155,1,151,1,170,1,44,32,164,1,151,1,150,1,162,1,159,1,150,1,32,167,1,150,1,163,1,32,164,1,151,1,146,1,159,1,146,1,160,1,162,1,142,1,149,1,171,1,33,0};
-const char _LOC_MS_SETTINGSRESETWARNING_RU[] =    // Вы действительно хотите сбросить настройки до значений по умолчанию?
-    {176,1,170,1,32,159,1,150,1,143,1,153,1,149,1,165,1,157,1,149,1,150,1,160,1,171,1,147,1,146,1,32,184,1,146,1,149,1,157,1,149,1,150,1,32,153,1,168,1,151,1,146,1,153,1,157,1,149,1,171,1,32,147,1,142,1,153,1,149,1,151,1,146,1,143,1,144,1,157,1,32,159,1,146,1,32,169,1,147,1,142,1,167,1,150,1,147,1,157,1,143,1,32,164,1,146,1,32,155,1,163,1,146,1,160,1,167,1,142,1,147,1,157,1,166,1,63,0};
-const char _LOC_MS_UVLOWARNINGSTRING_RU[] =    // АККУМ--
-    {179,1,181,1,181,1,183,1,185,1,45,45,0};
-const char _LOC_MS_UNDERVOLTAGESTRING_RU[] =    // Под питанием
-    {141,1,146,1,159,1,32,164,1,157,1,149,1,142,1,147,1,157,1,150,1,163,1,0};
-const char _LOC_MS_INPUTVOLTAGESTRING_RU[] =    // Питание(B):
-    {141,1,157,1,149,1,142,1,147,1,157,1,150,1,40,66,41,58,0};
-const char _LOC_MS_WARNINGTIPTEMPSTRING_RU[] =    // Жало t°
-    {190,1,142,1,160,1,146,1,32,116,139,1,0};
-const char _LOC_MS_BADTIPSTRING_RU[] =    // Жало--
-    {190,1,142,1,160,1,146,1,45,45,0};
-const char _LOC_MS_SLEEPINGSIMPLESTRING_RU[] =    // Сон
-    {145,1,146,1,147,1,0};
-const char _LOC_MS_SLEEPINGADVANCEDSTRING_RU[] =    // Ожидание...
-    {188,1,162,1,157,1,159,1,142,1,147,1,157,1,150,1,46,46,46,0};
-const char _LOC_MS_WARNINGSIMPLESTRING_RU[] =    //  АЙ!
-    " \xB3\x1\xBF\x1""!";
-const char _LOC_MS_WARNINGADVANCEDSTRING_RU[] =    // ОСТОРОЖНО!ГОРЯЧО
-    {188,1,145,1,175,1,188,1,173,1,188,1,190,1,158,1,188,1,33,192,1,188,1,173,1,182,1,177,1,188,1,0};
-const char _LOC_MS_SLEEPINGTIPADVANCEDSTRING_RU[] =    // Жало:
-    {190,1,142,1,160,1,146,1,58,0};
-#define _LOC_MS_IDLETIPSTRING_RU    _LOC_MS_SLEEPINGTIPADVANCEDSTRING_RU     /* Жало: */
-const char _LOC_MS_IDLESETSTRING_RU[] =    //  зад:
-    {32,169,1,142,1,159,1,58,0};
-const char _LOC_MS_TIPDISCONNECTEDSTRING_RU[] =    // Жало отключено!
-    {190,1,142,1,160,1,146,1,32,146,1,149,1,144,1,160,1,166,1,167,1,150,1,147,1,146,1,33,0};
-const char _LOC_MS_SOLDERINGADVANCEDPOWERPROMPT_RU[] =    // Питание: 
-    {141,1,157,1,149,1,142,1,147,1,157,1,150,1,58,32,0};
-#define _LOC_MS_RESETOK_RU    _LOC_MS_RESETOK_EN     /* RESET OK */
-#define _LOC_MS_OFFSTRING_RU    _LOC_MS_OFFSTRING_EN     /* Off */
-const char _LOC_MS_SETTINGRIGHTCHAR_RU[] =    // П
-    {141,1,0};
-const char _LOC_MS_SETTINGLEFTCHAR_RU[] =    // Л
-    {189,1,0};
-#define _LOC_MS_SETTINGAUTOCHAR_RU    _LOC_MS_SETTINGAUTOCHAR_EN     /* A */
-const char _LOC_MS_SETTINGFASTCHAR_RU[] =    // +
-    "+";
-const char _LOC_MS_SETTINGSLOWCHAR_RU[] =    // -
-    "-";
+// ================ MENU TYPES PER LANGUAGE ================
+
+const ShortNameType L_MENU_TYPE[] = {
+    SHORT_NAME_DOUBLE_LINE,    /* EN */
+    SHORT_NAME_DOUBLE_LINE,    /* HR */
+    SHORT_NAME_DOUBLE_LINE,    /* RU */
+};
 
 
 // ================ STRING POINTER ARRAYS ================
 
 
+// ---- Pointer Array: Messages ----
+
+const char* const L_ARR_MS[25][LANG_COUNT] = {
+  { _L_MS_LANGUAGECODE_EN, _L_MS_LANGUAGECODE_HR, _L_MS_LANGUAGECODE_RU,  },
+  { _L_MS_LANGUAGELOCALNAME_EN, _L_MS_LANGUAGELOCALNAME_HR, _L_MS_LANGUAGELOCALNAME_RU,  },
+  { _L_MS_SETTINGSCALIBRATIONWARNING_EN, _L_MS_SETTINGSCALIBRATIONWARNING_HR, _L_MS_SETTINGSCALIBRATIONWARNING_RU,  },
+  { _L_MS_SETTINGSRESETWARNING_EN, _L_MS_SETTINGSRESETWARNING_HR, _L_MS_SETTINGSRESETWARNING_RU,  },
+  { _L_MS_UVLOWARNINGSTRING_EN, _L_MS_UVLOWARNINGSTRING_HR, _L_MS_UVLOWARNINGSTRING_RU,  },
+  { _L_MS_UNDERVOLTAGESTRING_EN, _L_MS_UNDERVOLTAGESTRING_HR, _L_MS_UNDERVOLTAGESTRING_RU,  },
+  { _L_MS_INPUTVOLTAGESTRING_EN, _L_MS_INPUTVOLTAGESTRING_HR, _L_MS_INPUTVOLTAGESTRING_RU,  },
+  { _L_MS_WARNINGTIPTEMPSTRING_EN, _L_MS_WARNINGTIPTEMPSTRING_HR, _L_MS_WARNINGTIPTEMPSTRING_RU,  },
+  { _L_MS_BADTIPSTRING_EN, _L_MS_BADTIPSTRING_HR, _L_MS_BADTIPSTRING_RU,  },
+  { _L_MS_SLEEPINGSIMPLESTRING_EN, _L_MS_SLEEPINGSIMPLESTRING_HR, _L_MS_SLEEPINGSIMPLESTRING_RU,  },
+  { _L_MS_SLEEPINGADVANCEDSTRING_EN, _L_MS_SLEEPINGADVANCEDSTRING_HR, _L_MS_SLEEPINGADVANCEDSTRING_RU,  },
+  { _L_MS_WARNINGSIMPLESTRING_EN, _L_MS_WARNINGSIMPLESTRING_HR, _L_MS_WARNINGSIMPLESTRING_RU,  },
+  { _L_MS_WARNINGADVANCEDSTRING_EN, _L_MS_WARNINGADVANCEDSTRING_HR, _L_MS_WARNINGADVANCEDSTRING_RU,  },
+  { _L_MS_SLEEPINGTIPADVANCEDSTRING_EN, _L_MS_SLEEPINGTIPADVANCEDSTRING_HR, _L_MS_SLEEPINGTIPADVANCEDSTRING_RU,  },
+  { _L_MS_IDLETIPSTRING_EN, _L_MS_IDLETIPSTRING_HR, _L_MS_IDLETIPSTRING_RU,  },
+  { _L_MS_IDLESETSTRING_EN, _L_MS_IDLESETSTRING_HR, _L_MS_IDLESETSTRING_RU,  },
+  { _L_MS_TIPDISCONNECTEDSTRING_EN, _L_MS_TIPDISCONNECTEDSTRING_HR, _L_MS_TIPDISCONNECTEDSTRING_RU,  },
+  { _L_MS_SOLDERINGADVANCEDPOWERPROMPT_EN, _L_MS_SOLDERINGADVANCEDPOWERPROMPT_HR, _L_MS_SOLDERINGADVANCEDPOWERPROMPT_RU,  },
+  { _L_MS_RESETOK_EN, _L_MS_RESETOK_HR, _L_MS_RESETOK_RU,  },
+  { _L_MS_OFFSTRING_EN, _L_MS_OFFSTRING_HR, _L_MS_OFFSTRING_RU,  },
+  { _L_MS_SETTINGRIGHTCHAR_EN, _L_MS_SETTINGRIGHTCHAR_HR, _L_MS_SETTINGRIGHTCHAR_RU,  },
+  { _L_MS_SETTINGLEFTCHAR_EN, _L_MS_SETTINGLEFTCHAR_HR, _L_MS_SETTINGLEFTCHAR_RU,  },
+  { _L_MS_SETTINGAUTOCHAR_EN, _L_MS_SETTINGAUTOCHAR_HR, _L_MS_SETTINGAUTOCHAR_RU,  },
+  { _L_MS_SETTINGFASTCHAR_EN, _L_MS_SETTINGFASTCHAR_HR, _L_MS_SETTINGFASTCHAR_RU,  },
+  { _L_MS_SETTINGSLOWCHAR_EN, _L_MS_SETTINGSLOWCHAR_HR, _L_MS_SETTINGSLOWCHAR_RU,  },
+};
+
 // ---- Pointer Array: Settings Groups ----
 
-const char* const LOC_ARR_SG[4][LANG_COUNT] = {
-  { _LOC_SG_SOLDERINGMENU_EN, _LOC_SG_SOLDERINGMENU_HR, _LOC_SG_SOLDERINGMENU_IT, _LOC_SG_SOLDERINGMENU_RU,  },
-  { _LOC_SG_POWERSAVINGMENU_EN, _LOC_SG_POWERSAVINGMENU_HR, _LOC_SG_POWERSAVINGMENU_IT, _LOC_SG_POWERSAVINGMENU_RU,  },
-  { _LOC_SG_UIMENU_EN, _LOC_SG_UIMENU_HR, _LOC_SG_UIMENU_IT, _LOC_SG_UIMENU_RU,  },
-  { _LOC_SG_ADVANCEDMENU_EN, _LOC_SG_ADVANCEDMENU_HR, _LOC_SG_ADVANCEDMENU_IT, _LOC_SG_ADVANCEDMENU_RU,  },
+const char* const L_ARR_SG[4][LANG_COUNT] = {
+  { _L_SG_SOLDERINGMENU_EN, _L_SG_SOLDERINGMENU_HR, _L_SG_SOLDERINGMENU_RU,  },
+  { _L_SG_POWERSAVINGMENU_EN, _L_SG_POWERSAVINGMENU_HR, _L_SG_POWERSAVINGMENU_RU,  },
+  { _L_SG_UIMENU_EN, _L_SG_UIMENU_HR, _L_SG_UIMENU_RU,  },
+  { _L_SG_ADVANCEDMENU_EN, _L_SG_ADVANCEDMENU_HR, _L_SG_ADVANCEDMENU_RU,  },
 };
 
 // ---- Pointer Array: Settings Groups Descriptions ----
 
-const char* const LOC_ARR_SGD[4][LANG_COUNT] = {
-  { _LOC_SGD_SOLDERINGMENU_EN, _LOC_SGD_SOLDERINGMENU_HR, _LOC_SGD_SOLDERINGMENU_IT, _LOC_SGD_SOLDERINGMENU_RU,  },
-  { _LOC_SGD_POWERSAVINGMENU_EN, _LOC_SGD_POWERSAVINGMENU_HR, _LOC_SGD_POWERSAVINGMENU_IT, _LOC_SGD_POWERSAVINGMENU_RU,  },
-  { _LOC_SGD_UIMENU_EN, _LOC_SGD_UIMENU_HR, _LOC_SGD_UIMENU_IT, _LOC_SGD_UIMENU_RU,  },
-  { _LOC_SGD_ADVANCEDMENU_EN, _LOC_SGD_ADVANCEDMENU_HR, _LOC_SGD_ADVANCEDMENU_IT, _LOC_SGD_ADVANCEDMENU_RU,  },
+const char* const L_ARR_SGD[4][LANG_COUNT] = {
+  { _L_SGD_SOLDERINGMENU_EN, _L_SGD_SOLDERINGMENU_HR, _L_SGD_SOLDERINGMENU_RU,  },
+  { _L_SGD_POWERSAVINGMENU_EN, _L_SGD_POWERSAVINGMENU_HR, _L_SGD_POWERSAVINGMENU_RU,  },
+  { _L_SGD_UIMENU_EN, _L_SGD_UIMENU_HR, _L_SGD_UIMENU_RU,  },
+  { _L_SGD_ADVANCEDMENU_EN, _L_SGD_ADVANCEDMENU_HR, _L_SGD_ADVANCEDMENU_RU,  },
 };
 
 // ---- Pointer Array: Settings Names ----
 
-const char* const LOC_ARR_SN[18][LANG_COUNT] = {
-  { _LOC_SN_POWERSOURCE_EN, _LOC_SN_POWERSOURCE_HR, _LOC_SN_POWERSOURCE_IT, _LOC_SN_POWERSOURCE_RU,  },
-  { _LOC_SN_SLEEPTEMPERATURE_EN, _LOC_SN_SLEEPTEMPERATURE_HR, _LOC_SN_SLEEPTEMPERATURE_IT, _LOC_SN_SLEEPTEMPERATURE_RU,  },
-  { _LOC_SN_SLEEPTIMEOUT_EN, _LOC_SN_SLEEPTIMEOUT_HR, _LOC_SN_SLEEPTIMEOUT_IT, _LOC_SN_SLEEPTIMEOUT_RU,  },
-  { _LOC_SN_SHUTDOWNTIMEOUT_EN, _LOC_SN_SHUTDOWNTIMEOUT_HR, _LOC_SN_SHUTDOWNTIMEOUT_IT, _LOC_SN_SHUTDOWNTIMEOUT_RU,  },
-  { _LOC_SN_MOTIONSENSITIVITY_EN, _LOC_SN_MOTIONSENSITIVITY_HR, _LOC_SN_MOTIONSENSITIVITY_IT, _LOC_SN_MOTIONSENSITIVITY_RU,  },
-  { _LOC_SN_TEMPERATUREUNIT_EN, _LOC_SN_TEMPERATUREUNIT_HR, _LOC_SN_TEMPERATUREUNIT_IT, _LOC_SN_TEMPERATUREUNIT_RU,  },
-  { _LOC_SN_ADVANCEDIDLE_EN, _LOC_SN_ADVANCEDIDLE_HR, _LOC_SN_ADVANCEDIDLE_IT, _LOC_SN_ADVANCEDIDLE_RU,  },
-  { _LOC_SN_DISPLAYROTATION_EN, _LOC_SN_DISPLAYROTATION_HR, _LOC_SN_DISPLAYROTATION_IT, _LOC_SN_DISPLAYROTATION_RU,  },
-  { _LOC_SN_BOOSTENABLED_EN, _LOC_SN_BOOSTENABLED_HR, _LOC_SN_BOOSTENABLED_IT, _LOC_SN_BOOSTENABLED_RU,  },
-  { _LOC_SN_BOOSTTEMPERATURE_EN, _LOC_SN_BOOSTTEMPERATURE_HR, _LOC_SN_BOOSTTEMPERATURE_IT, _LOC_SN_BOOSTTEMPERATURE_RU,  },
-  { _LOC_SN_AUTOSTART_EN, _LOC_SN_AUTOSTART_HR, _LOC_SN_AUTOSTART_IT, _LOC_SN_AUTOSTART_RU,  },
-  { _LOC_SN_COOLDOWNBLINK_EN, _LOC_SN_COOLDOWNBLINK_HR, _LOC_SN_COOLDOWNBLINK_IT, _LOC_SN_COOLDOWNBLINK_RU,  },
-  { _LOC_SN_TEMPERATURECALIBRATION_EN, _LOC_SN_TEMPERATURECALIBRATION_HR, _LOC_SN_TEMPERATURECALIBRATION_IT, _LOC_SN_TEMPERATURECALIBRATION_RU,  },
-  { _LOC_SN_SETTINGSRESET_EN, _LOC_SN_SETTINGSRESET_HR, _LOC_SN_SETTINGSRESET_IT, _LOC_SN_SETTINGSRESET_RU,  },
-  { _LOC_SN_VOLTAGECALIBRATION_EN, _LOC_SN_VOLTAGECALIBRATION_HR, _LOC_SN_VOLTAGECALIBRATION_IT, _LOC_SN_VOLTAGECALIBRATION_RU,  },
-  { _LOC_SN_ADVANCEDSOLDERING_EN, _LOC_SN_ADVANCEDSOLDERING_HR, _LOC_SN_ADVANCEDSOLDERING_IT, _LOC_SN_ADVANCEDSOLDERING_RU,  },
-  { _LOC_SN_SCROLLINGSPEED_EN, _LOC_SN_SCROLLINGSPEED_HR, _LOC_SN_SCROLLINGSPEED_IT, _LOC_SN_SCROLLINGSPEED_RU,  },
-  { _LOC_SN_LANGUAGE_EN, _LOC_SN_LANGUAGE_HR, _LOC_SN_LANGUAGE_IT, _LOC_SN_LANGUAGE_RU,  },
+const char* const L_ARR_SN[18][LANG_COUNT] = {
+  { _L_SN_POWERSOURCE_EN, _L_SN_POWERSOURCE_HR, _L_SN_POWERSOURCE_RU,  },
+  { _L_SN_SLEEPTEMPERATURE_EN, _L_SN_SLEEPTEMPERATURE_HR, _L_SN_SLEEPTEMPERATURE_RU,  },
+  { _L_SN_SLEEPTIMEOUT_EN, _L_SN_SLEEPTIMEOUT_HR, _L_SN_SLEEPTIMEOUT_RU,  },
+  { _L_SN_SHUTDOWNTIMEOUT_EN, _L_SN_SHUTDOWNTIMEOUT_HR, _L_SN_SHUTDOWNTIMEOUT_RU,  },
+  { _L_SN_MOTIONSENSITIVITY_EN, _L_SN_MOTIONSENSITIVITY_HR, _L_SN_MOTIONSENSITIVITY_RU,  },
+  { _L_SN_TEMPERATUREUNIT_EN, _L_SN_TEMPERATUREUNIT_HR, _L_SN_TEMPERATUREUNIT_RU,  },
+  { _L_SN_ADVANCEDIDLE_EN, _L_SN_ADVANCEDIDLE_HR, _L_SN_ADVANCEDIDLE_RU,  },
+  { _L_SN_DISPLAYROTATION_EN, _L_SN_DISPLAYROTATION_HR, _L_SN_DISPLAYROTATION_RU,  },
+  { _L_SN_BOOSTENABLED_EN, _L_SN_BOOSTENABLED_HR, _L_SN_BOOSTENABLED_RU,  },
+  { _L_SN_BOOSTTEMPERATURE_EN, _L_SN_BOOSTTEMPERATURE_HR, _L_SN_BOOSTTEMPERATURE_RU,  },
+  { _L_SN_AUTOSTART_EN, _L_SN_AUTOSTART_HR, _L_SN_AUTOSTART_RU,  },
+  { _L_SN_COOLDOWNBLINK_EN, _L_SN_COOLDOWNBLINK_HR, _L_SN_COOLDOWNBLINK_RU,  },
+  { _L_SN_TEMPERATURECALIBRATION_EN, _L_SN_TEMPERATURECALIBRATION_HR, _L_SN_TEMPERATURECALIBRATION_RU,  },
+  { _L_SN_SETTINGSRESET_EN, _L_SN_SETTINGSRESET_HR, _L_SN_SETTINGSRESET_RU,  },
+  { _L_SN_VOLTAGECALIBRATION_EN, _L_SN_VOLTAGECALIBRATION_HR, _L_SN_VOLTAGECALIBRATION_RU,  },
+  { _L_SN_ADVANCEDSOLDERING_EN, _L_SN_ADVANCEDSOLDERING_HR, _L_SN_ADVANCEDSOLDERING_RU,  },
+  { _L_SN_SCROLLINGSPEED_EN, _L_SN_SCROLLINGSPEED_HR, _L_SN_SCROLLINGSPEED_RU,  },
+  { _L_SN_LANGUAGE_EN, _L_SN_LANGUAGE_HR, _L_SN_LANGUAGE_RU,  },
 };
 
 // ---- Pointer Array: Settings Names Descriptions ----
 
-const char* const LOC_ARR_SND[18][LANG_COUNT] = {
-  { _LOC_SND_POWERSOURCE_EN, _LOC_SND_POWERSOURCE_HR, _LOC_SND_POWERSOURCE_IT, _LOC_SND_POWERSOURCE_RU,  },
-  { _LOC_SND_SLEEPTEMPERATURE_EN, _LOC_SND_SLEEPTEMPERATURE_HR, _LOC_SND_SLEEPTEMPERATURE_IT, _LOC_SND_SLEEPTEMPERATURE_RU,  },
-  { _LOC_SND_SLEEPTIMEOUT_EN, _LOC_SND_SLEEPTIMEOUT_HR, _LOC_SND_SLEEPTIMEOUT_IT, _LOC_SND_SLEEPTIMEOUT_RU,  },
-  { _LOC_SND_SHUTDOWNTIMEOUT_EN, _LOC_SND_SHUTDOWNTIMEOUT_HR, _LOC_SND_SHUTDOWNTIMEOUT_IT, _LOC_SND_SHUTDOWNTIMEOUT_RU,  },
-  { _LOC_SND_MOTIONSENSITIVITY_EN, _LOC_SND_MOTIONSENSITIVITY_HR, _LOC_SND_MOTIONSENSITIVITY_IT, _LOC_SND_MOTIONSENSITIVITY_RU,  },
-  { _LOC_SND_TEMPERATUREUNIT_EN, _LOC_SND_TEMPERATUREUNIT_HR, _LOC_SND_TEMPERATUREUNIT_IT, _LOC_SND_TEMPERATUREUNIT_RU,  },
-  { _LOC_SND_ADVANCEDIDLE_EN, _LOC_SND_ADVANCEDIDLE_HR, _LOC_SND_ADVANCEDIDLE_IT, _LOC_SND_ADVANCEDIDLE_RU,  },
-  { _LOC_SND_DISPLAYROTATION_EN, _LOC_SND_DISPLAYROTATION_HR, _LOC_SND_DISPLAYROTATION_IT, _LOC_SND_DISPLAYROTATION_RU,  },
-  { _LOC_SND_BOOSTENABLED_EN, _LOC_SND_BOOSTENABLED_HR, _LOC_SND_BOOSTENABLED_IT, _LOC_SND_BOOSTENABLED_RU,  },
-  { _LOC_SND_BOOSTTEMPERATURE_EN, _LOC_SND_BOOSTTEMPERATURE_HR, _LOC_SND_BOOSTTEMPERATURE_IT, _LOC_SND_BOOSTTEMPERATURE_RU,  },
-  { _LOC_SND_AUTOSTART_EN, _LOC_SND_AUTOSTART_HR, _LOC_SND_AUTOSTART_IT, _LOC_SND_AUTOSTART_RU,  },
-  { _LOC_SND_COOLDOWNBLINK_EN, _LOC_SND_COOLDOWNBLINK_HR, _LOC_SND_COOLDOWNBLINK_IT, _LOC_SND_COOLDOWNBLINK_RU,  },
-  { _LOC_SND_TEMPERATURECALIBRATION_EN, _LOC_SND_TEMPERATURECALIBRATION_HR, _LOC_SND_TEMPERATURECALIBRATION_IT, _LOC_SND_TEMPERATURECALIBRATION_RU,  },
-  { _LOC_SND_SETTINGSRESET_EN, _LOC_SND_SETTINGSRESET_HR, _LOC_SND_SETTINGSRESET_IT, _LOC_SND_SETTINGSRESET_RU,  },
-  { _LOC_SND_VOLTAGECALIBRATION_EN, _LOC_SND_VOLTAGECALIBRATION_HR, _LOC_SND_VOLTAGECALIBRATION_IT, _LOC_SND_VOLTAGECALIBRATION_RU,  },
-  { _LOC_SND_ADVANCEDSOLDERING_EN, _LOC_SND_ADVANCEDSOLDERING_HR, _LOC_SND_ADVANCEDSOLDERING_IT, _LOC_SND_ADVANCEDSOLDERING_RU,  },
-  { _LOC_SND_SCROLLINGSPEED_EN, _LOC_SND_SCROLLINGSPEED_HR, _LOC_SND_SCROLLINGSPEED_IT, _LOC_SND_SCROLLINGSPEED_RU,  },
-  { _LOC_SND_LANGUAGE_EN, _LOC_SND_LANGUAGE_HR, _LOC_SND_LANGUAGE_IT, _LOC_SND_LANGUAGE_RU,  },
-};
-
-// ---- Pointer Array: Messages ----
-
-const char* const LOC_ARR_MS[23][LANG_COUNT] = {
-  { _LOC_MS_SETTINGSCALIBRATIONWARNING_EN, _LOC_MS_SETTINGSCALIBRATIONWARNING_HR, _LOC_MS_SETTINGSCALIBRATIONWARNING_IT, _LOC_MS_SETTINGSCALIBRATIONWARNING_RU,  },
-  { _LOC_MS_SETTINGSRESETWARNING_EN, _LOC_MS_SETTINGSRESETWARNING_HR, _LOC_MS_SETTINGSRESETWARNING_IT, _LOC_MS_SETTINGSRESETWARNING_RU,  },
-  { _LOC_MS_UVLOWARNINGSTRING_EN, _LOC_MS_UVLOWARNINGSTRING_HR, _LOC_MS_UVLOWARNINGSTRING_IT, _LOC_MS_UVLOWARNINGSTRING_RU,  },
-  { _LOC_MS_UNDERVOLTAGESTRING_EN, _LOC_MS_UNDERVOLTAGESTRING_HR, _LOC_MS_UNDERVOLTAGESTRING_IT, _LOC_MS_UNDERVOLTAGESTRING_RU,  },
-  { _LOC_MS_INPUTVOLTAGESTRING_EN, _LOC_MS_INPUTVOLTAGESTRING_HR, _LOC_MS_INPUTVOLTAGESTRING_IT, _LOC_MS_INPUTVOLTAGESTRING_RU,  },
-  { _LOC_MS_WARNINGTIPTEMPSTRING_EN, _LOC_MS_WARNINGTIPTEMPSTRING_HR, _LOC_MS_WARNINGTIPTEMPSTRING_IT, _LOC_MS_WARNINGTIPTEMPSTRING_RU,  },
-  { _LOC_MS_BADTIPSTRING_EN, _LOC_MS_BADTIPSTRING_HR, _LOC_MS_BADTIPSTRING_IT, _LOC_MS_BADTIPSTRING_RU,  },
-  { _LOC_MS_SLEEPINGSIMPLESTRING_EN, _LOC_MS_SLEEPINGSIMPLESTRING_HR, _LOC_MS_SLEEPINGSIMPLESTRING_IT, _LOC_MS_SLEEPINGSIMPLESTRING_RU,  },
-  { _LOC_MS_SLEEPINGADVANCEDSTRING_EN, _LOC_MS_SLEEPINGADVANCEDSTRING_HR, _LOC_MS_SLEEPINGADVANCEDSTRING_IT, _LOC_MS_SLEEPINGADVANCEDSTRING_RU,  },
-  { _LOC_MS_WARNINGSIMPLESTRING_EN, _LOC_MS_WARNINGSIMPLESTRING_HR, _LOC_MS_WARNINGSIMPLESTRING_IT, _LOC_MS_WARNINGSIMPLESTRING_RU,  },
-  { _LOC_MS_WARNINGADVANCEDSTRING_EN, _LOC_MS_WARNINGADVANCEDSTRING_HR, _LOC_MS_WARNINGADVANCEDSTRING_IT, _LOC_MS_WARNINGADVANCEDSTRING_RU,  },
-  { _LOC_MS_SLEEPINGTIPADVANCEDSTRING_EN, _LOC_MS_SLEEPINGTIPADVANCEDSTRING_HR, _LOC_MS_SLEEPINGTIPADVANCEDSTRING_IT, _LOC_MS_SLEEPINGTIPADVANCEDSTRING_RU,  },
-  { _LOC_MS_IDLETIPSTRING_EN, _LOC_MS_IDLETIPSTRING_HR, _LOC_MS_IDLETIPSTRING_IT, _LOC_MS_IDLETIPSTRING_RU,  },
-  { _LOC_MS_IDLESETSTRING_EN, _LOC_MS_IDLESETSTRING_HR, _LOC_MS_IDLESETSTRING_IT, _LOC_MS_IDLESETSTRING_RU,  },
-  { _LOC_MS_TIPDISCONNECTEDSTRING_EN, _LOC_MS_TIPDISCONNECTEDSTRING_HR, _LOC_MS_TIPDISCONNECTEDSTRING_IT, _LOC_MS_TIPDISCONNECTEDSTRING_RU,  },
-  { _LOC_MS_SOLDERINGADVANCEDPOWERPROMPT_EN, _LOC_MS_SOLDERINGADVANCEDPOWERPROMPT_HR, _LOC_MS_SOLDERINGADVANCEDPOWERPROMPT_IT, _LOC_MS_SOLDERINGADVANCEDPOWERPROMPT_RU,  },
-  { _LOC_MS_RESETOK_EN, _LOC_MS_RESETOK_HR, _LOC_MS_RESETOK_IT, _LOC_MS_RESETOK_RU,  },
-  { _LOC_MS_OFFSTRING_EN, _LOC_MS_OFFSTRING_HR, _LOC_MS_OFFSTRING_IT, _LOC_MS_OFFSTRING_RU,  },
-  { _LOC_MS_SETTINGRIGHTCHAR_EN, _LOC_MS_SETTINGRIGHTCHAR_HR, _LOC_MS_SETTINGRIGHTCHAR_IT, _LOC_MS_SETTINGRIGHTCHAR_RU,  },
-  { _LOC_MS_SETTINGLEFTCHAR_EN, _LOC_MS_SETTINGLEFTCHAR_HR, _LOC_MS_SETTINGLEFTCHAR_IT, _LOC_MS_SETTINGLEFTCHAR_RU,  },
-  { _LOC_MS_SETTINGAUTOCHAR_EN, _LOC_MS_SETTINGAUTOCHAR_HR, _LOC_MS_SETTINGAUTOCHAR_IT, _LOC_MS_SETTINGAUTOCHAR_RU,  },
-  { _LOC_MS_SETTINGFASTCHAR_EN, _LOC_MS_SETTINGFASTCHAR_HR, _LOC_MS_SETTINGFASTCHAR_IT, _LOC_MS_SETTINGFASTCHAR_RU,  },
-  { _LOC_MS_SETTINGSLOWCHAR_EN, _LOC_MS_SETTINGSLOWCHAR_HR, _LOC_MS_SETTINGSLOWCHAR_IT, _LOC_MS_SETTINGSLOWCHAR_RU,  },
+const char* const L_ARR_SND[18][LANG_COUNT] = {
+  { _L_SND_POWERSOURCE_EN, _L_SND_POWERSOURCE_HR, _L_SND_POWERSOURCE_RU,  },
+  { _L_SND_SLEEPTEMPERATURE_EN, _L_SND_SLEEPTEMPERATURE_HR, _L_SND_SLEEPTEMPERATURE_RU,  },
+  { _L_SND_SLEEPTIMEOUT_EN, _L_SND_SLEEPTIMEOUT_HR, _L_SND_SLEEPTIMEOUT_RU,  },
+  { _L_SND_SHUTDOWNTIMEOUT_EN, _L_SND_SHUTDOWNTIMEOUT_HR, _L_SND_SHUTDOWNTIMEOUT_RU,  },
+  { _L_SND_MOTIONSENSITIVITY_EN, _L_SND_MOTIONSENSITIVITY_HR, _L_SND_MOTIONSENSITIVITY_RU,  },
+  { _L_SND_TEMPERATUREUNIT_EN, _L_SND_TEMPERATUREUNIT_HR, _L_SND_TEMPERATUREUNIT_RU,  },
+  { _L_SND_ADVANCEDIDLE_EN, _L_SND_ADVANCEDIDLE_HR, _L_SND_ADVANCEDIDLE_RU,  },
+  { _L_SND_DISPLAYROTATION_EN, _L_SND_DISPLAYROTATION_HR, _L_SND_DISPLAYROTATION_RU,  },
+  { _L_SND_BOOSTENABLED_EN, _L_SND_BOOSTENABLED_HR, _L_SND_BOOSTENABLED_RU,  },
+  { _L_SND_BOOSTTEMPERATURE_EN, _L_SND_BOOSTTEMPERATURE_HR, _L_SND_BOOSTTEMPERATURE_RU,  },
+  { _L_SND_AUTOSTART_EN, _L_SND_AUTOSTART_HR, _L_SND_AUTOSTART_RU,  },
+  { _L_SND_COOLDOWNBLINK_EN, _L_SND_COOLDOWNBLINK_HR, _L_SND_COOLDOWNBLINK_RU,  },
+  { _L_SND_TEMPERATURECALIBRATION_EN, _L_SND_TEMPERATURECALIBRATION_HR, _L_SND_TEMPERATURECALIBRATION_RU,  },
+  { _L_SND_SETTINGSRESET_EN, _L_SND_SETTINGSRESET_HR, _L_SND_SETTINGSRESET_RU,  },
+  { _L_SND_VOLTAGECALIBRATION_EN, _L_SND_VOLTAGECALIBRATION_HR, _L_SND_VOLTAGECALIBRATION_RU,  },
+  { _L_SND_ADVANCEDSOLDERING_EN, _L_SND_ADVANCEDSOLDERING_HR, _L_SND_ADVANCEDSOLDERING_RU,  },
+  { _L_SND_SCROLLINGSPEED_EN, _L_SND_SCROLLINGSPEED_HR, _L_SND_SCROLLINGSPEED_RU,  },
+  { _L_SND_LANGUAGE_EN, _L_SND_LANGUAGE_HR, _L_SND_LANGUAGE_RU,  },
 };
 
 
@@ -861,70 +743,66 @@ const uint8_t FONT_12x16[] = {
 0x00,0x10,0x18,0x0c,0x04,0x0c,0x18,0x10,0x18,0x0c,0x04,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00, //   #126  ~  7e
 0x00,0x00,0x80,0xc0,0x60,0x30,0x30,0x60,0xc0,0x80,0x00,0x00,0x00,0x0f,0x0f,0x0c,0x0c,0x0c,0x0c,0x0c,0x0c,0x0f,0x0f,0x00, //   #127    7f
 0x00,0xc0,0xe0,0x64,0x6c,0x68,0x6c,0x64,0x40,0x00,0x00,0x00,0x00,0x11,0x33,0x33,0x33,0x33,0x33,0x3f,0x1e,0x00,0x00,0x00, //   #128  š  c5 a1
-0x00,0x80,0xc0,0xe0,0x64,0x6c,0x68,0x6c,0x64,0xc0,0x80,0x00,0x00,0x0f,0x1f,0x38,0x30,0x30,0x30,0x30,0x30,0x18,0x08,0x00, //   #129  č  c4 8d
-0x00,0x80,0xc0,0xe0,0x60,0x60,0x60,0xe4,0xc4,0xff,0xff,0x04,0x00,0x0f,0x1f,0x38,0x30,0x30,0x30,0x30,0x30,0x3f,0x3f,0x00, //   #130  đ  c4 91
-0x00,0x80,0xc0,0xe0,0x60,0x60,0x68,0x6c,0x64,0xc0,0x80,0x00,0x00,0x0f,0x1f,0x38,0x30,0x30,0x30,0x30,0x30,0x18,0x08,0x00, //   #131  ć  c4 87
-0x00,0x60,0x60,0x64,0x6c,0x68,0xec,0xe4,0x60,0x20,0x00,0x00,0x00,0x30,0x38,0x3c,0x36,0x33,0x31,0x30,0x30,0x30,0x00,0x00, //   #132  ž  c5 be
-0x00,0x60,0xf0,0xf8,0x99,0x9b,0x9a,0x9b,0x99,0x30,0x20,0x00,0x00,0x0c,0x1c,0x39,0x31,0x31,0x31,0x31,0x3b,0x1f,0x0e,0x00, //   #133  Š  c5 a0
-0x00,0x80,0xe0,0x70,0x38,0x18,0x1a,0x1b,0x39,0x70,0x60,0x00,0x00,0x03,0x0f,0x1c,0x38,0x30,0x30,0x30,0x38,0x1c,0x0c,0x00, //   #134  Ć  c4 86
-0x00,0xe0,0xe0,0x00,0x02,0x06,0x0c,0x08,0x00,0xe0,0xe0,0x00,0x00,0x0f,0x1f,0x38,0x30,0x30,0x30,0x30,0x18,0x3f,0x3f,0x00, //   #135  ù  c3 b9
-0x00,0x00,0x40,0x60,0x62,0x66,0x6c,0x68,0x60,0xe0,0xc0,0x00,0x00,0x1c,0x3e,0x33,0x33,0x33,0x33,0x33,0x33,0x3f,0x3f,0x00, //   #136  à  c3 a0
-0x00,0x80,0xc0,0x60,0x20,0x00,0x80,0xc0,0x60,0x20,0x00,0x00,0x00,0x00,0x01,0x03,0x02,0x00,0x00,0x01,0x03,0x02,0x00,0x00, //   #137  «  c2 ab
-0x00,0x20,0x60,0xc0,0x80,0x00,0x20,0x60,0xc0,0x80,0x00,0x00,0x00,0x02,0x03,0x01,0x00,0x00,0x02,0x03,0x01,0x00,0x00,0x00, //   #138  »  c2 bb
-0x00,0x00,0x00,0x1e,0x3f,0x33,0x33,0x3f,0x1e,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00, //   #139  °  c2 b0
-0x00,0x80,0xc0,0xe0,0x62,0x66,0x6c,0x68,0x60,0xc0,0x80,0x00,0x00,0x0f,0x1f,0x33,0x33,0x33,0x33,0x33,0x33,0x13,0x03,0x00, //   #140  è  c3 a8
-0x00,0xff,0xff,0x03,0x03,0x03,0x03,0x03,0x03,0xff,0xff,0x00,0x00,0x3f,0x3f,0x00,0x00,0x00,0x00,0x00,0x00,0x3f,0x3f,0x00, //   #141  П  d0 9f
-0x00,0x00,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0xf0,0xe0,0x00,0x00,0x1e,0x3f,0x33,0x33,0x33,0x33,0x33,0x33,0x3f,0x3f,0x00, //   #142  а  d0 b0
-0x00,0xf0,0xf0,0x00,0x04,0x08,0x88,0xc4,0xe0,0xf0,0xf0,0x00,0x00,0x3f,0x3f,0x1c,0x0e,0x07,0x03,0x01,0x00,0x3f,0x3f,0x00, //   #143  й  d0 b9
-0x00,0xf0,0xf0,0x80,0x80,0xc0,0xe0,0x70,0x30,0x10,0x00,0x00,0x00,0x3f,0x3f,0x03,0x03,0x07,0x0e,0x1c,0x38,0x30,0x20,0x00, //   #144  к  d0 ba
-0x00,0xf0,0xfc,0x0e,0x07,0x03,0x03,0x03,0x07,0x0e,0x0c,0x00,0x00,0x03,0x0f,0x1c,0x38,0x30,0x30,0x30,0x38,0x1c,0x0c,0x00, //   #145  С  d0 a1
-0x00,0xc0,0xe0,0x70,0x30,0x30,0x30,0x30,0x70,0xe0,0xc0,0x00,0x00,0x0f,0x1f,0x38,0x30,0x30,0x30,0x30,0x38,0x1f,0x0f,0x00, //   #146  о  d0 be
-0x00,0xf0,0xf0,0x00,0x00,0x00,0x00,0x00,0x00,0xf0,0xf0,0x00,0x00,0x3f,0x3f,0x03,0x03,0x03,0x03,0x03,0x03,0x3f,0x3f,0x00, //   #147  н  d0 bd
-0x00,0xff,0xff,0x00,0x00,0xc0,0xf0,0x38,0x0e,0xff,0xff,0x00,0x00,0x3f,0x3f,0x1c,0x07,0x03,0x00,0x00,0x00,0x3f,0x3f,0x00, //   #148  И  d0 98
-0x00,0x30,0x30,0x30,0x30,0xf0,0xf0,0x30,0x30,0x30,0x30,0x00,0x00,0x00,0x00,0x00,0x00,0x3f,0x3f,0x00,0x00,0x00,0x00,0x00, //   #149  т  d1 82
-0x00,0xe0,0xf0,0x30,0x30,0x30,0x30,0x30,0x30,0xf0,0xe0,0x00,0x00,0x1f,0x3f,0x33,0x33,0x33,0x33,0x33,0x33,0x33,0x33,0x00, //   #150  е  d0 b5
-0x00,0xf0,0xf0,0x30,0x30,0x30,0x30,0x30,0x70,0xe0,0xc0,0x00,0x00,0xff,0xff,0x0c,0x0c,0x0c,0x0c,0x0c,0x0e,0x07,0x03,0x00, //   #151  р  d1 80
-0x00,0x80,0xc0,0x60,0x60,0xf0,0xf0,0x60,0x60,0xc0,0x80,0x00,0x00,0x0f,0x1f,0x30,0x30,0xff,0xff,0x30,0x30,0x1f,0x0f,0x00, //   #152  ф  d1 84
-0x00,0xc0,0xe0,0x70,0x30,0x30,0x30,0x30,0x70,0x60,0x40,0x00,0x00,0x0f,0x1f,0x38,0x30,0x30,0x30,0x30,0x38,0x18,0x08,0x00, //   #153  с  d1 81
-0x00,0x00,0xf8,0xfe,0x0f,0x03,0x03,0x03,0xff,0xff,0x00,0x00,0x00,0x70,0x7f,0x1f,0x18,0x18,0x18,0x18,0x1f,0x7f,0x70,0x00, //   #154  Д  d0 94
-0x00,0x30,0xf0,0xc0,0x00,0x00,0x00,0x00,0xc0,0xf0,0x30,0x00,0x00,0x60,0xe0,0xc3,0xe7,0x7c,0x3c,0x0f,0x03,0x00,0x00,0x00, //   #155  у  d1 83
-0x00,0xf0,0xf0,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x00,0x00,0x3f,0x3f,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00, //   #156  г  d0 b3
-0x00,0xf0,0xf0,0x00,0x00,0x00,0x80,0xc0,0xe0,0xf0,0xf0,0x00,0x00,0x3f,0x3f,0x1c,0x0e,0x07,0x03,0x01,0x00,0x3f,0x3f,0x00, //   #157  и  d0 b8
-0x00,0xff,0xff,0xc0,0xc0,0xc0,0xc0,0xc0,0xc0,0xff,0xff,0x00,0x00,0x3f,0x3f,0x00,0x00,0x00,0x00,0x00,0x00,0x3f,0x3f,0x00, //   #158  Н  d0 9d
-0x00,0x00,0xc0,0xe0,0x70,0x30,0x30,0x30,0xf0,0xf0,0x00,0x00,0x00,0x60,0x7f,0x3f,0x30,0x30,0x30,0x30,0x3f,0x7f,0x60,0x00, //   #159  д  d0 b4
-0x00,0x00,0xc0,0xe0,0x70,0x30,0x30,0x30,0x30,0xf0,0xf0,0x00,0x00,0x30,0x3f,0x1f,0x00,0x00,0x00,0x00,0x00,0x3f,0x3f,0x00, //   #160  л  d0 bb
-0x00,0xc0,0xe0,0x70,0x30,0x30,0x30,0x30,0x30,0xf0,0xf0,0x00,0x00,0x21,0x33,0x3b,0x1e,0x0e,0x06,0x06,0x06,0x3f,0x3f,0x00, //   #161  я  d1 8f
-0x00,0x30,0xf0,0xc0,0x00,0xf0,0xf0,0x00,0xc0,0xf0,0x30,0x00,0x00,0x30,0x3c,0x0f,0x03,0x3f,0x3f,0x03,0x0f,0x3c,0x30,0x00, //   #162  ж  d0 b6
-0x00,0xf0,0xf0,0xe0,0xc0,0x80,0x80,0xc0,0xe0,0xf0,0xf0,0x00,0x00,0x3f,0x3f,0x00,0x01,0x03,0x03,0x01,0x00,0x3f,0x3f,0x00, //   #163  м  d0 bc
-0x00,0xf0,0xf0,0x30,0x30,0x30,0x30,0x30,0x30,0xf0,0xf0,0x00,0x00,0x3f,0x3f,0x00,0x00,0x00,0x00,0x00,0x00,0x3f,0x3f,0x00, //   #164  п  d0 bf
-0x00,0xf0,0xf0,0x30,0x30,0x30,0x30,0x30,0xf0,0xe0,0x00,0x00,0x00,0x3f,0x3f,0x33,0x33,0x33,0x33,0x33,0x33,0x3f,0x1e,0x00, //   #165  в  d0 b2
-0x00,0xf0,0xf0,0x00,0xe0,0xf0,0x30,0x30,0x30,0xf0,0xe0,0x00,0x00,0x3f,0x3f,0x03,0x1f,0x3f,0x30,0x30,0x30,0x3f,0x1f,0x00, //   #166  ю  d1 8e
-0x00,0xf0,0xf0,0x00,0x00,0x00,0x00,0x00,0x00,0xf0,0xf0,0x00,0x00,0x01,0x03,0x03,0x03,0x03,0x03,0x03,0x03,0x3f,0x3f,0x00, //   #167  ч  d1 87
-0x00,0xe0,0xf0,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x00,0x00,0x00,0x1f,0x3f,0x33,0x33,0x33,0x33,0x33,0x33,0x3f,0x1e,0x00, //   #168  б  d0 b1
-0x00,0x60,0x70,0x30,0x30,0x30,0x30,0x30,0x30,0xf0,0xe0,0x00,0x00,0x18,0x38,0x30,0x33,0x33,0x33,0x33,0x33,0x3f,0x1d,0x00, //   #169  з  d0 b7
-0x00,0xf0,0xf0,0x80,0x80,0x80,0x00,0x00,0x00,0xf0,0xf0,0x00,0x00,0x3f,0x3f,0x31,0x31,0x3b,0x1f,0x0e,0x00,0x3f,0x3f,0x00, //   #170  ы  d1 8b
-0x00,0xf0,0xf0,0x80,0x80,0x80,0x80,0x80,0x80,0x00,0x00,0x00,0x00,0x3f,0x3f,0x31,0x31,0x31,0x31,0x31,0x3b,0x1f,0x0e,0x00, //   #171  ь  d1 8c
-0x00,0xf0,0xf0,0x00,0x00,0xf0,0xf0,0x00,0x00,0xf0,0xf0,0x00,0x00,0x3f,0x3f,0x30,0x30,0x3f,0x3f,0x30,0x30,0x3f,0xff,0xe0, //   #172  щ  d1 89
-0x00,0xff,0xff,0x83,0x83,0x83,0x83,0x83,0xc7,0xfe,0x7c,0x00,0x00,0x3f,0x3f,0x01,0x01,0x01,0x01,0x01,0x01,0x00,0x00,0x00, //   #173  Р  d0 a0
-0x00,0xf0,0xf0,0x00,0x00,0xe0,0xe0,0x00,0x00,0xf0,0xf0,0x00,0x00,0x3f,0x3f,0x30,0x30,0x3f,0x3f,0x30,0x30,0x3f,0x3f,0x00, //   #174  ш  d1 88
-0x00,0x03,0x03,0x03,0x03,0xff,0xff,0x03,0x03,0x03,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x3f,0x3f,0x00,0x00,0x00,0x00,0x00, //   #175  Т  d0 a2
-0x00,0xff,0xff,0xc3,0xc3,0xc3,0xc3,0xe7,0xfe,0xbc,0x00,0x00,0x00,0x3f,0x3f,0x30,0x30,0x30,0x30,0x30,0x39,0x1f,0x0f,0x00, //   #176  В  d0 92
-0x00,0x7f,0xff,0xc0,0xc0,0xc0,0xc0,0xc0,0xc0,0xff,0xff,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x3f,0x3f,0x00, //   #177  Ч  d0 a7
-0x00,0xf8,0xfc,0x0e,0x06,0xff,0xff,0x06,0x0e,0xfc,0xf8,0x00,0x00,0x03,0x07,0x0e,0x0c,0x3f,0x3f,0x0c,0x0e,0x07,0x03,0x00, //   #178  Ф  d0 a4
-0x00,0x80,0xe0,0x78,0x1e,0x07,0x07,0x1e,0x78,0xe0,0x80,0x00,0x00,0x3f,0x3f,0x06,0x06,0x06,0x06,0x06,0x06,0x3f,0x3f,0x00, //   #179  А  d0 90
-0x00,0x40,0x60,0x70,0x30,0x30,0x30,0x30,0x70,0xe0,0xc0,0x00,0x00,0x08,0x18,0x38,0x30,0x33,0x33,0x33,0x3b,0x1f,0x0f,0x00, //   #180  э  d1 8d
-0x00,0xff,0xff,0xc0,0xe0,0xf0,0x38,0x1c,0x0e,0x07,0x03,0x00,0x00,0x3f,0x3f,0x00,0x01,0x03,0x07,0x0e,0x1c,0x38,0x30,0x00, //   #181  К  d0 9a
-0x00,0x7c,0xfe,0xc7,0x83,0x83,0x83,0x83,0x83,0xff,0xff,0x00,0x00,0x30,0x38,0x1d,0x0f,0x07,0x03,0x01,0x01,0x3f,0x3f,0x00, //   #182  Я  d0 af
-0x00,0x07,0x1f,0x7c,0xf0,0xc0,0xc0,0xf0,0x7c,0x1f,0x07,0x00,0x00,0x00,0x30,0x30,0x3c,0x0f,0x07,0x01,0x00,0x00,0x00,0x00, //   #183  У  d0 a3
-0x00,0x30,0x70,0xc0,0x80,0x00,0x00,0x80,0xc0,0x70,0x30,0x00,0x00,0x30,0x38,0x0c,0x07,0x03,0x03,0x07,0x0c,0x38,0x30,0x00, //   #184  х  d1 85
-0x00,0xff,0xff,0x1e,0x78,0xe0,0xe0,0x78,0x1e,0xff,0xff,0x00,0x00,0x3f,0x3f,0x00,0x00,0x01,0x01,0x00,0x00,0x3f,0x3f,0x00, //   #185  М  d0 9c
-0x00,0xff,0xff,0x00,0x00,0x00,0x00,0x00,0xff,0xff,0x00,0x00,0x00,0x1f,0x1f,0x18,0x18,0x18,0x18,0x18,0x1f,0x7f,0x78,0x00, //   #186  Ц  d0 a6
+0x00,0x80,0xc0,0xe0,0x60,0x60,0x60,0xe4,0xc4,0xff,0xff,0x04,0x00,0x0f,0x1f,0x38,0x30,0x30,0x30,0x30,0x30,0x3f,0x3f,0x00, //   #129  đ  c4 91
+0x00,0x60,0x60,0x64,0x6c,0x68,0xec,0xe4,0x60,0x20,0x00,0x00,0x00,0x30,0x38,0x3c,0x36,0x33,0x31,0x30,0x30,0x30,0x00,0x00, //   #130  ž  c5 be
+0x00,0x80,0xc0,0xe0,0x64,0x6c,0x68,0x6c,0x64,0xc0,0x80,0x00,0x00,0x0f,0x1f,0x38,0x30,0x30,0x30,0x30,0x30,0x18,0x08,0x00, //   #131  č  c4 8d
+0x00,0x60,0xf0,0xf8,0x99,0x9b,0x9a,0x9b,0x99,0x30,0x20,0x00,0x00,0x0c,0x1c,0x39,0x31,0x31,0x31,0x31,0x3b,0x1f,0x0e,0x00, //   #132  Š  c5 a0
+0x00,0x80,0xe0,0x70,0x38,0x18,0x1a,0x1b,0x39,0x70,0x60,0x00,0x00,0x03,0x0f,0x1c,0x38,0x30,0x30,0x30,0x38,0x1c,0x0c,0x00, //   #133  Ć  c4 86
+0x00,0x80,0xc0,0xe0,0x60,0x60,0x68,0x6c,0x64,0xc0,0x80,0x00,0x00,0x0f,0x1f,0x38,0x30,0x30,0x30,0x30,0x30,0x18,0x08,0x00, //   #134  ć  c4 87
+0x00,0xff,0xff,0x83,0x83,0x83,0x83,0x83,0xc7,0xfe,0x7c,0x00,0x00,0x3f,0x3f,0x01,0x01,0x01,0x01,0x01,0x01,0x00,0x00,0x00, //   #135  Р  d0 a0
+0x00,0x30,0xf0,0xc0,0x00,0x00,0x00,0x00,0xc0,0xf0,0x30,0x00,0x00,0x60,0xe0,0xc3,0xe7,0x7c,0x3c,0x0f,0x03,0x00,0x00,0x00, //   #136  у  d1 83
+0x00,0xc0,0xe0,0x70,0x30,0x30,0x30,0x30,0x70,0x60,0x40,0x00,0x00,0x0f,0x1f,0x38,0x30,0x30,0x30,0x30,0x38,0x18,0x08,0x00, //   #137  с  d1 81
+0x00,0xf0,0xf0,0x80,0x80,0xc0,0xe0,0x70,0x30,0x10,0x00,0x00,0x00,0x3f,0x3f,0x03,0x03,0x07,0x0e,0x1c,0x38,0x30,0x20,0x00, //   #138  к  d0 ba
+0x00,0xf0,0xf0,0x00,0x00,0x00,0x80,0xc0,0xe0,0xf0,0xf0,0x00,0x00,0x3f,0x3f,0x1c,0x0e,0x07,0x03,0x01,0x00,0x3f,0x3f,0x00, //   #139  и  d0 b8
+0x00,0xf0,0xf0,0x00,0x04,0x08,0x88,0xc4,0xe0,0xf0,0xf0,0x00,0x00,0x3f,0x3f,0x1c,0x0e,0x07,0x03,0x01,0x00,0x3f,0x3f,0x00, //   #140  й  d0 b9
+0x00,0x07,0x1f,0x7c,0xf0,0xc0,0xc0,0xf0,0x7c,0x1f,0x07,0x00,0x00,0x00,0x30,0x30,0x3c,0x0f,0x07,0x01,0x00,0x00,0x00,0x00, //   #141  У  d0 a3
+0x00,0xe0,0xf0,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x00,0x00,0x00,0x1f,0x3f,0x33,0x33,0x33,0x33,0x33,0x33,0x3f,0x1e,0x00, //   #142  б  d0 b1
+0x00,0xe0,0xf0,0x30,0x30,0x30,0x30,0x30,0x30,0xf0,0xe0,0x00,0x00,0x1f,0x3f,0x33,0x33,0x33,0x33,0x33,0x33,0x33,0x33,0x00, //   #143  е  d0 b5
+0x00,0x00,0xc0,0xe0,0x70,0x30,0x30,0x30,0xf0,0xf0,0x00,0x00,0x00,0x60,0x7f,0x3f,0x30,0x30,0x30,0x30,0x3f,0x7f,0x60,0x00, //   #144  д  d0 b4
+0x00,0x30,0x30,0x30,0x30,0xf0,0xf0,0x30,0x30,0x30,0x30,0x00,0x00,0x00,0x00,0x00,0x00,0x3f,0x3f,0x00,0x00,0x00,0x00,0x00, //   #145  т  d1 82
+0x00,0xf0,0xf0,0x80,0x80,0x80,0x80,0x80,0x80,0x00,0x00,0x00,0x00,0x3f,0x3f,0x31,0x31,0x31,0x31,0x31,0x3b,0x1f,0x0e,0x00, //   #146  ь  d1 8c
+0x00,0xf0,0xf0,0x00,0x00,0x00,0x00,0x00,0x00,0xf0,0xf0,0x00,0x00,0x01,0x03,0x03,0x03,0x03,0x03,0x03,0x03,0x3f,0x3f,0x00, //   #147  ч  d1 87
+0x00,0xc0,0xe0,0x70,0x30,0x30,0x30,0x30,0x70,0xe0,0xc0,0x00,0x00,0x0f,0x1f,0x38,0x30,0x30,0x30,0x30,0x38,0x1f,0x0f,0x00, //   #148  о  d0 be
+0x00,0x30,0xf0,0xc0,0x00,0xf0,0xf0,0x00,0xc0,0xf0,0x30,0x00,0x00,0x30,0x3c,0x0f,0x03,0x3f,0x3f,0x03,0x0f,0x3c,0x30,0x00, //   #149  ж  d0 b6
+0x00,0x00,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0xf0,0xe0,0x00,0x00,0x1e,0x3f,0x33,0x33,0x33,0x33,0x33,0x33,0x3f,0x3f,0x00, //   #150  а  d0 b0
+0x00,0x00,0xc0,0xe0,0x70,0x30,0x30,0x30,0x30,0xf0,0xf0,0x00,0x00,0x30,0x3f,0x1f,0x00,0x00,0x00,0x00,0x00,0x3f,0x3f,0x00, //   #151  л  d0 bb
+0x00,0xf0,0xf0,0x80,0x80,0x80,0x00,0x00,0x00,0xf0,0xf0,0x00,0x00,0x3f,0x3f,0x31,0x31,0x3b,0x1f,0x0e,0x00,0x3f,0x3f,0x00, //   #152  ы  d1 8b
+0x00,0xf0,0xf0,0xe0,0xc0,0x80,0x80,0xc0,0xe0,0xf0,0xf0,0x00,0x00,0x3f,0x3f,0x00,0x01,0x03,0x03,0x01,0x00,0x3f,0x3f,0x00, //   #153  м  d0 bc
+0x00,0xf0,0xf0,0x00,0x00,0x00,0x00,0x00,0x00,0xf0,0xf0,0x00,0x00,0x3f,0x3f,0x03,0x03,0x03,0x03,0x03,0x03,0x3f,0x3f,0x00, //   #154  н  d0 bd
+0x00,0xf0,0xf0,0x30,0x30,0x30,0x30,0x30,0x30,0xf0,0xf0,0x00,0x00,0x3f,0x3f,0x00,0x00,0x00,0x00,0x00,0x00,0x3f,0x3f,0x00, //   #155  п  d0 bf
+0x00,0xf0,0xf0,0x30,0x30,0x30,0x30,0x30,0x70,0xe0,0xc0,0x00,0x00,0xff,0xff,0x0c,0x0c,0x0c,0x0c,0x0c,0x0e,0x07,0x03,0x00, //   #156  р  d1 80
+0x00,0xff,0xff,0xc3,0xc3,0xc3,0xc3,0xe7,0xfe,0xbc,0x00,0x00,0x00,0x3f,0x3f,0x30,0x30,0x30,0x30,0x30,0x39,0x1f,0x0f,0x00, //   #157  В  d0 92
+0x00,0xf0,0xf0,0x30,0x30,0x30,0x30,0x30,0xf0,0xe0,0x00,0x00,0x00,0x3f,0x3f,0x33,0x33,0x33,0x33,0x33,0x33,0x3f,0x1e,0x00, //   #158  в  d0 b2
+0x00,0x30,0x70,0xc0,0x80,0x00,0x00,0x80,0xc0,0x70,0x30,0x00,0x00,0x30,0x38,0x0c,0x07,0x03,0x03,0x07,0x0c,0x38,0x30,0x00, //   #159  х  d1 85
+0x00,0x60,0x70,0x30,0x30,0x30,0x30,0x30,0x30,0xf0,0xe0,0x00,0x00,0x18,0x38,0x30,0x33,0x33,0x33,0x33,0x33,0x3f,0x1d,0x00, //   #160  з  d0 b7
+0x00,0xf0,0xf0,0x00,0xe0,0xf0,0x30,0x30,0x30,0xf0,0xe0,0x00,0x00,0x3f,0x3f,0x03,0x1f,0x3f,0x30,0x30,0x30,0x3f,0x1f,0x00, //   #161  ю  d1 8e
+0x00,0x80,0xe0,0x78,0x1e,0x07,0x07,0x1e,0x78,0xe0,0x80,0x00,0x00,0x3f,0x3f,0x06,0x06,0x06,0x06,0x06,0x06,0x3f,0x3f,0x00, //   #162  А  d0 90
+0x00,0xff,0xff,0xc0,0xe0,0xf0,0x38,0x1c,0x0e,0x07,0x03,0x00,0x00,0x3f,0x3f,0x00,0x01,0x03,0x07,0x0e,0x1c,0x38,0x30,0x00, //   #163  К  d0 9a
+0x00,0xff,0xff,0x1e,0x78,0xe0,0xe0,0x78,0x1e,0xff,0xff,0x00,0x00,0x3f,0x3f,0x00,0x00,0x01,0x01,0x00,0x00,0x3f,0x3f,0x00, //   #164  М  d0 9c
+0x00,0xff,0xff,0x03,0x03,0x03,0x03,0x03,0x03,0xff,0xff,0x00,0x00,0x3f,0x3f,0x00,0x00,0x00,0x00,0x00,0x00,0x3f,0x3f,0x00, //   #165  П  d0 9f
+0x00,0x03,0x0f,0xfc,0xe0,0xff,0xff,0xe0,0xfc,0x0f,0x03,0x00,0x00,0x38,0x3f,0x07,0x00,0x3f,0x3f,0x00,0x07,0x3f,0x38,0x00, //   #166  Ж  d0 96
+0x00,0x00,0x00,0x1e,0x3f,0x33,0x33,0x3f,0x1e,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00, //   #167  °  c2 b0
+0x00,0xf0,0xfc,0x0e,0x07,0x03,0x03,0x03,0x07,0x0e,0x0c,0x00,0x00,0x03,0x0f,0x1c,0x38,0x30,0x30,0x30,0x38,0x1c,0x0c,0x00, //   #168  С  d0 a1
+0x00,0xf0,0xfc,0x0e,0x07,0x03,0x03,0x07,0x0e,0xfc,0xf0,0x00,0x00,0x03,0x0f,0x1c,0x38,0x30,0x30,0x38,0x1c,0x0f,0x03,0x00, //   #169  О  d0 9e
+0x00,0xff,0xff,0x00,0x02,0xc3,0xf1,0x38,0x0e,0xff,0xff,0x00,0x00,0x3f,0x3f,0x1c,0x07,0x03,0x00,0x00,0x00,0x3f,0x3f,0x00, //   #170  Й  d0 99
+0x00,0xff,0xff,0xc0,0xc0,0xc0,0xc0,0xc0,0xc0,0xff,0xff,0x00,0x00,0x3f,0x3f,0x00,0x00,0x00,0x00,0x00,0x00,0x3f,0x3f,0x00, //   #171  Н  d0 9d
+0x00,0xff,0xff,0x00,0x00,0xc0,0xf0,0x38,0x0e,0xff,0xff,0x00,0x00,0x3f,0x3f,0x1c,0x07,0x03,0x00,0x00,0x00,0x3f,0x3f,0x00, //   #172  И  d0 98
+0x00,0xff,0xff,0xc3,0xc3,0xc3,0xc3,0xc3,0xc3,0x03,0x03,0x00,0x00,0x3f,0x3f,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x00, //   #173  Е  d0 95
+0x00,0xff,0xff,0x03,0x03,0x03,0x03,0x03,0x03,0x03,0x03,0x00,0x00,0x3f,0x3f,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00, //   #174  Г  d0 93
+0x00,0x7c,0xfe,0xc7,0x83,0x83,0x83,0x83,0x83,0xff,0xff,0x00,0x00,0x30,0x38,0x1d,0x0f,0x07,0x03,0x01,0x01,0x3f,0x3f,0x00, //   #175  Я  d0 af
+0x00,0x7f,0xff,0xc0,0xc0,0xc0,0xc0,0xc0,0xc0,0xff,0xff,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x3f,0x3f,0x00, //   #176  Ч  d0 a7
+0x00,0x00,0xf0,0xfc,0x1e,0x07,0x03,0x03,0x03,0xff,0xff,0x00,0x00,0x30,0x3f,0x1f,0x00,0x00,0x00,0x00,0x00,0x3f,0x3f,0x00, //   #177  Л  d0 9b
+0x00,0x80,0xc0,0x60,0x60,0xf0,0xf0,0x60,0x60,0xc0,0x80,0x00,0x00,0x0f,0x1f,0x30,0x30,0xff,0xff,0x30,0x30,0x1f,0x0f,0x00, //   #178  ф  d1 84
+0x00,0x00,0xf8,0xfe,0x0f,0x03,0x03,0x03,0xff,0xff,0x00,0x00,0x00,0x70,0x7f,0x1f,0x18,0x18,0x18,0x18,0x1f,0x7f,0x70,0x00, //   #179  Д  d0 94
+0x00,0xf0,0xf0,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x00,0x00,0x3f,0x3f,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00, //   #180  г  d0 b3
+0x00,0xc0,0xe0,0x70,0x30,0x30,0x30,0x30,0x30,0xf0,0xf0,0x00,0x00,0x21,0x33,0x3b,0x1e,0x0e,0x06,0x06,0x06,0x3f,0x3f,0x00, //   #181  я  d1 8f
+0x00,0xf0,0xf0,0x00,0x00,0xf0,0xf0,0x00,0x00,0xf0,0xf0,0x00,0x00,0x3f,0x3f,0x30,0x30,0x3f,0x3f,0x30,0x30,0x3f,0xff,0xe0, //   #182  щ  d1 89
+0x00,0xf0,0xf0,0x00,0x00,0xe0,0xe0,0x00,0x00,0xf0,0xf0,0x00,0x00,0x3f,0x3f,0x30,0x30,0x3f,0x3f,0x30,0x30,0x3f,0x3f,0x00, //   #183  ш  d1 88
+0x00,0x03,0x03,0x03,0x03,0xff,0xff,0x03,0x03,0x03,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x3f,0x3f,0x00,0x00,0x00,0x00,0x00, //   #184  Т  d0 a2
+0x00,0xf8,0xfc,0x0e,0x06,0xff,0xff,0x06,0x0e,0xfc,0xf8,0x00,0x00,0x03,0x07,0x0e,0x0c,0x3f,0x3f,0x0c,0x0e,0x07,0x03,0x00, //   #185  Ф  d0 a4
+0x00,0x40,0x60,0x70,0x30,0x30,0x30,0x30,0x70,0xe0,0xc0,0x00,0x00,0x08,0x18,0x38,0x30,0x33,0x33,0x33,0x3b,0x1f,0x0f,0x00, //   #186  э  d1 8d
 0x00,0xf0,0xf0,0x00,0x00,0x00,0x00,0x00,0xf0,0xf0,0x00,0x00,0x00,0x3f,0x3f,0x30,0x30,0x30,0x30,0x30,0x3f,0xff,0xf0,0x00, //   #187  ц  d1 86
-0x00,0xf0,0xfc,0x0e,0x07,0x03,0x03,0x07,0x0e,0xfc,0xf0,0x00,0x00,0x03,0x0f,0x1c,0x38,0x30,0x30,0x38,0x1c,0x0f,0x03,0x00, //   #188  О  d0 9e
-0x00,0x00,0xf0,0xfc,0x1e,0x07,0x03,0x03,0x03,0xff,0xff,0x00,0x00,0x30,0x3f,0x1f,0x00,0x00,0x00,0x00,0x00,0x3f,0x3f,0x00, //   #189  Л  d0 9b
-0x00,0x03,0x0f,0xfc,0xe0,0xff,0xff,0xe0,0xfc,0x0f,0x03,0x00,0x00,0x38,0x3f,0x07,0x00,0x3f,0x3f,0x00,0x07,0x3f,0x38,0x00, //   #190  Ж  d0 96
-0x00,0xff,0xff,0x00,0x02,0xc3,0xf1,0x38,0x0e,0xff,0xff,0x00,0x00,0x3f,0x3f,0x1c,0x07,0x03,0x00,0x00,0x00,0x3f,0x3f,0x00, //   #191  Й  d0 99
-0x00,0xff,0xff,0x03,0x03,0x03,0x03,0x03,0x03,0x03,0x03,0x00,0x00,0x3f,0x3f,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00, //   #192  Г  d0 93
+0x00,0xff,0xff,0x00,0x00,0x00,0x00,0x00,0xff,0xff,0x00,0x00,0x00,0x1f,0x1f,0x18,0x18,0x18,0x18,0x18,0x1f,0x7f,0x78,0x00, //   #188  Ц  d0 a6
 };
 
 
@@ -1027,69 +905,65 @@ const uint8_t FONT_6x8[] = {
 0x02,0x01,0x02,0x04,0x02,0x00, //   #126  ~  7e
 0x04,0x02,0x01,0x02,0x04,0x00, //   #127    7f
 0x48,0x55,0x56,0x55,0x24,0x00, //   #128  š  c5 a1
-0x38,0x45,0x46,0x45,0x20,0x00, //   #129  č  c4 8d
-0x38,0x44,0x44,0x4A,0x7F,0x00, //   #130  đ  c4 91
-0x38,0x44,0x46,0x45,0x20,0x00, //   #131  ć  c4 87
-0x44,0x65,0x56,0x4d,0x44,0x00, //   #132  ž  c5 be
-0x08,0x55,0x56,0x55,0x20,0x00, //   #133  Š  c5 a0
-0x38,0x44,0x46,0x45,0x28,0x00, //   #134  Ć  c4 86
-0x3c,0x41,0x42,0x20,0x7c,0x00, //   #135  ù  c3 b9
-0x20,0x55,0x56,0x54,0x78,0x00, //   #136  à  c3 a0
-0x08,0x14,0x00,0x08,0x14,0x00, //   #137  «  c2 ab
-0x14,0x08,0x00,0x14,0x08,0x00, //   #138  »  c2 bb
-0x00,0x00,0x07,0x05,0x07,0x00, //   #139  °  c2 b0
-0x38,0x55,0x56,0x54,0x08,0x00, //   #140  è  c3 a8
-0x7f,0x01,0x01,0x01,0x7f,0x00, //   #141  П  d0 9f
-0x20,0x54,0x54,0x54,0x78,0x00, //   #142  а  d0 b0
-0x7c,0x21,0x12,0x09,0x7c,0x00, //   #143  й  d0 b9
-0x7c,0x10,0x28,0x44,0x00,0x00, //   #144  к  d0 ba
-0x3e,0x41,0x41,0x41,0x22,0x00, //   #145  С  d0 a1
-0x38,0x44,0x44,0x44,0x38,0x00, //   #146  о  d0 be
-0x7c,0x10,0x10,0x10,0x7c,0x00, //   #147  н  d0 bd
-0x7f,0x10,0x08,0x04,0x7f,0x00, //   #148  И  d0 98
-0x04,0x04,0x7c,0x04,0x04,0x00, //   #149  т  d1 82
-0x38,0x54,0x54,0x54,0x18,0x00, //   #150  е  d0 b5
-0x7c,0x14,0x14,0x14,0x08,0x00, //   #151  р  d1 80
-0x18,0x24,0x7e,0x24,0x18,0x00, //   #152  ф  d1 84
-0x38,0x44,0x44,0x44,0x20,0x00, //   #153  с  d1 81
-0x60,0x3f,0x21,0x3f,0x60,0x00, //   #154  Д  d0 94
-0x4c,0x50,0x20,0x10,0x0c,0x00, //   #155  у  d1 83
-0x7c,0x04,0x04,0x04,0x04,0x00, //   #156  г  d0 b3
-0x7c,0x20,0x10,0x08,0x7c,0x00, //   #157  и  d0 b8
-0x7f,0x08,0x08,0x08,0x7f,0x00, //   #158  Н  d0 9d
-0x40,0x3c,0x24,0x3c,0x60,0x00, //   #159  д  d0 b4
-0x40,0x3c,0x04,0x04,0x7c,0x00, //   #160  л  d0 bb
-0x48,0x34,0x14,0x14,0x7c,0x00, //   #161  я  d1 8f
-0x6c,0x10,0x7c,0x10,0x6c,0x00, //   #162  ж  d0 b6
-0x7c,0x08,0x10,0x08,0x7c,0x00, //   #163  м  d0 bc
-0x7c,0x04,0x04,0x04,0x7c,0x00, //   #164  п  d0 bf
-0x7c,0x54,0x54,0x54,0x28,0x00, //   #165  в  d0 b2
-0x7c,0x10,0x38,0x44,0x38,0x00, //   #166  ю  d1 8e
-0x0c,0x10,0x10,0x10,0x7c,0x00, //   #167  ч  d1 87
-0x3c,0x4a,0x4a,0x4a,0x30,0x00, //   #168  б  d0 b1
-0x28,0x44,0x54,0x54,0x28,0x00, //   #169  з  d0 b7
-0x7c,0x50,0x20,0x00,0x7c,0x00, //   #170  ы  d1 8b
-0x00,0x7c,0x50,0x20,0x00,0x00, //   #171  ь  d1 8c
-0x3c,0x20,0x3c,0x20,0x7c,0x00, //   #172  щ  d1 89
-0x7f,0x09,0x09,0x09,0x06,0x00, //   #173  Р  d0 a0
-0x3c,0x20,0x3c,0x20,0x3c,0x00, //   #174  ш  d1 88
-0x01,0x01,0x7f,0x01,0x01,0x00, //   #175  Т  d0 a2
-0x7f,0x49,0x49,0x49,0x36,0x00, //   #176  В  d0 92
-0x07,0x08,0x08,0x08,0x7f,0x00, //   #177  Ч  d0 a7
-0x0c,0x12,0x7f,0x12,0x0c,0x00, //   #178  Ф  d0 a4
-0x7e,0x09,0x09,0x09,0x7e,0x00, //   #179  А  d0 90
-0x28,0x44,0x54,0x54,0x28,0x00, //   #180  э  d1 8d
-0x7f,0x08,0x14,0x22,0x41,0x00, //   #181  К  d0 9a
-0x46,0x29,0x19,0x09,0x7f,0x00, //   #182  Я  d0 af
-0x47,0x48,0x30,0x08,0x07,0x00, //   #183  У  d0 a3
-0x44,0x28,0x10,0x28,0x44,0x00, //   #184  х  d1 85
-0x7f,0x02,0x04,0x02,0x7f,0x00, //   #185  М  d0 9c
-0x3f,0x20,0x20,0x3f,0x60,0x00, //   #186  Ц  d0 a6
+0x38,0x44,0x44,0x4A,0x7F,0x00, //   #129  đ  c4 91
+0x44,0x65,0x56,0x4d,0x44,0x00, //   #130  ž  c5 be
+0x38,0x45,0x46,0x45,0x20,0x00, //   #131  č  c4 8d
+0x08,0x55,0x56,0x55,0x20,0x00, //   #132  Š  c5 a0
+0x38,0x44,0x46,0x45,0x28,0x00, //   #133  Ć  c4 86
+0x38,0x44,0x46,0x45,0x20,0x00, //   #134  ć  c4 87
+0x7f,0x09,0x09,0x09,0x06,0x00, //   #135  Р  d0 a0
+0x4c,0x50,0x20,0x10,0x0c,0x00, //   #136  у  d1 83
+0x38,0x44,0x44,0x44,0x20,0x00, //   #137  с  d1 81
+0x7c,0x10,0x28,0x44,0x00,0x00, //   #138  к  d0 ba
+0x7c,0x20,0x10,0x08,0x7c,0x00, //   #139  и  d0 b8
+0x7c,0x21,0x12,0x09,0x7c,0x00, //   #140  й  d0 b9
+0x47,0x48,0x30,0x08,0x07,0x00, //   #141  У  d0 a3
+0x3c,0x4a,0x4a,0x4a,0x30,0x00, //   #142  б  d0 b1
+0x38,0x54,0x54,0x54,0x18,0x00, //   #143  е  d0 b5
+0x40,0x3c,0x24,0x3c,0x60,0x00, //   #144  д  d0 b4
+0x04,0x04,0x7c,0x04,0x04,0x00, //   #145  т  d1 82
+0x00,0x7c,0x50,0x20,0x00,0x00, //   #146  ь  d1 8c
+0x0c,0x10,0x10,0x10,0x7c,0x00, //   #147  ч  d1 87
+0x38,0x44,0x44,0x44,0x38,0x00, //   #148  о  d0 be
+0x6c,0x10,0x7c,0x10,0x6c,0x00, //   #149  ж  d0 b6
+0x20,0x54,0x54,0x54,0x78,0x00, //   #150  а  d0 b0
+0x40,0x3c,0x04,0x04,0x7c,0x00, //   #151  л  d0 bb
+0x7c,0x50,0x20,0x00,0x7c,0x00, //   #152  ы  d1 8b
+0x7c,0x08,0x10,0x08,0x7c,0x00, //   #153  м  d0 bc
+0x7c,0x10,0x10,0x10,0x7c,0x00, //   #154  н  d0 bd
+0x7c,0x04,0x04,0x04,0x7c,0x00, //   #155  п  d0 bf
+0x7c,0x14,0x14,0x14,0x08,0x00, //   #156  р  d1 80
+0x7f,0x49,0x49,0x49,0x36,0x00, //   #157  В  d0 92
+0x7c,0x54,0x54,0x54,0x28,0x00, //   #158  в  d0 b2
+0x44,0x28,0x10,0x28,0x44,0x00, //   #159  х  d1 85
+0x28,0x44,0x54,0x54,0x28,0x00, //   #160  з  d0 b7
+0x7c,0x10,0x38,0x44,0x38,0x00, //   #161  ю  d1 8e
+0x7e,0x09,0x09,0x09,0x7e,0x00, //   #162  А  d0 90
+0x7f,0x08,0x14,0x22,0x41,0x00, //   #163  К  d0 9a
+0x7f,0x02,0x04,0x02,0x7f,0x00, //   #164  М  d0 9c
+0x7f,0x01,0x01,0x01,0x7f,0x00, //   #165  П  d0 9f
+0x77,0x08,0x7f,0x08,0x77,0x00, //   #166  Ж  d0 96
+0x00,0x00,0x07,0x05,0x07,0x00, //   #167  °  c2 b0
+0x3e,0x41,0x41,0x41,0x22,0x00, //   #168  С  d0 a1
+0x3e,0x41,0x41,0x41,0x3e,0x00, //   #169  О  d0 9e
+0x7c,0x21,0x12,0x09,0x7c,0x00, //   #170  Й  d0 99
+0x7f,0x08,0x08,0x08,0x7f,0x00, //   #171  Н  d0 9d
+0x7f,0x10,0x08,0x04,0x7f,0x00, //   #172  И  d0 98
+0x7f,0x49,0x49,0x49,0x41,0x00, //   #173  Е  d0 95
+0x7f,0x01,0x01,0x01,0x01,0x00, //   #174  Г  d0 93
+0x46,0x29,0x19,0x09,0x7f,0x00, //   #175  Я  d0 af
+0x07,0x08,0x08,0x08,0x7f,0x00, //   #176  Ч  d0 a7
+0x40,0x3f,0x01,0x01,0x7f,0x00, //   #177  Л  d0 9b
+0x18,0x24,0x7e,0x24,0x18,0x00, //   #178  ф  d1 84
+0x60,0x3f,0x21,0x3f,0x60,0x00, //   #179  Д  d0 94
+0x7c,0x04,0x04,0x04,0x04,0x00, //   #180  г  d0 b3
+0x48,0x34,0x14,0x14,0x7c,0x00, //   #181  я  d1 8f
+0x3c,0x20,0x3c,0x20,0x7c,0x00, //   #182  щ  d1 89
+0x3c,0x20,0x3c,0x20,0x3c,0x00, //   #183  ш  d1 88
+0x01,0x01,0x7f,0x01,0x01,0x00, //   #184  Т  d0 a2
+0x0c,0x12,0x7f,0x12,0x0c,0x00, //   #185  Ф  d0 a4
+0x28,0x44,0x54,0x54,0x28,0x00, //   #186  э  d1 8d
 0x3c,0x20,0x20,0x3c,0x60,0x00, //   #187  ц  d1 86
-0x3e,0x41,0x41,0x41,0x3e,0x00, //   #188  О  d0 9e
-0x40,0x3f,0x01,0x01,0x7f,0x00, //   #189  Л  d0 9b
-0x77,0x08,0x7f,0x08,0x77,0x00, //   #190  Ж  d0 96
-0x7c,0x21,0x12,0x09,0x7c,0x00, //   #191  Й  d0 99
-0x7f,0x01,0x01,0x01,0x01,0x00, //   #192  Г  d0 93
+0x3f,0x20,0x20,0x3f,0x60,0x00, //   #188  Ц  d0 a6
 };
 #endif /* I14N_H_ */
